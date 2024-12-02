@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-20613.htm" />
+    <!-- Title of The Page -->
+    <title>Spring MVC 自定义拦截器</title>
+        <meta name="description" content="拦截器 Spring MVC 的处理器拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行预处理和后处理。 预处理：在访问controller之前执行的代码 后处理：在访问co" />
+        <link rel="icon" href="__ADDON__/img/clashxray/favicon.ico" type="image/x-icon"/>
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Spring MVC 自定义拦截器</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="markdown_views prism-dracula"> <h2><a id="_0" rel="nofollow"></a>拦截器</h2> <p>Spring MVC 的处理器拦截器类似于 Servlet 开发中的过滤器 Filter，用于对处理器进行预处理和后处理。</p> <p>预处理：在访问controller之前执行的代码<br /> 后处理：在访问controller返回之后执行的代码</p> <p>拦截器链（Interceptor Chain）：拦截器链就是将拦截器按一定的顺序联结成一条链。在访问被拦截的方法或字段时，拦截器链中的拦截器就会按其之前定义的顺序被调用。</p> <p>可以自定义实现拦截器，需要实现<code>HandlerInterceptor 接口</code></p> <p><strong>拦截器和过滤器的区别</strong>：</p> <ul> <li>过滤器是 servlet 规范中的一部分， 任何 java web 工程都可以使用。</li> <li>拦截器是 SpringMVC 框架自己的，只有使用了 SpringMVC 框架的工程才能用。</li> <li>过滤器在 url-pattern 中配置了/*之后，可以对所有要访问的资源拦截。</li> <li>拦截器它是只会拦截访问的控制器方法，如果访问的是 jsp，html，css，image或者 js 是不会进行拦<br /> 截的</li> </ul> <h2><a id="_17" rel="nofollow"></a>自定义拦截器</h2> <p>在resources/springmvc.xml文件中配置拦截器：</p> <pre><code class="prism language-java"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>配置拦截器<span class="token operator">--</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>mvc<span class="token operator">:</span>interceptors<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>配置拦截器<span class="token operator">--</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>mvc<span class="token operator">:</span>interceptor<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>要拦截的具体的方法，当请求路径前缀是<span class="token operator">/</span>user时拦截<span class="token operator">--</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>mvc<span class="token operator">:</span>mapping path<span class="token operator">=</span><span class="token string">"/user/*"</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>不要拦截的方法<span class="token operator">&lt;</span>mvc<span class="token operator">:</span>exclude<span class="token operator">-</span>mapping path<span class="token operator">=</span><span class="token string">""</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">--</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>配置拦截器对象<span class="token operator">--</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>bean<span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"包名.MyInterceptor1"</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>mvc<span class="token operator">:</span>interceptor<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>配置第二个拦截器<span class="token operator">--</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>mvc<span class="token operator">:</span>interceptor<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>要拦截的具体的方法，所有的请求都拦截<span class="token operator">--</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>mvc<span class="token operator">:</span>mapping path<span class="token operator">=</span><span class="token string">"/**"</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>不要拦截的方法<span class="token operator">&lt;</span>mvc<span class="token operator">:</span>exclude<span class="token operator">-</span>mapping path<span class="token operator">=</span><span class="token string">""</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">--</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>配置拦截器对象<span class="token operator">--</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>bean<span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"包名.MyInterceptor2"</span><span class="token operator">/</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>mvc<span class="token operator">:</span>interceptor<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>mvc<span class="token operator">:</span>interceptors<span class="token operator">&gt;</span></code></pre> <p>第一个拦截器：</p> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">MyInterceptor1</span><span class="token keyword">implements</span><span class="token class-name">HandlerInterceptor</span><span class="token punctuation">{<!-- --></span><span class="token comment">/**      * 预处理，controller方法执行前      * return true 放行，执行下一个拦截器，如果没有，执行controller中的方法      * return false不放行      * @param request      * @param response      * @param handler      * @return      * @throws Exception      */</span><span class="token keyword">public</span><span class="token keyword">boolean</span><span class="token function">preHandle</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">,</span> Object handler<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception<span class="token punctuation">{<!-- --></span>         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"MyInterceptor1-preHandle-执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token boolean">true</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      * 后处理方法，controller方法执行后，success.jsp执行之前      * @param request      * @param response      * @param handler      * @param modelAndView      * @throws Exception      */</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">postHandle</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">,</span> Object handler<span class="token punctuation">,</span> ModelAndView modelAndView<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception<span class="token punctuation">{<!-- --></span>         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"MyInterceptor1-postHandle-执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      * success.jsp页面执行后，该方法会执行      * @param request      * @param response      * @param handler      * @param ex      * @throws Exception      */</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">afterCompletion</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">,</span> Object handler<span class="token punctuation">,</span> Exception ex<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception<span class="token punctuation">{<!-- --></span>         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"MyInterceptor1-afterCompletion-执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">MyInterceptor2</span><span class="token keyword">implements</span><span class="token class-name">HandlerInterceptor</span><span class="token punctuation">{<!-- --></span><span class="token comment">/**      * 预处理，controller方法执行前      * return true 放行，执行下一个拦截器，如果没有，执行controller中的方法      * return false不放行      * @param request      * @param response      * @param handler      * @return      * @throws Exception      */</span><span class="token keyword">public</span><span class="token keyword">boolean</span><span class="token function">preHandle</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">,</span> Object handler<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception<span class="token punctuation">{<!-- --></span>         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"MyInterceptor2-preHandle-执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token boolean">true</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      * 后处理方法，controller方法执行后，success.jsp执行之前      * @param request      * @param response      * @param handler      * @param modelAndView      * @throws Exception      */</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">postHandle</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">,</span> Object handler<span class="token punctuation">,</span> ModelAndView modelAndView<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception<span class="token punctuation">{<!-- --></span>         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"MyInterceptor2-postHandle-执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      * success.jsp页面执行后，该方法会执行      * @param request      * @param response      * @param handler      * @param ex      * @throws Exception      */</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">afterCompletion</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">,</span> HttpServletResponse response<span class="token punctuation">,</span> Object handler<span class="token punctuation">,</span> Exception ex<span class="token punctuation">)</span><span class="token keyword">throws</span> Exception<span class="token punctuation">{<!-- --></span>         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"MyInterceptor2-afterCompletion-执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>UserController :</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@Controller</span><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/user"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">UserController</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/testInterceptor"</span><span class="token punctuation">)</span><span class="token keyword">public</span> String<span class="token function">testInterceptor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"UserController.testInterceptor控制器-执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//success.jsp页面</span><span class="token keyword">return</span><span class="token string">"success"</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>success.jsp：</p> <pre><code class="prism language-java"><span class="token operator">&lt;</span><span class="token operator">%</span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"success.jsp-执行"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">%</span><span class="token operator">&gt;</span></code></pre> <p>当请求/user/testInterceptor时，控制台打印结果：<br /> MyInterceptor1-preHandle-执行<br /> MyInterceptor2-preHandle-执行<br /> UserController.testInterceptor控制器-执行<br /> MyInterceptor2-postHandle-执行<br /> MyInterceptor1-postHandle-执行<br /> success.jsp-执行<br /> MyInterceptor2-afterCompletion-执行<br /> MyInterceptor1-afterCompletion-执行</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-20154.htm">给动物注射疫苗时应如何防止病毒的干扰现象（动物防疫注射注意事项）</a></p>
+                                        <p>下一个：<a href="/news/article-20615.htm">动物医院诊疗范围有哪些项目 动物医院诊疗范围有哪些项目呢</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-20613.htm" title="Spring MVC 自定义拦截器">Spring MVC 自定义拦截器</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-winxray-github.htm" title="12月2日→18.5M/S|2024年最新免费节点Clash Xray订阅链接地址">12月2日→18.5M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-13-latest-winxray-node.htm" title="10月13日→18.4M/S|2024年最新免费节点Clash Xray订阅链接地址">10月13日→18.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-today-winxray-node.htm" title="11月30日→20.9M/S|2024年最新免费节点Clash Xray订阅链接地址">11月30日→20.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-winxray-node.htm" title="10月20日→18.4M/S|2024年最新免费节点Clash Xray订阅链接地址">10月20日→18.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-subscribe-node.htm" title="11月2日→21.8M/S|2024年最新免费节点Clash Xray订阅链接地址">11月2日→21.8M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-26-winxray-github.htm" title="9月26日→22.4M/S|2024年最新免费节点Clash Xray订阅链接地址">9月26日→22.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-31-free-subscribe-node.htm" title="10月31日→18.3M/S|2024年最新免费节点Clash Xray订阅链接地址">10月31日→18.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-23-today-winxray-node.htm" title="10月23日→20.1M/S|2024年最新免费节点Clash Xray订阅链接地址">10月23日→20.1M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-subscribe-node.htm" title="11月27日→18M/S|2024年最新免费节点Clash Xray订阅链接地址">11月27日→18M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

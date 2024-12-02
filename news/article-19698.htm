@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-19698.htm" />
+    <!-- Title of The Page -->
+    <title>Java中的抽象类与接口</title>
+        <meta name="description" content="目录 一、抽象类 1、抽象类的基本概念 2、抽象类的定义语法 &nbsp;3、抽象类和普通类的区别 4、抽象方法 5、抽象方法和普通方法的区别 6、抽象类与抽象方法的使用 7、抽象类的局限性 二、接口" />
+        <link rel="icon" href="__ADDON__/img/clashxray/favicon.ico" type="image/x-icon"/>
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Java中的抽象类与接口</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="htmledit_views"> <p id="main-toc"><strong>目录</strong></p> <p id="%E4%B8%80%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB-toc" style="margin-left:0px;"><a href="#%E4%B8%80%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB" rel="nofollow">一、抽象类</a></p> <p id="1%E3%80%81-toc" style="margin-left:40px;"><a href="#1%E3%80%81" rel="nofollow">1、抽象类的基本概念</a></p> <p id="2%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E8%AF%AD%E6%B3%95-toc" style="margin-left:40px;"><a href="#2%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E8%AF%AD%E6%B3%95" rel="nofollow">2、抽象类的定义语法</a></p> <p id="%C2%A03%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%99%AE%E9%80%9A%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB-toc" style="margin-left:40px;"><a href="#%C2%A03%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%99%AE%E9%80%9A%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB" rel="nofollow">&nbsp;3、抽象类和普通类的区别</a></p> <p id="4%E3%80%81%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95-toc" style="margin-left:40px;"><a href="#4%E3%80%81%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95" rel="nofollow">4、抽象方法</a></p> <p id="5%E3%80%81%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95%E5%92%8C%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB-toc" style="margin-left:40px;"><a href="#5%E3%80%81%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95%E5%92%8C%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB" rel="nofollow">5、抽象方法和普通方法的区别</a></p> <p id="6%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8-toc" style="margin-left:40px;"><a href="#6%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8" rel="nofollow">6、抽象类与抽象方法的使用</a></p> <p id="7%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7-toc" style="margin-left:40px;"><a href="#7%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7" rel="nofollow">7、抽象类的局限性</a></p> <p id="%E4%BA%8C%E3%80%81-toc" style="margin-left:0px;"><a href="#%E4%BA%8C%E3%80%81" rel="nofollow">二、接口</a></p> <p id="2%E3%80%81-toc" style="margin-left:40px;"><a href="#2%E3%80%81" rel="nofollow">1、抽象类的定义语法</a></p> <p id="%C2%A02%E3%80%81%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%89%B9%E6%80%A7-toc" style="margin-left:40px;"><a href="#%C2%A02%E3%80%81%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%89%B9%E6%80%A7" rel="nofollow">&nbsp;2、接口的特性</a></p> <p id="3%E3%80%81%E7%90%86%E8%A7%A3%E6%8E%A5%E5%8F%A3-toc" style="margin-left:40px;"><a href="#3%E3%80%81%E7%90%86%E8%A7%A3%E6%8E%A5%E5%8F%A3" rel="nofollow">3、理解接口</a></p> <p id="%C2%A04%E3%80%81%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B-toc" style="margin-left:40px;"><a href="#%C2%A04%E3%80%81%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B" rel="nofollow">&nbsp;4、面向接口编程</a></p> <p id="5%E3%80%81%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B%E7%9A%84%E4%BC%98%E7%82%B9-toc" style="margin-left:40px;"><a href="#5%E3%80%81%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B%E7%9A%84%E4%BC%98%E7%82%B9" rel="nofollow">5、面向接口编程的优点</a></p> <p id="6%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E8%81%94%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB-toc" style="margin-left:40px;"><a href="#6%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E8%81%94%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB" rel="nofollow">6、抽象类和接口的联系和区别</a></p> <hr id="hr-toc"/> </h1> <h2 id="1%E3%80%81">1、抽象类的基本概念</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;抽象思维，是人类思维达到高级阶段产生的一种能力，例如，当小孩子思维尚未成熟时，他们只能掌握具体概念，他们在学习代词“你、我、他”时往往遇到困难，因为代词具有较高的抽象性。<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ffd900;">抽象类就是为了继承而存在</span>的，如果你定义了一个抽象类，却不去继承它，那么等于白白创建了这个抽象类，因为你不能用它来做任何事情。<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于一个父类，如果它的某个方法在父类中实现出来没有任何意义，必须根据子类的实际需求来进行不同的实现，那么就可以将这个方法声明为<span style="color:#ffd900;">abstract</span>方法，此时这个类也就成为abstract类了。</p> <h2 id="2%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E8%AF%AD%E6%B3%95">2、抽象类的定义语法</h2> <pre><code class="language-java">访问修饰符 abstract class ClassName {   }</code></pre> <h2 id="%C2%A03%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%99%AE%E9%80%9A%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB">&nbsp;3、抽象类和普通类的区别</h2> <ul> <li>抽象类要用<span style="color:#ffd900;">abstract修饰</span> </li> <li>普通类可以实例化，<span style="color:#ffd900;">抽象类不能实例化</span> </li> <li>如果一个<span style="color:#ffd900;">类继承于一个抽象类，则子类必须实现父类的抽象方法</span>。如果<span style="color:#ffd900;">子类没有实现父类的抽象方法，则必须将子类也定义为为abstract类</span>。</li> </ul> <h2 id="4%E3%80%81%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95">4、抽象方法</h2> <pre><code class="language-java">访问修饰符 abstract class ClassName {        访问修饰符 abstract 返回值类型  方法名(参数列表…); } </code></pre> <h2 id="5%E3%80%81%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95%E5%92%8C%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB">5、抽象方法和普通方法的区别</h2> <ul> <li>普通方法必须要有方法体，抽象方法不能有方法体（大括号也没有）</li> <li>抽象方法要用abstract修饰</li> <li>抽象方法必须存在于抽象类中</li> </ul> <h2 id="6%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E4%B8%8E%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8">6、抽象类与抽象方法的使用</h2> <ul> <li>抽象类中可以没有抽象方法，但包含了抽象方法的类必须被定义为抽象类</li> <li>如果子类没有实现父类的所有抽象方法，子类必须被定义为抽象类</li> <li>没有抽象构造方法，也没有抽象静态方法</li> <li>抽象类中可以有非抽象的构造方法，创建子类的实例时可以调用</li> </ul> <h2 id="7%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7">7、抽象类的局限性</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;子类继承抽象类之后，必须重写父类的抽象方法，重写的方法有可能会是代码重复的情况，不符合代码复用的要求</p> </h1> <h2 id="2%E3%80%81">1、抽象类的定义语法</h2> <p>定义接口的语法：</p> <pre><code class="language-java">[访问修饰符]  interface 接口名   extends 父接口1,父接口2,…{                     //常量定义                     //方法定义 } </code></pre> <p>类实现接口的语法：&nbsp;</p> <pre><code class="language-java">[访问修饰符]  class  类名  extends  父类名 implements  接口1,接口2,…{                     //类成员 } </code></pre> <h2 id="%C2%A02%E3%80%81%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%89%B9%E6%80%A7">&nbsp;2、接口的特性</h2> <ol> <li>接口的命名规则与类相同。如果<span style="color:#ffd900;">修饰符</span>是public，则该接口在整个项目中可见；如果省略修饰符，则该接口只在当前包可见。</li> <li> <span style="color:#ffd900;">接口中可以定义常量</span>，不能定义变量。接口中的属性都会自动用public static final 修饰，即接口中的属性都是全局静态常量。</li> <li>接口中方法自动用public&nbsp; abstract修饰，<span style="color:#ffd900;">接口中所有方法都是抽象方法</span>。</li> <li>接口不能实例化，<span style="color:#ffd900;">接口中不能有构造方法</span>。</li> <li>接口直接可以<span style="color:#ffd900;">通过extends实现继承</span>关系，一个<span style="color:#ffd900;">接口可以继承多个接口</span>，但是<span style="color:#ffd900;">接口不能继承类</span>。</li> <li>接口的<span style="color:#ffd900;">实现类必须实现接口的全部方法</span>，<span style="color:#ffd900;">否则必须定义为抽象类</span>。</li> </ol> <h2 id="3%E3%80%81%E7%90%86%E8%A7%A3%E6%8E%A5%E5%8F%A3">3、理解接口</h2> <p>接口表示一种约定</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生活中，我们使用的两相电源插座，规定了<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;两个接头间的额定电压<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;两个接头间的距离<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接头的形状</p> <p>接口表示一种约定</p> <h2 id="%C2%A04%E3%80%81%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B">&nbsp;4、面向接口编程</h2> <ul> <li>关心实现类有何能力，而不关心实现细节</li> <li>面向接口的约定而不考虑接口的具体实现</li> </ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面向接口编程就是先把客户的业务逻辑线提取出来，作为接口，业务具体实现通过该接口的实现类来完成。当客户需求变化时，只需编写该业务逻辑的新的实现类，替换该接口的实现类就可以完成需求，不需要改写现有代码，减少对系统的影响。</p> <h2 id="5%E3%80%81%E9%9D%A2%E5%90%91%E6%8E%A5%E5%8F%A3%E7%BC%96%E7%A8%8B%E7%9A%84%E4%BC%98%E7%82%B9">5、面向接口编程的优点</h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;接口体现了约定和实现相分离的原则<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;面向接口编程就意味着：开发系统时，主体架构使用接口，接口构成系统的骨架，这样就可以通过更换实现接口的类来实现更换需求。</p> <p>面向接口编程的优点：</p> <ul> <li>降低代码间的耦合性</li> <li>易于程序的扩展，提高了程序的可扩性性</li> <li>提高了程序的可维护性</li> </ul> <h2 id="6%E3%80%81%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E8%81%94%E7%B3%BB%E5%92%8C%E5%8C%BA%E5%88%AB">6、抽象类和接口的联系和区别</h2> <p>相同点：</p> <ul> <li>代表系统的抽象层</li> <li>都不能被实例化</li> <li>都能包含抽象方法：用于描述系统提供的服务，不必提供具体实现</li> </ul> <p>不同点：</p> <ul> <li>在抽象类中可以为部分方法提供默认实现，而接口中只能包含抽象方法</li> <li>抽象类便于复用，接口便于代码维护</li> <li>一个类只能继承一个直接的父类，但可以实现多个接口</li> </ul> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-19696.htm">Vue 引入外部css样式两种方式 import 和link ； mixin.js的使用</a></p>
+                                        <p>下一个：<a href="/news/article-20153.htm">动物疫苗公司10强名单公布 动物疫苗公司10强名单公布时间</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-30-today-winxray-node.htm" title="11月30日→20.9M/S|2024年最新免费节点Clash Xray订阅链接地址">11月30日→20.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-28-winxray-github.htm" title="9月28日→22.7M/S|2024年最新免费节点Clash Xray订阅链接地址">9月28日→22.7M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-12-node-share-links.htm" title="9月12日→22.9M/S|2024年最新免费节点Clash Xray订阅链接地址">9月12日→22.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-subscribe-node.htm" title="11月27日→18M/S|2024年最新免费节点Clash Xray订阅链接地址">11月27日→18M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-16-latest-winxray-node.htm" title="9月16日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址">9月16日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-free-node-subscribe-links.htm" title="11月18日→22.9M/S|2024年最新免费节点Clash Xray订阅链接地址">11月18日→22.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-20613.htm" title="Spring MVC 自定义拦截器">Spring MVC 自定义拦截器</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-31-free-subscribe-node.htm" title="10月31日→18.3M/S|2024年最新免费节点Clash Xray订阅链接地址">10月31日→18.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-winxray-windows.htm" title="11月29日→19.3M/S|2024年最新免费节点Clash Xray订阅链接地址">11月29日→19.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-14-winxray-node-github.htm" title="10月14日→21.9M/S|2024年最新免费节点Clash Xray订阅链接地址">10月14日→21.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
