@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-23819.htm" />
+    <!-- Title of The Page -->
+    <title>Spring cloud链路跟踪服务集成zipkin+mysql+sleuth+rabbitMq</title>
+        <meta name="description" content="Spring cloud链路跟踪服务集成zipkin+mysql+sleuth+rabbitMq 一、链路跟踪服务能为我们带来什么好处？  随着各模块单体微服务越来越多，系统之间的服务依赖、服务调用越" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Spring cloud链路跟踪服务集成zipkin+mysql+sleuth+rabbitMq</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="Spring_cloudzipkinmysqlsleuthrabbitMq_0" rel="nofollow"></a>Spring cloud链路跟踪服务集成zipkin+mysql+sleuth+rabbitMq</h2> <h4><a id="_2" rel="nofollow"></a>一、链路跟踪服务能为我们带来什么好处？</h4> <p> 随着各模块单体微服务越来越多，系统之间的服务依赖、服务调用越来越复杂，当我们的系统出现性能缓慢时，无法快速地定位是哪个服务造成的，而链路跟踪服务能帮助我们很好的查看各服务调用信息，帮助我们很好地分析系统性能问题。</p> <h4><a id="_6" rel="nofollow"></a>二、请求调用链路信息需不需要作数据存储？</h4> <p> 由于有的生产问题可能无法复现，所以请求调用链路信息是有必要作数据存储地，但是不能所有的信息都去存储，需要制定相关策略。</p> <h4><a id="_10" rel="nofollow"></a>三、技术选型</h4> <p> 因为链路跟踪服务是辅助服务，不是我们的主流程服务，所以选型不要过于复杂，需要适配spring cloud体系。</p> <p>这里选用spring cloud全家桶里的组件，如下：</p> <p>spring-cloud-sleuth：用作服务之间调用信息采集。</p> <p>zipkin：用于图形化查看请求调用信息与服务之间的调用依赖关系。</p> <p>mysql：用于存储请求调用信息。</p> <p>rabbitmq：用于服务调用时给zipkin服务发送信息，在图形化界面查看调用信息，还支持web方式发送，但是web方式会占带宽影响系统性能，所以采用rabbitmq异步发送。</p> <h4><a id="_24" rel="nofollow"></a>四、实现方案</h4> <p> 官方建议zipkin 2.0之后的版本用官方jar包；而zipkin没有提供存储策略，即数据要么全部存储，要么全部不存储。所以为了增加存储策略，不采用官方jar，自己定制zipkin服务。</p> <p>定制内容：</p> <p> 增加定时任务，定时删除请求响应小于N秒的请求，N支持配置。</p> <h4><a id="_32" rel="nofollow"></a>五、配置文件详解</h4> <p>1、zipkin服务端配置文件</p> <p>application.yml</p> <pre><code class="prism language-yml"><span class="token key atrule">server</span><span class="token punctuation">:</span><span class="token key atrule">port</span><span class="token punctuation">:</span><span class="token number">9411</span><span class="token key atrule">spring</span><span class="token punctuation">:</span><span class="token key atrule">main</span><span class="token punctuation">:</span><span class="token key atrule">allow-bean-definition-overriding</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token key atrule">application</span><span class="token punctuation">:</span><span class="token key atrule">name</span><span class="token punctuation">:</span> zipkin<span class="token punctuation">-</span>server<span class="token key atrule">cloud</span><span class="token punctuation">:</span><span class="token key atrule">nacos</span><span class="token punctuation">:</span><span class="token key atrule">discovery</span><span class="token punctuation">:</span><span class="token key atrule">server-addr</span><span class="token punctuation">:</span> 192.168.103.240<span class="token punctuation">:</span><span class="token number">8848</span><span class="token key atrule">cluster-name</span><span class="token punctuation">:</span> DEFAULT<span class="token key atrule">zipkin</span><span class="token punctuation">:</span><span class="token key atrule">enabled</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token comment">#启用zipkin</span><span class="token key atrule">discovery-client-enabled</span><span class="token punctuation">:</span><span class="token boolean important">false</span><span class="token comment">#服务端不注册zipkin服务</span><span class="token key atrule">sleuth</span><span class="token punctuation">:</span><span class="token key atrule">enabled</span><span class="token punctuation">:</span><span class="token boolean important">false</span><span class="token comment">#服务端不进行信息采集</span><span class="token comment">#数据库配置</span><span class="token key atrule">datasource</span><span class="token punctuation">:</span><span class="token key atrule">driver-class-name</span><span class="token punctuation">:</span> com.mysql.cj.jdbc.Driver     		schema<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span> classpath<span class="token punctuation">:</span>/zipkin.sql<span class="token comment">#服务启动执行脚本自动创建表结构</span><span class="token key atrule">url</span><span class="token punctuation">:</span> jdbc<span class="token punctuation">:</span>mysql<span class="token punctuation">:</span>//192.168.103.240<span class="token punctuation">:</span>13126/cbs_svr_zipkin<span class="token punctuation">?</span>zeroDateTimeBehavior=CONVERT_TO_NULL<span class="token important">&amp;allowMultiQueries</span>=true<span class="token important">&amp;useUnicode</span>=true<span class="token important">&amp;characterEncoding</span>=UTF<span class="token punctuation">-</span>8<span class="token important">&amp;useSSL</span>=false<span class="token important">&amp;serverTimezone</span>=GMT%2b8<span class="token important">&amp;allowPublicKeyRetrieval</span>=true<span class="token key atrule">username</span><span class="token punctuation">:</span> root<span class="token key atrule">password</span><span class="token punctuation">:</span> q<span class="token tag">!W</span><span class="token comment">#3e4r123456</span><span class="token key atrule">initialization-mode</span><span class="token punctuation">:</span> always<span class="token key atrule">continueOnError</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token key atrule">zipkin</span><span class="token punctuation">:</span><span class="token comment">#配置rabbitmq</span><span class="token key atrule">collector</span><span class="token punctuation">:</span><span class="token key atrule">rabbitmq</span><span class="token punctuation">:</span><span class="token key atrule">addresses</span><span class="token punctuation">:</span> 192.168.103.240<span class="token punctuation">:</span><span class="token number">5672</span><span class="token key atrule">username</span><span class="token punctuation">:</span> comtom<span class="token key atrule">password</span><span class="token punctuation">:</span> comtom<span class="token key atrule">virtual-host</span><span class="token punctuation">:</span> cbs<span class="token comment">#指定数据库类型</span><span class="token key atrule">storage</span><span class="token punctuation">:</span><span class="token key atrule">type</span><span class="token punctuation">:</span> mysql<span class="token comment">#此配置不影响信息采集，若不配置，会报一个错误，但不影响服务采集信息，配置上时为了避免打印报错日志</span><span class="token key atrule">management</span><span class="token punctuation">:</span><span class="token key atrule">metrics</span><span class="token punctuation">:</span><span class="token key atrule">web</span><span class="token punctuation">:</span><span class="token key atrule">server</span><span class="token punctuation">:</span><span class="token key atrule">auto-time-requests</span><span class="token punctuation">:</span><span class="token boolean important">false</span><span class="token comment">#配置请求响应用时多少秒内的链路需要删除,默认删除1S内的链路跟踪信息。    1S = 1000000</span><span class="token key atrule">time</span><span class="token punctuation">:</span><span class="token number">1000000</span></code></pre> <p>2、zipkin客户端配置文件</p> <pre><code class="prism language-yml"><span class="token comment">#链路跟踪配置</span><span class="token key atrule">zipkin</span><span class="token punctuation">:</span><span class="token key atrule">sender</span><span class="token punctuation">:</span><span class="token key atrule">type</span><span class="token punctuation">:</span> rabbit<span class="token comment">#请求调用发送到服务端方式</span><span class="token key atrule">sleuth</span><span class="token punctuation">:</span><span class="token key atrule">sampler</span><span class="token punctuation">:</span><span class="token key atrule">percentage</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token comment"># 全局采样率，测试环境配置全采样，生产环境可以不配置，采用默认值0.1</span></code></pre> <p><strong>zipkin表结构</strong></p> <p>CREATE TABLE IF NOT EXISTS zipkin_spans (<br /><code>trace_id_high</code> BIGINT NOT NULL DEFAULT 0 COMMENT ‘If non zero, this means the trace uses 128 bit traceIds instead of 64 bit’,<br /><code>trace_id</code> BIGINT NOT NULL,<br /><code>id</code> BIGINT NOT NULL,<br /><code>name</code> VARCHAR(255) NOT NULL,<br /><code>parent_id</code> BIGINT,<br /><code>debug</code> BIT(1),<br /><code>start_ts</code> BIGINT COMMENT ‘Span.timestamp(): epoch micros used for endTs query and to implement TTL’,<br /><code>duration</code> BIGINT COMMENT ‘Span.duration(): micros used for minDuration and maxDuration query’<br /> ) ENGINE=InnoDB ROW_FORMAT=COMPRESSED CHARACTER SET=utf8 COLLATE utf8_general_ci;</p> <pre><code>ALTER TABLE zipkin_spans ADD UNIQUE KEY(`trace_id_high`, `trace_id`, `id`) COMMENT 'ignore insert on duplicate'; ALTER TABLE zipkin_spans ADD INDEX(`trace_id_high`, `trace_id`, `id`) COMMENT 'for joining with zipkin_annotations'; ALTER TABLE zipkin_spans ADD INDEX(`trace_id_high`, `trace_id`) COMMENT 'for getTracesByIds'; ALTER TABLE zipkin_spans ADD INDEX(`name`) COMMENT 'for getTraces and getSpanNames'; ALTER TABLE zipkin_spans ADD INDEX(`start_ts`) COMMENT 'for getTraces ordering and range';  CREATE TABLE IF NOT EXISTS zipkin_annotations (   `trace_id_high` BIGINT NOT NULL DEFAULT 0 COMMENT 'If non zero, this means the trace uses 128 bit traceIds instead of 64 bit',   `trace_id` BIGINT NOT NULL COMMENT 'coincides with zipkin_spans.trace_id',   `span_id` BIGINT NOT NULL COMMENT 'coincides with zipkin_spans.id',   `a_key` VARCHAR(255) NOT NULL COMMENT 'BinaryAnnotation.key or Annotation.value if type == -1',   `a_value` BLOB COMMENT 'BinaryAnnotation.value(), which must be smaller than 64KB',   `a_type` INT NOT NULL COMMENT 'BinaryAnnotation.type() or -1 if Annotation',   `a_timestamp` BIGINT COMMENT 'Used to implement TTL; Annotation.timestamp or zipkin_spans.timestamp',   `endpoint_ipv4` INT COMMENT 'Null when Binary/Annotation.endpoint is null',   `endpoint_ipv6` BINARY(16) COMMENT 'Null when Binary/Annotation.endpoint is null, or no IPv6 address',   `endpoint_port` SMALLINT COMMENT 'Null when Binary/Annotation.endpoint is null',   `endpoint_service_name` VARCHAR(255) COMMENT 'Null when Binary/Annotation.endpoint is null' ) ENGINE=InnoDB ROW_FORMAT=COMPRESSED CHARACTER SET=utf8 COLLATE utf8_general_ci;  ALTER TABLE zipkin_annotations ADD UNIQUE KEY(`trace_id_high`, `trace_id`, `span_id`, `a_key`, `a_timestamp`) COMMENT 'Ignore insert on duplicate'; ALTER TABLE zipkin_annotations ADD INDEX(`trace_id_high`, `trace_id`, `span_id`) COMMENT 'for joining with zipkin_spans'; ALTER TABLE zipkin_annotations ADD INDEX(`trace_id_high`, `trace_id`) COMMENT 'for getTraces/ByIds'; ALTER TABLE zipkin_annotations ADD INDEX(`endpoint_service_name`) COMMENT 'for getTraces and getServiceNames'; ALTER TABLE zipkin_annotations ADD INDEX(`a_type`) COMMENT 'for getTraces'; ALTER TABLE zipkin_annotations ADD INDEX(`a_key`) COMMENT 'for getTraces'; ALTER TABLE zipkin_annotations ADD INDEX(`trace_id`, `span_id`, `a_key`) COMMENT 'for dependencies job';  CREATE TABLE IF NOT EXISTS zipkin_dependencies (   `day` DATE NOT NULL,   `parent` VARCHAR(255) NOT NULL,   `child` VARCHAR(255) NOT NULL,   `error_count` BIGINT,   `call_count` BIGINT ) ENGINE=InnoDB ROW_FORMAT=COMPRESSED CHARACTER SET=utf8 COLLATE utf8_general_ci;  ALTER TABLE zipkin_dependencies ADD UNIQUE KEY(`day`, `parent`, `child`);</code></pre> <p><strong>pom依赖</strong></p> <p>zipkin服务端：<br /><strong>一、zipkin服务</strong><br /> pom文件加入一下依赖：</p> <pre><code>    &lt;dependency&gt;         &lt;groupId&gt;com.alibaba.cloud&lt;/groupId&gt;         &lt;artifactId&gt;spring-cloud-starter-alibaba-nacos-discovery&lt;/artifactId&gt;     &lt;/dependency&gt;     &lt;dependency&gt;         &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;         &lt;artifactId&gt;zipkin-server&lt;/artifactId&gt;         &lt;version&gt;2.12.3&lt;/version&gt;         &lt;!--排除日志，否则报错--&gt;         &lt;exclusions&gt;             &lt;exclusion&gt;                 &lt;artifactId&gt;log4j-slf4j-impl&lt;/artifactId&gt;                 &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;             &lt;/exclusion&gt;         &lt;/exclusions&gt;     &lt;/dependency&gt;     &lt;!-- zipkin 界面--&gt;     &lt;dependency&gt;         &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;         &lt;artifactId&gt;zipkin-autoconfigure-ui&lt;/artifactId&gt;         &lt;version&gt;2.12.3&lt;/version&gt;     &lt;/dependency&gt;     &lt;!-- zipkin 存储到数据库需要引入此类 --&gt;     &lt;dependency&gt;         &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;         &lt;artifactId&gt;zipkin-autoconfigure-storage-mysql&lt;/artifactId&gt;         &lt;version&gt;2.12.3&lt;/version&gt;     &lt;/dependency&gt;     &lt;dependency&gt;         &lt;groupId&gt;mysql&lt;/groupId&gt;         &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;     &lt;/dependency&gt;     &lt;dependency&gt;         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;         &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;     &lt;/dependency&gt;     &lt;!--&amp;lt;!&amp;ndash;包含spring-cloud-starter-sleuth和spring-cloud-sleuth-zipkin两个依赖&amp;ndash;&amp;gt;--&gt;     &lt;dependency&gt;         &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;         &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt;     &lt;/dependency&gt;     &lt;!--连接rabbitmq并配置--&gt;     &lt;dependency&gt;         &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;         &lt;artifactId&gt;zipkin-autoconfigure-collector-rabbitmq&lt;/artifactId&gt;         &lt;version&gt;2.12.3&lt;/version&gt;     &lt;/dependency&gt;</code></pre> <p>zipkin客户端：</p> <pre><code>    &lt;dependency&gt;         &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;         &lt;artifactId&gt;spring-cloud-starter-zipkin&lt;/artifactId&gt;     &lt;/dependency&gt;     &lt;!-- 使用消息的方式收集数据（使用rabbitmq） --&gt;     &lt;dependency&gt;         &lt;groupId&gt;io.zipkin.java&lt;/groupId&gt;         &lt;artifactId&gt;zipkin-autoconfigure-collector-rabbitmq&lt;/artifactId&gt;         &lt;version&gt;2.12.3&lt;/version&gt;     &lt;/dependency&gt;</code></pre> <p>链路采集：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221201/758760524593883c27869c8ff8cc617d.jpg" alt="Spring cloud链路跟踪服务集成zipkin+mysql+sleuth+rabbitMq"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221201/42ec6b249b132e0279e4afa2a0f48252.jpg" alt="Spring cloud链路跟踪服务集成zipkin+mysql+sleuth+rabbitMq"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221201/30275994f1feebbc77b34a5cfd7b1eba.jpg" alt="Spring cloud链路跟踪服务集成zipkin+mysql+sleuth+rabbitMq"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-23354.htm">延吉动物医院在哪里预约疫苗（延吉哪里有动物园）</a></p>
+                                        <p>下一个：<a href="/news/article-23820.htm">我所在的城市有一家宠物医院英语翻译怎么说（在我的城市有一家宠物医院英文）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-winxray-node-github.htm" title="11月26日→20.3M/S|2024年最新免费节点Clash Xray订阅链接地址">11月26日→20.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-24-node-share.htm" title="10月24日→18.1M/S|2024年最新免费节点Clash Xray订阅链接地址">10月24日→18.1M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21980.htm" title="动物医院管理制度清单（动物医院管理制度清单表）">动物医院管理制度清单（动物医院管理制度清单表）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-5-winxray-windows.htm" title="10月5日→18.3M/S|2024年最新免费节点Clash Xray订阅链接地址">10月5日→18.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-9-today-winxray-node.htm" title="11月9日→20.9M/S|2024年最新免费节点Clash Xray订阅链接地址">11月9日→20.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-13-latest-winxray-node.htm" title="10月13日→18.4M/S|2024年最新免费节点Clash Xray订阅链接地址">10月13日→18.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-latest-winxray-node.htm" title="11月10日→20.7M/S|2024年最新免费节点Clash Xray订阅链接地址">11月10日→20.7M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21979.htm" title="猫三针疫苗后多久有抗体（猫三针疫苗打完要多久）">猫三针疫苗后多久有抗体（猫三针疫苗打完要多久）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-17-winxray-github.htm" title="11月17日→21.5M/S|2024年最新免费节点Clash Xray订阅链接地址">11月17日→21.5M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-20613.htm" title="Spring MVC 自定义拦截器">Spring MVC 自定义拦截器</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
