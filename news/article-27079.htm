@@ -124,7 +124,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<div id="content_views" class="markdown_views prism-github-gist"> <h4> <a id="_1" rel="nofollow"></a>解决办法</h4> <pre><code class="prism language-Java">Map pathVariables = (Map) request.getAttribute( HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);  String classId = (String)pathVariables.get("classId"); </code></pre> <h4> <a id="_9" rel="nofollow"></a>示例接口</h4> <pre><code class="prism language-Java">    // 获取某个班级下面的学生列表     @RequestMapping("/classes/{classId}/students")     public String list(@PathVariable String classId){          return "学生列表";     } </code></pre> <h4> <a id="_21" rel="nofollow"></a>完整示例</h4> <pre><code class="prism language-Java">package com.example.demo;  import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse;  import org.springframework.web.servlet.HandlerInterceptor; import org.springframework.web.servlet.HandlerMapping; import org.springframework.web.servlet.ModelAndView;  import java.util.Map;  public class SpringMVCInterceptor implements HandlerInterceptor {   	@Override 	public boolean preHandle(HttpServletRequest request, 			HttpServletResponse response, Object handler) throws Exception { 		Map pathVariables = (Map) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE); 		String chatbotId = (String)pathVariables.get("classId"); 		System.out.println("classId: " + classId); 		if ("1234".equals(classId)) 			return true; 		return false; 	} 	 	 	@Override 	public void postHandle(HttpServletRequest request, 			HttpServletResponse response, Object handler, 			ModelAndView modelAndView) throws Exception { 		// TODO Auto-generated method stub 		 	}  	@Override 	public void afterCompletion(HttpServletRequest request, 			HttpServletResponse response, Object handler, Exception ex) 	throws Exception { 		// TODO Auto-generated method stub 		 	} 	 }  </code></pre> <pre><code class="prism language-Java"> package com.example.demo;  import org.springframework.context.annotation.Configuration; import org.springframework.web.servlet.config.annotation.InterceptorRegistry; import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;  @Configuration public class MvcInterceptorConfig extends WebMvcConfigurationSupport{        @Override     protected void addInterceptors(InterceptorRegistry registry) {         registry.addInterceptor(new SpringMVCInterceptor()).addPathPatterns("/chatbot/**");         super.addInterceptors(registry);     } }  </code></pre> </p></div> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-github-gist"> <h4> <a id="_1" rel="nofollow"></a>解决办法</h4> <pre><code class="prism language-Java">Map pathVariables = (Map) request.getAttribute( HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE);  String classId = (String)pathVariables.get("classId"); </code></pre> <h4> <a id="_9" rel="nofollow"></a>示例接口</h4> <pre><code class="prism language-Java">    // 获取某个班级下面的学生列表     @RequestMapping("/classes/{classId}/students")     public String list(@PathVariable String classId){          return "学生列表";     } </code></pre> <h4> <a id="_21" rel="nofollow"></a>完整示例</h4> <pre><code class="prism language-Java">package com.example.demo;  import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse;  import org.springframework.web.servlet.HandlerInterceptor; import org.springframework.web.servlet.HandlerMapping; import org.springframework.web.servlet.ModelAndView;  import java.util.Map;  public class SpringMVCInterceptor implements HandlerInterceptor {   	@Override 	public boolean preHandle(HttpServletRequest request, 			HttpServletResponse response, Object handler) throws Exception { 		Map pathVariables = (Map) request.getAttribute(HandlerMapping.URI_TEMPLATE_VARIABLES_ATTRIBUTE); 		String chatbotId = (String)pathVariables.get("classId"); 		System.out.println("classId: " + classId); 		if ("1234".equals(classId)) 			return true; 		return false; 	} 	 	 	@Override 	public void postHandle(HttpServletRequest request, 			HttpServletResponse response, Object handler, 			ModelAndView modelAndView) throws Exception { 		// TODO Auto-generated method stub 		 	}  	@Override 	public void afterCompletion(HttpServletRequest request, 			HttpServletResponse response, Object handler, Exception ex) 	throws Exception { 		// TODO Auto-generated method stub 		 	} 	 }  </code></pre> <pre><code class="prism language-Java"> package com.example.demo;  import org.springframework.context.annotation.Configuration; import org.springframework.web.servlet.config.annotation.InterceptorRegistry; import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;  @Configuration public class MvcInterceptorConfig extends WebMvcConfigurationSupport{        @Override     protected void addInterceptors(InterceptorRegistry registry) {         registry.addInterceptor(new SpringMVCInterceptor()).addPathPatterns("/chatbot/**");         super.addInterceptors(registry);     } }  </code></pre> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-26614.htm">动物医院办理条件是什么（动物医院手续）</a></p>
                                         <p>下一个：<a href="/news/article-27080.htm">宠物用品一件代发网站（宠物用品一件代发进货渠道）</a></p>
@@ -137,16 +138,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-12-5-node-share.htm" title="12月5日→19.7M/S|2024年最新免费节点Clash Xray订阅链接地址">12月5日→19.7M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-14-winxray-node-github.htm" title="10月14日→21.9M/S|2024年最新免费节点Clash Xray订阅链接地址">10月14日→21.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-12-free-high-speed-nodes.htm" title="12月12日→22M/S|2024年最新免费节点Clash Xray订阅链接地址">12月12日→22M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-subscribe-node.htm" title="11月27日→18M/S|2024年最新免费节点Clash Xray订阅链接地址">11月27日→18M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-3-latest-winxray-node.htm" title="11月3日→21.5M/S|2024年最新免费节点Clash Xray订阅链接地址">11月3日→21.5M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-26-winxray-github.htm" title="9月26日→22.4M/S|2024年最新免费节点Clash Xray订阅链接地址">9月26日→22.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/news/article-25683.htm" title="猫咪打疫苗一般多少钱一次打几针（猫咪打疫苗要打几针要多少钱）">猫咪打疫苗一般多少钱一次打几针（猫咪打疫苗要打几针要多少钱）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-22-winxray-github.htm" title="10月22日→18.7M/S|2024年最新免费节点Clash Xray订阅链接地址">10月22日→18.7M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-29-node-share-links.htm" title="10月29日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址">10月29日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-12-winxray-node.htm" title="10月12日→18.8M/S|2024年最新免费节点Clash Xray订阅链接地址">10月12日→18.8M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-node-share-links.htm" title="10月21日→19.9M/S|2024年最新免费节点Clash Xray订阅链接地址">10月21日→19.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-winxray-windows.htm" title="11月29日→19.3M/S|2024年最新免费节点Clash Xray订阅链接地址">11月29日→19.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-18-winxray-node-share.htm" title="9月18日→19.6M/S|2024年最新免费节点Clash Xray订阅链接地址">9月18日→19.6M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-4-free-node-subscribe.htm" title="12月4日→21.4M/S|2024年最新免费节点Clash Xray订阅链接地址">12月4日→21.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-26613.htm" title="Python数据分析实例">Python数据分析实例</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-16-latest-winxray-node.htm" title="9月16日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址">9月16日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-winxray-github.htm" title="12月11日→20.3M/S|2024年最新免费节点Clash Xray订阅链接地址">12月11日→20.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-28009.htm" title="windows环境下VSCode配置C++教程（使用msvc编译器）">windows环境下VSCode配置C++教程（使用msvc编译器）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-20-winxray-node-github.htm" title="9月20日→22.1M/S|2024年最新免费节点Clash Xray订阅链接地址">9月20日→22.1M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21538.htm" title="宠物之家官网（深圳宠物之家官网）">宠物之家官网（深圳宠物之家官网）</a></li>
                     </ul>
     </div>
 </div>
@@ -158,7 +159,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">51</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -186,6 +187,15 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
                             <p>
                                 <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
                             </p>

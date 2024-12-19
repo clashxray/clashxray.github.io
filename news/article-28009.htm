@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-28009.htm" />
+    <!-- Title of The Page -->
+    <title>windows环境下VSCode配置C++教程（使用msvc编译器）</title>
+        <meta name="description" content="VSCode是个优秀的、开源的、可扩展的代码编辑器，今天就来介绍一下在windows系统下如何用它来配置C++环境。 须知VSCode只是个编辑器，它自己是不带有编译、构建、调试等工具套件的，所以需要" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">windows环境下VSCode配置C++教程（使用msvc编译器）</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-dracula"> </h1> <p>VSCode是个优秀的、开源的、可扩展的代码编辑器，今天就来介绍一下在windows系统下如何用它来配置C++环境。</p> <p>须知VSCode只是个编辑器，它自己是不带有编译、构建、调试等工具套件的，所以需要我们额外配置一些东西。</p> <p>（理论上用宇宙超级无敌IDE：Visual Studio 2022就可以，但是<s>我们技术人诶没办法就是玩</s>它太笨重了，而且不够开源。所以我们今天尝试用VSCode配置）</p> </h1> <p>首先我们需要下载Visual Studio Installer（现在大大小小的东西都得通过它下载，不能单独下载组件了）。VS下载网址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://visualstudio.microsoft.com/downloads/"  rel="nofollow">Visual Studio 2022 Community</a></p> <p>我们以免费的最新的（2022.11.08）社区版为例，安装时，选择“单个组件”选项卡，我们需要以下列表里的组件，请确保他们已被选中或已安装：</p> <table> <thead> <tr> <th>组</th> <th>组件名称</th> </tr> </thead> <tbody> <tr> <td>编译器、生成工具和运行时</td> <td>MSVC v143 - VS 2022 C++ x64/x86生成工具（最新）</td> </tr> <tr> <td>SDK、库和框架</td> <td>Windows 10 SDK (10.0.20348.0)</td> </tr> </tbody> </table> <p>注：这两个就够了；选择其他相近或较早版本的组件也可，一定要是MSVC生成工具和Windows SDK。</p> <p>选择安装位置，安装好后关闭Visual Studio。接下来配置MSVC和windows kits的环境变量，需要添加以下环境变量或路径：</p> <table> <thead> <tr> <th>变量名</th> <th align="left">值</th> <th>备注</th> </tr> </thead> <tbody> <tr> <td>VS170VCTOOLS</td> <td align="left">D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools</td> <td>这是我的安装位置，你用你的</td> </tr> <tr> <td>WIN10KITS</td> <td align="left">D:\Windows Kits\10</td> <td>这个位置也是</td> </tr> <tr> <td>WINDOWS_SDK_VERSION</td> <td align="left">10.0.20348.0</td> <td></td> </tr> <tr> <td>Path</td> <td align="left">%VS170VCTOOLS%\MSVC\14.33.31629\bin\Hostx64\x64</td> <td>我们的编译器<code>cl.exe</code>就在这里面</td> </tr> <tr> <td>INCLUDE</td> <td align="left">%VS170VCTOOLS%\MSVC\14.33.31629\include</td> <td>用英文<code>;</code>隔开多个值</td> </tr> <tr> <td>INCLUDE</td> <td align="left">%WIN10KITS%\Include\%WINDOWS_SDK_VERSION%\ucrt</td> <td></td> </tr> <tr> <td>INCLUDE</td> <td align="left">%WIN10KITS%\Include\%WINDOWS_SDK_VERSION%\um</td> <td></td> </tr> <tr> <td>INCLUDE</td> <td align="left">%WIN10KITS%\Include\%WINDOWS_SDK_VERSION%\shared</td> <td></td> </tr> <tr> <td>LIB</td> <td align="left">%VS170VCTOOLS%\MSVC\14.33.31629\lib\x64</td> <td>用英文<code>;</code>隔开多个值</td> </tr> <tr> <td>LIB</td> <td align="left">%WIN10KITS%\Lib\%WINDOWS_SDK_VERSION%\ucrt\x64</td> <td></td> </tr> <tr> <td>LIB</td> <td align="left">%WIN10KITS%\Lib\%WINDOWS_SDK_VERSION%\um\x64</td> <td></td> </tr> </tbody> </table> <p>环境配置好后，我们可以简单测试一下：</p> <pre><code class="prism language-cpp"><span class="token comment">// helloworld.cpp</span> <span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span> <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span> 	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Hello, world!"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span> 	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> </code></pre> <p>打开<code>cmd</code>定位到它，输入编译构建命令：<code>cl /EHsc helloworld.cpp</code>，运行helloworld.exe，正确的话会正常输出。</p> </h1> <p>VSCode下载地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://code.visualstudio.com/Download"  rel="nofollow">Visual Studio Code</a>。打开，搜索并安装扩展C/C++，完事如下图所示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230223/bc4af490242195bb09b58ebea6db490a.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"><br /> 就是这样。</p> </h1> <p>VSCode在每个工作区（项目文件夹）下，都配有一个<code>.vscode</code>隐藏文件夹，里面存放一些脚本文件，指示VSCode对工作区的代码进行操作的模板或模式。</p> <h2> <a id="31_c_cpp_propertiesjson_56" rel="nofollow"></a>3.1 配置编译器信息：c_cpp_properties.json</h2> <p>以D:\source\vscode_msvc\为例，建立它，并在VSCode里打开这个文件夹，使它成为我们目前的主工作区。输入快捷键<code>Ctrl</code>+<code>Shift</code>+<code>P</code>，呼出命令行，输入C/C++，搜索并寻找一个全称为<code>C/C++: Edit Configurations (UI)</code>的命令，点它（如果你搜索不到，或许是遗漏了<strong>命令前导符</strong><code>&gt;</code>）。这时就会自动生成一个.vscode文件夹，里面有一个文件叫c_cpp_properties.json，我们的编译器配置就靠它了。</p> <p>由于我们是通过UI来改的，而不是直接写json的方式，所以VSCode为我们打开了一个C/C++ Configurations主页。如果之前每一步都按照要求配置好，那么这里会自动生成很多已经为你改好的选项，包括<strong>配置模式</strong>（win32）、<strong>编译器路径</strong>（…/bin/Hostx64/x64/cl.exe）、<strong>编译器参数</strong>（无）、<strong>IntelliSense模式</strong>（windows-msvc-x64）、<strong>包含路径</strong>（${workspaceFolder/**}）、<strong>宏定义</strong>（_DEBUG，UNICODE，_UNICODE）、<strong>C标准</strong>（c17）、<strong>C++标准</strong>（c++17），以及高级设置里的<strong>Windows SDK版本</strong>（10.0.20348.0），等等。如果这些没有自动生成，请逐一检查它们的路径并如实填写就好；如与你的意愿不符，比如C++标准只需要11，也可以更改。更改是即时响应的，不需要“保存”。</p> <p>这些设置或修改最终会反映在.vscode/c_cpp_properties.json描述文件里，打开它，你应该会看到如下已经设置好的内容：</p> <pre><code class="prism language-js"><span class="token comment">// .vscode/c_cpp_properties.json</span> <span class="token punctuation">{<!-- --></span>     <span class="token string-property property">"configurations"</span><span class="token operator">:</span> <span class="token punctuation">[</span>         <span class="token punctuation">{<!-- --></span>             <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"Win32"</span><span class="token punctuation">,</span>             <span class="token string-property property">"includePath"</span><span class="token operator">:</span> <span class="token punctuation">[</span>                 <span class="token string">"${workspaceFolder}/**"</span>             <span class="token punctuation">]</span><span class="token punctuation">,</span>             <span class="token string-property property">"defines"</span><span class="token operator">:</span> <span class="token punctuation">[</span>                 <span class="token string">"_DEBUG"</span><span class="token punctuation">,</span>                 <span class="token string">"UNICODE"</span><span class="token punctuation">,</span>                 <span class="token string">"_UNICODE"</span>             <span class="token punctuation">]</span><span class="token punctuation">,</span>             <span class="token string-property property">"windowsSdkVersion"</span><span class="token operator">:</span> <span class="token string">"10.0.20348.0"</span><span class="token punctuation">,</span>             <span class="token string-property property">"compilerPath"</span><span class="token operator">:</span> <span class="token string">"D:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/cl.exe"</span><span class="token punctuation">,</span>             <span class="token string-property property">"cStandard"</span><span class="token operator">:</span> <span class="token string">"c17"</span><span class="token punctuation">,</span>             <span class="token string-property property">"cppStandard"</span><span class="token operator">:</span> <span class="token string">"c++17"</span><span class="token punctuation">,</span>             <span class="token string-property property">"intelliSenseMode"</span><span class="token operator">:</span> <span class="token string">"windows-msvc-x64"</span>         <span class="token punctuation">}</span>     <span class="token punctuation">]</span><span class="token punctuation">,</span>     <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token number">4</span> <span class="token punctuation">}</span> </code></pre> <h2> <a id="32_tasksjson_87" rel="nofollow"></a>3.2 配置构建（生成）任务：tasks.json</h2> <p>不要离开你的D:\source\vscode_msvc主工作区，除了.vscode外它应该是空的，所以如果你已经着急写出了一份代码，并且不太熟悉它将对下面的操作产生什么样的影响时，请先关闭或者不要选中它。</p> <p>首先，键入<code>Ctrl</code>+<code>Shift</code>+<code>P</code>，呼出命令行，输入build，搜索并寻找一个全称为<code>Tasks: Configure Default Build Task</code>的命令，点它。</p> <blockquote> <p>【注】如果你的命令行总是不出现预期的行为，可能是以下原因：</p> <ol> <li>遗漏了<strong>命令前导符</strong><code>&gt;</code>；</li> <li>你正处于上一个还未退出的命令的中途，按<code>ESC</code>退出它，去呼出新的命令行；</li> <li>你的工作区已经有了一个我们想要设置的文档（这一章是tasks.json，那么你可以跳过前置的步骤，直接按照后面的章节去设置它）；</li> </ol> </blockquote> <p>搜索结果会提示你从模板创建一个tasks.json文档，全称是<code>Create tasks.json file from template</code>，点它；</p> <p>这时会再次提示你使用什么样的构建套件，并推荐了几个可选项，有MSBuild、maven、.NET Core等。都不选，直接点<code>Other</code>。（如果你已经有了tasks.json，而且其中也有已经编写好的任务，那么这里就会显示它们。）</p> <p>现在，我们的.vscode文件夹里新添进来一个文档：tasks.json，由于VSCode没有提供UI，所以只能通过手写tasks.json来完成构建指令。我们简介一些它的语法，然后编写一些常用的构建指令，就可以了。如果想编写复杂的task，请参考官方手册。</p> <h3> <a id="321_tasksjson_102" rel="nofollow"></a>3.2.1 tasks.json基础语法简介</h3> <p>该文档由json格式描述了一个任务集(A Set of Tasks)，包含若干任务，每个任务具有一些字符串形式的<strong>键</strong>或者<strong>属性</strong>（key, or attributes, or properties），常用的键就是标签（label）、任务类型（type）、调用指令（command）等等，这些键都对应了一个或多个字符串<strong>值</strong>，用花括号<code>{}</code>或中括号<code>[]</code>括起来，并用逗号<code>,</code>分隔。</p> <h3> <a id="322_build_task_105" rel="nofollow"></a>3.2.2 一条简单的build task</h3> <p>举个栗子，一个简单的build任务可以描述如下（可直接复制覆盖tasks.json）：</p> <pre><code class="prism language-js"><span class="token comment">// .vscode/tasks.json</span> <span class="token punctuation">{<!-- --></span>     <span class="token comment">// See https://go.microsoft.com/fwlink/?LinkId=733558</span>     <span class="token comment">// for the documentation about the tasks.json format</span>     <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token string">"2.0.0"</span><span class="token punctuation">,</span>     <span class="token string-property property">"tasks"</span><span class="token operator">:</span> <span class="token punctuation">[</span>         <span class="token punctuation">{<!-- --></span>             <span class="token string-property property">"label"</span><span class="token operator">:</span> <span class="token string">"C/C++ Executable: build current active file"</span><span class="token punctuation">,</span>             <span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"shell"</span><span class="token punctuation">,</span>             <span class="token string-property property">"command"</span><span class="token operator">:</span> <span class="token string">"cl.exe"</span><span class="token punctuation">,</span>             <span class="token string-property property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>                 <span class="token string">"/EHsc"</span><span class="token punctuation">,</span> <span class="token string">"${file}"</span><span class="token punctuation">,</span>                 <span class="token string">"/Fo:"</span><span class="token punctuation">,</span>  <span class="token string">"${fileDirname}\\"</span><span class="token punctuation">,</span>                 <span class="token string">"/Fe:"</span><span class="token punctuation">,</span>  <span class="token string">"${fileDirname}\\${fileBasenameNoExtension}.exe"</span>             <span class="token punctuation">]</span><span class="token punctuation">,</span>             <span class="token string-property property">"problemMatcher"</span><span class="token operator">:</span> <span class="token string">"$msCompile"</span><span class="token punctuation">,</span>             <span class="token string-property property">"detail"</span><span class="token operator">:</span> <span class="token string">"Build only the current active file."</span>         <span class="token punctuation">}</span><span class="token punctuation">,</span>     <span class="token punctuation">]</span> <span class="token punctuation">}</span> </code></pre> <p>它记录的信息可以列成表如下：</p> <table> <thead> <tr> <th>键</th> <th>值</th> <th align="left">备注</th> </tr> </thead> <tbody> <tr> <td>“label”</td> <td>“C/C++ Executable: build current active file”</td> <td align="left">标签值。用于VSCode识别你的任务，相当于给任务起个名。</td> </tr> <tr> <td>“type”</td> <td>“shell”</td> <td align="left">任务类型。你想得到什么样的构建结果，有shell，process等多种选项。默认shell，即控制台程序。</td> </tr> <tr> <td>“command”</td> <td>“cl.exe”</td> <td align="left">你想呼起的指令。这里我们就是msvc的编译器cl.exe</td> </tr> <tr> <td>“args”</td> <td>“/EHsc” et al.</td> <td align="left">为你的指令加上各种参数。/EH是设置异常处理模型，/Fo是输出目录，/Fe是重命名</td> </tr> <tr> <td>“problemMatcher”</td> <td>“$msCompile”</td> <td align="left">优化PROBLEMS视图（强烈推荐，它与msvc绝配，也是我不想用mingw来配置的直接原因）。</td> </tr> <tr> <td>“detail”</td> <td>“…balabala”</td> <td align="left">任务的细节说明，方便日后VSCode用它来提示你。</td> </tr> <tr> <td>…</td> <td>…</td> <td align="left">丰富你的需求，添加更多的键值吧！参考<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://code.visualstudio.com/docs/editor/tasks#_custom-tasks"  rel="nofollow">Tasks in Visual Studio Code: custom tasks</a> </td> </tr> </tbody> </table> <p>这个任务很简单，说白了就是编译你当前选中的单个代码文件，并尝试输出一个可执行程序。假设你选中了工作区下的一个test.cpp，那么当VSCode识别这个task时便会合成一条指令：</p> <p><code>cl.exe /EHsc D:\source\vscode_msvc\test.cpp /Fo: D:\source\vscode_msvc /Fe: D:\source\vscode_msvc\test.exe</code></p> <h3> <a id="323__146" rel="nofollow"></a>3.2.3 测试</h3> <p>现在，我们完整的测试一遍（请确保你的工作区的.vscode里面的两份json文档，都按照上述内容写好了）：</p> <ol> <li> <p>在主工作区下任意路径，新建一个cpp代码文件。我这里的位置是A/a.cpp，并输入简单的算法，比如helloworld。如下图所示：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/14467c1c384e35c6ce17ebeb0afa1a9d.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"></p> </li> <li> <p>确保你选中了这份代码，<code>Ctrl</code>+<code>Shift</code>+<code>P</code>呼出命令行，输入run task，它会推荐你几个匹配度较高的命令，请选中全称为<code>Tasks: Run Task</code>的指令:<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/fc322e182701696b52617d9f225c6de9.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"></p> </li> <li> <p>点击Tasks: Run Task后，会再次推荐你几条优选的task命令，其中就有我们刚刚设置好的任务label和detail，说明VSCode已经识别到我们的任务书了：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/82c7896cba3470ad07f605f2da7dbfff.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"><br /> （可以看到，还有一个安装扩展后自带的task：“C/C++: cl.exe 生成活动文件”，它和我们自己写的任务目标类似，所以你也可以使用它，它会在你的tasks.json追加这个任务，你可以事后去查看两个任务的区别）</p> </li> <li> <p>点击它：<code>C/C++ Executable: build current active file</code>，就会看到终端已经运行并输出build结果了（TERMINAL视口会自动出现在工作区域右下，如果没有的话请键入<code>Ctrl</code>+<code>Shift</code>+<code>ˋ</code>以建立一个新的终端，并重新执行上述过程）。可以看到它调用cl.exe的方式，显示如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/172c87d81286437624c49b4ee4d513d4.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"></p> </li> <li> <p>/A目录如期有了a.obj和a.exe，显示如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/44697739ba5f98c8fd5fda0a955eb559.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"></p> </li> <li> <p>最后，你应该尝试在终端里运行一下你的a.exe，输入命令<code>./A/a.exe</code>，结果如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/d9527c6af0a18713f095f5c00186fd50.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"><br /> 呼~~测试到这里就算是成功啦！</p> </li> </ol> <h3> <a id="324__165" rel="nofollow"></a>3.2.4 推荐几个常用的任务</h3> <p>我这里还写了几个任务，分别对应不同的编码场景，希望能帮到大家！（附tasks.json文档：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://download.csdn.net/download/lzh1097776020/86990375"  rel="nofollow">download custom tasks.json</a>（站内地址放心跳转，如地址失效可评论提醒或索要）</p> <table> <thead> <tr> <th>任务标签</th> <th align="left">应用场景</th> </tr> </thead> <tbody> <tr> <td>“C/C++ Executable: build current active file”</td> <td align="left">只编译并生成当前活跃文件。（适用于每日刷题那种，即不断在工作区内创建多个单文件小项目）</td> </tr> <tr> <td>“C/C++ Executable: build and debug current active file”</td> <td align="left">只编译并生成当前活跃文件，并产生调试信息（.pdb文件等，放在bin目录）。</td> </tr> <tr> <td>“C++ Executable: build current folder”</td> <td align="left">视当前活跃文件所在的文件夹为一个独立的项目，进行编译构建（放在bin目录）。</td> </tr> <tr> <td>“C++ Executable: build and debug current folder”</td> <td align="left">相当于上一个任务的debug版本，构建并产生调试信息（放在bin目录）。</td> </tr> <tr> <td>“C++ dynamic link library: build current folder”</td> <td align="left">为当前活跃文件所在的文件夹（项目）生成一个.dll动态链接库，放在bin目录。</td> </tr> <tr> <td>“C++ static library: build current folder”</td> <td align="left">为当前活跃文件所在的文件夹（项目）生成一个.lib静态库，放在bin目录。<mark>（目前只能以你的项目里第一个源文件的名字来命名，原因是lib.exe的重命名等功能选项已被非VS环境禁用）</mark> </td> </tr> <tr> <td>“C++: clear build”</td> <td align="left">清除当前活跃文件所在的文件夹（项目）下的所有build，即清空bin目录。</td> </tr> </tbody> </table> <p>【注】它们仍<strong>不能胜任</strong>更复杂的项目构建任务。如果需要，要额外引入cmake支持（扩展），或者干脆直接使用Visual Studio。</p> <h2> <a id="33_launchjson_179" rel="nofollow"></a>3.3 配置调试器：launch.json</h2> <p>其实没有launch.json也是可以单文件调试的，因为我们有安装C/C++扩展，它提供了支持。</p> <p>可以进行一个简单的测试：选中一个活跃的代码文件，设置好断点，然后点击左侧调试界面里的<code>Run and Debug</code>，如果你的tasks.json已经被默认追加了任务（就是扩展自带的“C/C++: cl.exe 生成活动文件”任务，它在你第一次调用这个任务时自动追加），那么调试流程现在应该已经正常启动了；否则还需要一小步，手动选择配置，如下图所示：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/c01f209f7e7568d606e756db0d012519.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"><br /> 但是这一默认功能只能提供单文件的调试，如果需要在整个文件夹（项目）下进行调试，需要创建并配置一下launch.json，很容易（tasks.json写好后，launch就容易的多了）：</p> <ol> <li>首先，在工作区内选中一个C++代码文件，比如刚刚的a.cpp，确保你接下来的设置可以被C/C++扩展检测到。不妨多写些功能，以便测试调试。</li> <li>在左侧的调试界面，点击<code>create a launch.json file</code>，它会推荐几个模板，我们选中<code>C++ (Windows)</code>，点击它（或者你手动在.vscode里面创建一个launch.json也可以，反正后面会说如何写）。如下图所示：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/995f9e55277efae89f2cd7007f2a860f.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230223/151a5d11dc94eccb012808f52e2841a0.jpg" alt="windows环境下VSCode配置C++教程（使用msvc编译器）"> </li> <li>现在你的.vscode文件夹里有launch.json了，打开它，编辑以下内容。</li> </ol> <pre><code class="prism language-json"><span class="token punctuation">{<!-- --></span>     <span class="token comment">// Use IntelliSense to learn about possible attributes.</span>     <span class="token comment">// Hover to view descriptions of existing attributes.</span>     <span class="token comment">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span>     <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token string">"0.2.0"</span><span class="token punctuation">,</span>     <span class="token string-property property">"configurations"</span><span class="token operator">:</span> <span class="token punctuation">[</span>         <span class="token punctuation">{<!-- --></span>             <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"C++ Launch (Windows)"</span><span class="token punctuation">,</span>             <span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"cppvsdbg"</span><span class="token punctuation">,</span>             <span class="token string-property property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>             <span class="token string-property property">"program"</span><span class="token operator">:</span> <span class="token string">"${fileDirname}\\bin\\main.exe"</span><span class="token punctuation">,</span>             <span class="token string-property property">"cwd"</span><span class="token operator">:</span> <span class="token string">"${fileDirname}"</span><span class="token punctuation">,</span>         <span class="token punctuation">}</span>     <span class="token punctuation">]</span> <span class="token punctuation">}</span> </code></pre> <ol start="4"> <li>大功告成，快去设置断点并调试吧！（上面这份launch.json，与之前的tasks.json是配套的，如果你需要另写，需注意<code>"program"</code>词条一定要设置为你的task生成的带有调试标记的可执行程序的目录，调试标记最好是msvc的，不要用其他编译平台比如mingw生成的调试程序==）。</li> </ol> </h1> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-27541.htm">在哪里免费领养边牧狗（领养的边牧如何才能快速提高感情）</a></p>
+                                        <p>下一个：<a href="/news/article-28010.htm">动物疫苗哪里买的到 动物疫苗哪里买的到啊</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-19-free-node-subscribe.htm" title="10月19日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址">10月19日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24286.htm" title="VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU">VMware ESXi安装NVIDIA GPU显卡硬件驱动和配置vGPU</a></li>
+                        <li class="py-2"><a href="/news/article-26613.htm" title="Python数据分析实例">Python数据分析实例</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-winxray-node.htm" title="10月12日→18.8M/S|2024年最新免费节点Clash Xray订阅链接地址">10月12日→18.8M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-19239.htm" title="狗粮加工厂前景如何发展起来（做一个狗粮加工厂怎么样）">狗粮加工厂前景如何发展起来（做一个狗粮加工厂怎么样）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-22-winxray-windows.htm" title="9月22日→21.6M/S|2024年最新免费节点Clash Xray订阅链接地址">9月22日→21.6M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-27079.htm" title="在拦截器中获取 url 路径里面 @PathVariable 的参数值">在拦截器中获取 url 路径里面 @PathVariable 的参数值</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-8-winxray-node-share.htm" title="10月8日→21.1M/S|2024年最新免费节点Clash Xray订阅链接地址">10月8日→21.1M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-latest-winxray-node.htm" title="12月9日→22.5M/S|2024年最新免费节点Clash Xray订阅链接地址">12月9日→22.5M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-5-winxray-node-github.htm" title="11月5日→20.8M/S|2024年最新免费节点Clash Xray订阅链接地址">11月5日→20.8M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">57</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
