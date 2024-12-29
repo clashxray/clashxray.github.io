@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-32258.htm" />
+    <!-- Title of The Page -->
+    <title>如何使用Copy-Item在PowerShell中复制多个文件？</title>
+        <meta name="description" content="要在PowerShell中复制多个文件，您需要使用逗号(,)分隔每个文件。 在下面的示例中，我们将多个文件从源复制到目标文件夹D：\ TempContent。 示例 Copy-Item&nbsp;.\" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">如何使用Copy-Item在PowerShell中复制多个文件？</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>要在PowerShell中复制多个文件，您需要使用逗号(,)分隔每个文件。</p> <p>在下面的示例中，我们将多个文件从源复制到目标文件夹<strong>D：\ TempContent。</strong></p> <h2>示例</h2> <pre>Copy-Item&nbsp;.\PowerShellcommands.csv,.\cars.xml&nbsp;-Destination&nbsp;D:\TempContent\&nbsp;-PassThru</pre> <p>输出结果</p> <pre>PS&nbsp;D:\Temp&gt;&nbsp;Copy-Item&nbsp;.\PowerShellcommands.csv,.\cars.xml&nbsp;-Destination&nbsp;D:\TempContent\&nbsp;-PassThru &nbsp;&nbsp;&nbsp;&nbsp;Directory:&nbsp;D:\TempContent Mode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LastWriteTime&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Length&nbsp;Name ----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;------&nbsp;---- -a----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20-01-2020&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12:10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1148809&nbsp;PowerShellcommands.csv -a----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07-05-2018&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;23:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;301&nbsp;cars.xml</pre> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-31783.htm">动物疫苗价格表图片（动物疫苗法最新消息2019）</a></p>
+                                        <p>下一个：<a href="/news/article-32259.htm">动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-latest-winxray-node.htm" title="11月16日→19.1M/S|2024年最新免费节点Clash Xray订阅链接地址">11月16日→19.1M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-high-speed-nodes.htm" title="11月24日→18.9M/S|2024年最新免费节点Clash Xray订阅链接地址">11月24日→18.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-winxray-node.htm" title="10月12日→18.8M/S|2024年最新免费节点Clash Xray订阅链接地址">10月12日→18.8M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-16-latest-winxray-node.htm" title="9月16日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址">9月16日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-29-latest-winxray-node.htm" title="12月29日→20.7M/S|2024年最新免费节点Clash Xray订阅链接地址">12月29日→20.7M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-26-node-share.htm" title="12月26日→20.2M/S|2024年最新免费节点Clash Xray订阅链接地址">12月26日→20.2M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-9-free-winxray-node.htm" title="10月9日→18.1M/S|2024年最新免费节点Clash Xray订阅链接地址">10月9日→18.1M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25218.htm" title="杭州免费领养宠物狗（杭州哪里可以免费领养狗）">杭州免费领养宠物狗（杭州哪里可以免费领养狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-15-latest-winxray-node.htm" title="9月15日→20.2M/S|2024年最新免费节点Clash Xray订阅链接地址">9月15日→20.2M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-32259.htm" title="动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）">动物医院属于什么行业类别的企业（动物医院属于什么行业类别的企业有哪些）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
