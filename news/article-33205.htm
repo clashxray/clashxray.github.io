@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-33205.htm" />
+    <!-- Title of The Page -->
+    <title>Python yield 用法</title>
+        <meta name="description" content="yield&nbsp;用法说明  yield&nbsp;简单说来就是一个生成器，生成器是这样一个函数，它记住上一次返回时在函数体中的位置。对生成器函数的第二次（或第 n 次）调用跳转至该函数中间，而上" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Python yield 用法</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2 class="sectionedit2" style="margin:0px 0px 1em 20px; padding:0.5em 0px 0px; color:rgb(51,51,51); font-size:22px; font-weight:normal; border-bottom-width:1px; border-bottom-style:solid; border-color:rgb(204,204,204); clear:left; font-family:Verdana,'Lucida Grande',Lucida,Helvetica,Arial,sans-serif; line-height:19px; text-align:justify"><a target="_blank" name="yield_%E7%94%A8%E6%B3%95%E8%AF%B4%E6%98%8E" id="yield_用法说明" style="color:rgb(106,57,6); padding:0px; margin:0px" rel="nofollow"><span class="search_hit" style="padding:0px; margin:0px; background-color:rgb(255,255,153)">yield</span>&nbsp;用法说明</a></h2> <div class="level2" style="padding:0px; margin:0px 0px 0px 23px; color:rgb(51,51,51); font-family:Verdana,'Lucida Grande',Lucida,Helvetica,Arial,sans-serif; font-size:13px; line-height:19px; text-align:justify"> <p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:1em"><span class="search_hit" style="padding:0px; margin:0px; background-color:rgb(255,255,153)">yield</span>&nbsp;简单说来就是一个<span style="padding:0px; margin:0px">生成器</span>，<span style="padding:0px; margin:0px">生成器</span>是这样一个函数，它记住上一次返回时在函数体中的位置。对生成器函数的第二次（或第 n 次）调用跳转至该函数中间，而上次调用的所有局部变量都保持不变。</p> <ul style="padding:0px; margin:0px 0px 1em 3.5em; line-height:1.5em; list-style-type:square; color:rgb(99,140,156)"> <li class="level1" style="padding:0px; margin:0px"> <div class="li" style="padding:0px; margin:0px; color:rgb(51,51,51)">     生成器 是 一个函数</div> </li> </ul> <p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:1em"> 函数的所有参数都会保留</p> <ul style="padding:0px; margin:0px 0px 1em 3.5em; line-height:1.5em; list-style-type:square; color:rgb(99,140,156)"> <li class="level1" style="padding:0px; margin:0px"> <div class="li" style="padding:0px; margin:0px; color:rgb(51,51,51)">     第二次调用 此函数 时</div> </li> </ul> <p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:1em"> 使用的参数是前一次保留下的.</p> <ul style="padding:0px; margin:0px 0px 1em 3.5em; line-height:1.5em; list-style-type:square; color:rgb(99,140,156)"> <li class="level1" style="padding:0px; margin:0px"> <div class="li" style="padding:0px; margin:0px; color:rgb(51,51,51)">     生成器还“记住”了它在流控制构造</div> </li> </ul> <p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:1em"> 生成器不仅“记住”了它数据状态。 生成器还“记住”了它在流控制构造（在命令式编程中，这种构造不只是数据值）中的位置。由于连续性使您在执行框架间任意跳转，而不总是返回到直接调用者的上下文（如同生成器那样），因此它仍是比较一般的。</p> </div> <h2 class="sectionedit3" style="margin:0px 0px 1em 20px; padding:0.5em 0px 0px; color:rgb(51,51,51); font-size:22px; font-weight:normal; border-bottom-width:1px; border-bottom-style:solid; border-color:rgb(204,204,204); clear:left; font-family:Verdana,'Lucida Grande',Lucida,Helvetica,Arial,sans-serif; line-height:19px; text-align:justify"><a target="_blank" name="t1" style="color:rgb(106,57,6)" rel="nofollow"></a><a target="_blank" name="yield_%E7%94%9F%E6%88%90%E5%99%A8%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6" id="yield_生成器的运行机制" style="color:rgb(106,57,6); padding:0px; margin:0px" rel="nofollow"><span class="search_hit" style="padding:0px; margin:0px; background-color:rgb(255,255,153)">yield</span>&nbsp;生成器的运行机制</a></h2> <div class="level2" style="padding:0px; margin:0px 0px 0px 23px; color:rgb(51,51,51); font-family:Verdana,'Lucida Grande',Lucida,Helvetica,Arial,sans-serif; font-size:13px; line-height:19px; text-align:justify"> <p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:1em"> 当你问生成器要一个数时，生成器会执行，直至出现<span class="search_hit" style="padding:0px; margin:0px; background-color:rgb(255,255,153)">yield</span>&nbsp;语句，生成器把<span class="search_hit" style="padding:0px; margin:0px; background-color:rgb(255,255,153)">yield</span>&nbsp;的参数给你，之后生成器就不会往下继续运行。 当你问他要下一个数时，他会从上次的状态开始运行，直至出现<span class="search_hit" style="padding:0px; margin:0px; background-color:rgb(255,255,153)">yield</span>语句，把参数给你，之后停下。如此反复直至退出函数。</p> </div> <h2 class="sectionedit4" style="margin:0px 0px 1em 20px; padding:0.5em 0px 0px; color:rgb(51,51,51); font-size:22px; font-weight:normal; border-bottom-width:1px; border-bottom-style:solid; border-color:rgb(204,204,204); clear:left; font-family:Verdana,'Lucida Grande',Lucida,Helvetica,Arial,sans-serif; line-height:19px; text-align:justify"><a target="_blank" name="t2" style="color:rgb(106,57,6)" rel="nofollow"></a><a target="_blank" name="%E4%BE%8B%E5%AD%90_python_%E6%8E%92%E5%88%97_%E7%BB%84%E5%90%88%E7%94%9F%E6%88%90%E5%99%A8" id="例子_python_排列_组合生成器" style="color:rgb(106,57,6); padding:0px; margin:0px" rel="nofollow">例子：<span class="search_hit" style="padding:0px; margin:0px; background-color:rgb(255,255,153)">Python</span>&nbsp;排列，组合生成器</a></h2> <div class="level2" style="padding:0px; margin:0px 0px 0px 23px; color:rgb(51,51,51); font-family:Verdana,'Lucida Grande',Lucida,Helvetica,Arial,sans-serif; font-size:13px; line-height:19px; text-align:justify"> <pre><code class="language-python">&lt;span class="co1" style="padding: 0px; margin: 0px; color: rgb(128, 128, 128); font-style: italic;"&gt;#生成全排列&lt;/span&gt; &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;def&lt;/span&gt; perm&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;items, n=&lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;None&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;:     &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;if&lt;/span&gt; n &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;is&lt;/span&gt; &lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;None&lt;/span&gt;:         n = &lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;len&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;items&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;     &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;for&lt;/span&gt; i &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;in&lt;/span&gt; &lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;range&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;&lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;len&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;items&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;:         v = items&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;[&lt;/span&gt;i:i+&lt;span class="nu0" style="padding: 0px; margin: 0px; color: rgb(204, 102, 204);"&gt;1&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;]&lt;/span&gt;         &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;if&lt;/span&gt; n == &lt;span class="nu0" style="padding: 0px; margin: 0px; color: rgb(204, 102, 204);"&gt;1&lt;/span&gt;:             &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;&lt;span class="search_hit" style="padding: 0px; margin: 0px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 153);"&gt;yield&lt;/span&gt;&lt;/span&gt; v         &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;else&lt;/span&gt;:             rest = items&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;[&lt;/span&gt;:i&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;]&lt;/span&gt; + items&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;[&lt;/span&gt;i+&lt;span class="nu0" style="padding: 0px; margin: 0px; color: rgb(204, 102, 204);"&gt;1&lt;/span&gt;:&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;]&lt;/span&gt;             &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;for&lt;/span&gt; p &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;in&lt;/span&gt; perm&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;rest, n-&lt;span class="nu0" style="padding: 0px; margin: 0px; color: rgb(204, 102, 204);"&gt;1&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;:                 &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;&lt;span class="search_hit" style="padding: 0px; margin: 0px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 153);"&gt;yield&lt;/span&gt;&lt;/span&gt; v + p &nbsp; &lt;span class="co1" style="padding: 0px; margin: 0px; color: rgb(128, 128, 128); font-style: italic;"&gt;#生成组合&lt;/span&gt; &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;def&lt;/span&gt; comb&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;items, n=&lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;None&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;:     &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;if&lt;/span&gt; n &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;is&lt;/span&gt; &lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;None&lt;/span&gt;:         n = &lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;len&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;items&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;         &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;for&lt;/span&gt; i &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;in&lt;/span&gt; &lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;range&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;&lt;span class="kw2" style="padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-weight: bold;"&gt;len&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;items&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;:         v = items&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;[&lt;/span&gt;i:i+&lt;span class="nu0" style="padding: 0px; margin: 0px; color: rgb(204, 102, 204);"&gt;1&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;]&lt;/span&gt;         &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;if&lt;/span&gt; n == &lt;span class="nu0" style="padding: 0px; margin: 0px; color: rgb(204, 102, 204);"&gt;1&lt;/span&gt;:             &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;&lt;span class="search_hit" style="padding: 0px; margin: 0px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 153);"&gt;yield&lt;/span&gt;&lt;/span&gt; v         &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;else&lt;/span&gt;:             rest = items&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;[&lt;/span&gt;i+&lt;span class="nu0" style="padding: 0px; margin: 0px; color: rgb(204, 102, 204);"&gt;1&lt;/span&gt;:&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;]&lt;/span&gt;             &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;for&lt;/span&gt; c &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;in&lt;/span&gt; comb&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;rest, n-&lt;span class="nu0" style="padding: 0px; margin: 0px; color: rgb(204, 102, 204);"&gt;1&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt;:                 &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;&lt;span class="search_hit" style="padding: 0px; margin: 0px; color: rgb(51, 51, 51); background-color: rgb(255, 255, 153);"&gt;yield&lt;/span&gt;&lt;/span&gt; v + c &nbsp; a = perm&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;(&lt;/span&gt;&lt;span class="st0" style="padding: 0px; margin: 0px; color: rgb(255, 0, 0);"&gt;'abc'&lt;/span&gt;&lt;span class="br0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;)&lt;/span&gt; &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;for&lt;/span&gt; b &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;in&lt;/span&gt; a:     &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;print&lt;/span&gt; b     &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;break&lt;/span&gt; &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;print&lt;/span&gt; &lt;span class="st0" style="padding: 0px; margin: 0px; color: rgb(255, 0, 0);"&gt;'-'&lt;/span&gt;&lt;span class="sy0" style="padding: 0px; margin: 0px; color: rgb(102, 204, 102);"&gt;*&lt;/span&gt;&lt;span class="nu0" style="padding: 0px; margin: 0px; color: rgb(204, 102, 204);"&gt;20&lt;/span&gt; &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;for&lt;/span&gt; b &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;in&lt;/span&gt; a:     &lt;span class="kw1" style="padding: 0px; margin: 0px; color: rgb(177, 177, 0);"&gt;print&lt;/span&gt; b</code></pre> <p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:1em"> 结果如下：</p> <pre class="file" name="code" style="white-space: pre-wrap; word-wrap: break-word; padding: 0.5em; margin-top: 0px; margin-bottom: 1em; font-size: 12px; border: 1px dashed rgb(204, 204, 204); overflow: auto; width: auto !important; background-color: rgb(222, 231, 236);">102 pvopf006 ~/test&gt; ./generator.py abc -------------------- acb bac bca cab cba</pre> <p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:1em"> 可以看到，在第一个循环break后，生成器没有继续执行，而第二个循环接着第一个循环执行</p> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-32744.htm">宠物领养平台app推荐哪个软件最好（宠物领养 app）</a></p>
+                                        <p>下一个：<a href="/news/article-33206.htm">宠物医院好评模板100字开头和结尾 宠物医院好评模板100字开头和结尾怎么写</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-25217.htm" title="JSON  传输数据出现415错误 Content type &#8216;application/xml;charset=UTF-8&#8217; not supported">JSON  传输数据出现415错误 Content type &#8216;application/xml;charset=UTF-8&#8217; not supported</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-16-latest-winxray-node.htm" title="9月16日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址">9月16日→20.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-30844.htm" title="宠物医院加盟好还是自己开好（宠物医院加盟好还是自己开好一点）">宠物医院加盟好还是自己开好（宠物医院加盟好还是自己开好一点）</a></li>
+                        <li class="py-2"><a href="/news/article-31240.htm" title="动物接种疫苗前后注意事项是什么意思（动物疫苗接种技术）">动物接种疫苗前后注意事项是什么意思（动物疫苗接种技术）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-1-latest-winxray-node.htm" title="10月1日→18M/S|2024年最新免费节点Clash Xray订阅链接地址">10月1日→18M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-16-node-share.htm" title="12月16日→20.1M/S|2024年最新免费节点Clash Xray订阅链接地址">12月16日→20.1M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-21-winxray-node.htm" title="9月21日→20.3M/S|2024年最新免费节点Clash Xray订阅链接地址">9月21日→20.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21979.htm" title="猫三针疫苗后多久有抗体（猫三针疫苗打完要多久）">猫三针疫苗后多久有抗体（猫三针疫苗打完要多久）</a></li>
+                        <li class="py-2"><a href="/news/article-27541.htm" title="在哪里免费领养边牧狗（领养的边牧如何才能快速提高感情）">在哪里免费领养边牧狗（领养的边牧如何才能快速提高感情）</a></li>
+                        <li class="py-2"><a href="/news/article-33693.htm" title="动物园宠物认养流程（动物园认领的动物可以拿回家吗）">动物园宠物认养流程（动物园认领的动物可以拿回家吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
