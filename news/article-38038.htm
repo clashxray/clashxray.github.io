@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-38038.htm" />
+    <!-- Title of The Page -->
+    <title>i2c调试工具分享</title>
+        <meta name="description" content="i2c-tools简介 在嵌入式开发仲，有时候需要确认硬件是否正常连接，设备是否正常工作，设备的地址是多少等等，这里我们就需要使用一个用于测试I2C总线的工具——i2c-tools。 i2c-tool" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">i2c调试工具分享</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h2 id="i2c-tools简介">i2c-tools简介</h2> <p>在嵌入式开发仲，有时候需要确认硬件是否正常连接，设备是否正常工作，设备的地址是多少等等，这里我们就需要使用一个用于测试I2C总线的工具——i2c-tools。</p> <p>i2c-tools工具是一个专门调试i2c的，开源，可获取挂载的设备及设备地址，还可以读写I2C设备寄存器。</p> <p>下面我们就对这个工具的安装和使用做个简单介绍。</p> <h2 id="i2c-tools安装">i2c-tools安装</h2> <p>下载地址：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://mirrors.edge.kernel.org/pub/software/utils/i2c-tools/%E3%80%82%E6%9C%AC%E6%96%87%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF4.3%E7%89%88%E6%9C%AC%E3%80%82"  target="_blank" rel="nofollow">https://mirrors.edge.kernel.org/pub/software/utils/i2c-tools/。本文使用的是4.3版本。</a></p> <h3 id="解压">解压</h3> <p>下载完成后，放到linux环境下解压。</p> <pre><code class="language-bash"> tar -zxvf i2c-tools-4.3.tar.gz   cd i2c-tools-4.3</code></pre> <h3 id="编译">编译</h3> <p>使用以下命令进行编译</p> <pre><code>make CC=arm-linux-gnueabihf-gcc   USE_STATIC_LIB=1</code></pre> <p>USE_STATIC_LIB 的意思是使用静态编译。编译完成后，会在tools目录下产生i2cdetect，i2cdump，i2cget，i2cset，i2ctransfer五个产物。将这些可执行文件拷贝到设备上。</p> <blockquote> <p>不加 USE_STATIC_LIB 编译选项，会使用动态链接的方式编译。编译完成后需要拷贝i2c-tools-4.3/lib 目录下的libi2c.so.0动态库到设备上的/usr/bin 目录下。</p> </blockquote> <h2 id="i2c-tools使用方法">i2c-tools使用方法</h2> <h3 id="i2cdetect">i2cdetect</h3> <p>i2cdetect用來列举I2C bus和上面所有的设备，可接受的参数有</p> <pre><code class="language-bash">Usage: i2cdetect [-y] [-a] [-q|-r] I2CBUS [FIRST LAST]        i2cdetect -F I2CBUS        i2cdetect -l   I2CBUS is an integer or an I2C bus name   If provided, FIRST and LAST limit the probing range.</code></pre> <p>-V：输出当前版本号</p> <pre><code class="language-bash">debian@npi:/mnt/mnt$ ./i2cdetect -V i2cdetect version 4.3</code></pre> <p>-l：输出所有 i2c 总线，如下总线编号有twi1和twi2，或者1和2</p> <pre><code class="language-c">debian@npi:/mnt/mnt$ ./i2cdetect -l i2c-0   unknown         21a0000.i2c                             N/A i2c-1   unknown         21a4000.i2c                             N/A debian@npi:/mnt/mnt$ ls -l /dev/i2c-* crw------- 1 root root 89, 0 Mar 19 09:42 /dev/i2c-0 crw------- 1 root root 89, 1 Mar 19 09:42 /dev/i2c-1</code></pre> <p>I2CBUS：i2c总线编号<br /> -F：此 i2c 支持的功能</p> <pre><code class="language-bash">root@npi:/mnt/mnt# ./i2cdetect -F 1 Functionalities implemented by /dev/i2c-1: I2C                              yes SMBus Quick Command              yes SMBus Send Byte                  yes SMBus Receive Byte               yes SMBus Write Byte                 yes SMBus Read Byte                  yes SMBus Write Word                 yes SMBus Read Word                  yes SMBus Process Call               yes SMBus Block Write                yes SMBus Block Read                 yes SMBus Block Process Call         no SMBus PEC                        yes I2C Block Write                  yes I2C Block Read                   yes root@npi:/mnt/mnt#</code></pre> <p>-y：指令执行自动yes，否则会提示确认执行Continue? [Y/n] Y，不加参数y会有很多执行提示，可以帮助判断</p> <p>-a：输出总线上所有地址（00-7f），没有 -a，只显示 08-77，UU 表示该设备在驱动中已使用。</p> <p>如下0x1a,0x39的地址正在被使用。</p> <pre><code class="language-bash">root@npi:/mnt/mnt# ./i2cdetect -a 1 WARNING! This program can confuse your I2C bus, cause data loss and worse! I will probe file /dev/i2c-1. I will probe address range 0x00-0x7f. Continue? [Y/n] y      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f 00: 00 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  10: -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- --  20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  30: -- -- -- -- -- -- -- -- -- UU -- -- -- -- -- --  40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  60: 60 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  70: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  root@npi:/mnt/mnt# ./i2cdetect -y -a 1      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f 00: 00 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  10: -- -- -- -- -- -- -- -- -- -- UU -- -- -- -- --  20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  30: -- -- -- -- -- -- -- -- -- UU -- -- -- -- -- --  40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  60: 60 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  70: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  root@npi:/mnt/mnt#</code></pre> <h3 id="i2cdump">i2cdump</h3> <p>i2cdump读取设备上所有寄存器的值，可接受的参数有</p> <pre><code class="language-bash">Usage: i2cdump [-f] [-y] [-r first-last] [-a] I2CBUS ADDRESS [MODE [BANK [BANKREG]]]   I2CBUS is an integer or an I2C bus name   ADDRESS is an integer (0x03 - 0x77, or 0x00 - 0x7f if -a is given)   MODE is one of:     b (byte, default)     w (word)     W (word on even register addresses)     s (SMBus block)     i (I2C block)     c (consecutive byte)     Append p for SMBus PEC</code></pre> <p>-V：输出当前版本号</p> <p>-f：强制使用此设备地址，即使此设备地址已经被使用；若不添加此参数，地址可能写失败</p> <p>-y：指令执行自动 yes，否则会提示确认执行Continue? [Y/n] Y，不加参数y会有很多执行提示，可以帮助判断</p> <p>-r：读取从 first-last 之间的寄存器值</p> <p>-a：读取0x00-0xff范围的地址</p> <p>I2CBUS：i2c总线编号</p> <p>ADDRESS：设备地址，建议使用十六进制</p> <p>MODE：数据长度类型</p> <pre><code class="language-bash">root@npi:/mnt/mnt# ./i2cdump -f -y -a 1 0x39 No size specified (using byte-data access)      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef 00: 00 00 00 00 00 00 00 00 70 00 00 00 00 00 00 00    ........p....... 10: 00 00 00 00 00 00 00 00 00 00 10 b0 02 03 02 00    ..........?????. 20: 95 00 00 00 00 00 40 00 00 00 00 fb ff dd c4 00    ?.....@....?.??. 30: 00 00 00 00 00 00 90 22 a0 00 00 00 01 10 00 00    ......?"?...??.. 40: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................ 50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................ 60: 04 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ??.............. 70: 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00    .............?.. 80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................ 90: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................ a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................ b0: 00 00 00 00 00 00 00 00 00 77 14 76 01 00 01 00    .........w?v?.?. c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................ d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................ e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................ f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................  # 只读取0x50-0x7f寄存器范围的值 root@npi:/mnt/mnt# ./i2cdump -f -y -r 0x50-0x7f 1 0x39 No size specified (using byte-data access)      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef 50: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ................ 60: 04 03 00 00 00 00 00 00 00 00 00 00 00 00 00 00    ??.............. 70: 00 00 00 00 00 00 00 00 00 00 00 00 00 03 00 00    .............?.. root@npi:/mnt/mnt#</code></pre> <p>通过读取i2c设备寄存器的值与芯片手册的值进行比对，确认我们配置的是否正确。</p> <h3 id="i2cget">i2cget</h3> <p>i2cget读取设备上寄存器的值，可接受的参数有</p> <pre><code class="language-bash">Usage: i2cget [-f] [-y] [-a] I2CBUS CHIP-ADDRESS [DATA-ADDRESS [MODE]]   I2CBUS is an integer or an I2C bus name   ADDRESS is an integer (0x03 - 0x77, or 0x00 - 0x7f if -a is given)   MODE is one of:     b (read byte data, default)     w (read word data)     c (write byte/read byte)     Append p for SMBus PEC</code></pre> <p>I2CBUS：i2c总线编号</p> <p>CHIP-ADDRESS：设备地址</p> <p>DATA-ADDRESS：要读取的寄存器地址</p> <p>MODE：数据长度类型</p> <pre><code class="language-bash"># 0x39设备地址，0x04要读取的寄存器 root@npi:/mnt/mnt# ./i2cget -f -y 1 0x39 0x04 0x03</code></pre> <h3 id="i2cset">i2cset</h3> <p>i2cset设置设备上寄存器的值，可接受的参数有</p> <pre><code class="language-bash">Usage: i2cset [-f] [-y] [-m MASK] [-r] [-a] I2CBUS CHIP-ADDRESS DATA-ADDRESS [VALUE] ... [MODE]   I2CBUS is an integer or an I2C bus name   ADDRESS is an integer (0x03 - 0x77, or 0x00 - 0x7f if -a is given)   MODE is one of:     c (byte, no value)     b (byte data, default)     w (word data)     i (I2C block data)     s (SMBus block data)     Append p for SMBus PEC</code></pre> <p>I2CBUS：i2c总线编号</p> <p>CHIP-ADDRESS：设备地址</p> <p>DATA-ADDRESS：要写入的寄存器地址</p> <p>VALUE：要写入的值</p> <p>MODE：数据长度类型</p> <pre><code class="language-bash">root@npi:/mnt/mnt# ./i2cset -f -m 0xff -r 1 0x39 0x04 0x03 WARNING! This program can confuse your I2C bus, cause data loss and worse! I will write to device file /dev/i2c-1, chip address 0x39, data address 0x04, data 0x03 (masked), mode byte. Continue? [Y/n] y Old value 0x00, write mask 0xff, will write 0x03 Continue? [Y/n] y Value 0x03 written, readback matched root@npi:/mnt/mnt#</code></pre> <p>把写入寄存器的值读出来。确认与我们写入的值相同。</p> <pre><code class="language-bash">root@npi:/mnt/mnt# ./i2cdump -f -y -r 0x00-0x0f 1 0x39 No size specified (using byte-data access)      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f    0123456789abcdef 00: 00 00 00 00 03 00 00 00 70 00 00 00 00 00 00 00    ....?...p....... root@npi:/mnt/mnt#</code></pre> <h3 id="i2ctransfer">i2ctransfer</h3> <p>i2ctransfer通过一次传输发送用户定义的I2C消息，用于创建I2C消息并将其作为一次传输合并发送。</p> <pre><code class="language-bash">Usage: i2ctransfer [-f] [-y] [-v] [-V] [-a] I2CBUS DESC [DATA] [DESC [DATA]]...   I2CBUS is an integer or an I2C bus name   DESC describes the transfer in the form: {r|w}LENGTH[@address]     1) read/write-flag 2) LENGTH (range 0-65535) 3) I2C address (use last one if omitted)   DATA are LENGTH bytes for a write message. They can be shortened by a suffix:     = (keep value constant until LENGTH)     + (increase value by 1 until LENGTH)     - (decrease value by 1 until LENGTH)     p (use pseudo random generator until LENGTH with value as seed)  Example (bus 0, read 8 byte at offset 0x64 from EEPROM at 0x50):   # i2ctransfer 0 w1@0x50 0x64 r8 Example (same EEPROM, at offset 0x42 write 0xff 0xfe ... 0xf0):   # i2ctransfer 0 w17@0x50 0x42 0xff-</code></pre> <p>I2CBUS：i2c总线编号</p> <p>DESC：<code>{r | w}</code>&lt;消息长度&gt;[@设备地址]</p> <ul> <li> <p><code>{r | w}</code>指定消息是读还是写</p> </li> <li> <p>&lt;消息长度&gt;指定在此消息中读取或写入的字节数。它被解析为一个无符号的16位整数</p> </li> <li> <p>[@设备地址]指定此消息要访问的芯片的7位地址，并且是整数。</p> </li> </ul> <pre><code class="language-bash">#参数2为i2c2，w2表示写两个字节，@0x39为i2c设备（注意要7位地址），0x02 0xd3 为高低位地址，r1为读取的数据是一个byte。 root@npi:/mnt/mnt# ./i2ctransfer  -f -y 1 w2@0x60 0x02 0xd3 r1 0x00</code></pre> <h2 id="总结">总结</h2> <p>本文只是抛砖引玉，i2c-tools还有更多的使用方法，需要大家在实际工作中去探索。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-38037.htm">Vue中组件是什么</a></p>
+                                        <p>下一个：<a href="/news/article-38517.htm">宠爱宠物服务有限公司（宠爱宠物会馆）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-31-winxray-node-share.htm" title="12月31日→18.4M/S|2025年最新免费节点Clash Xray订阅链接地址">12月31日→18.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-35693.htm" title="为什么我们不应该在MySQL SELECT查询中不使用没有GROUP BY子句的非组字段的组函数？">为什么我们不应该在MySQL SELECT查询中不使用没有GROUP BY子句的非组字段的组函数？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-winxray-windows.htm" title="12月14日→19M/S|2024年最新免费节点Clash Xray订阅链接地址">12月14日→19M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36563.htm" title="宠物医院证件办理流程（宠物医院需要办理什么证）">宠物医院证件办理流程（宠物医院需要办理什么证）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-18-free-node-subscribe-links.htm" title="12月18日→22.4M/S|2024年最新免费节点Clash Xray订阅链接地址">12月18日→22.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-high-speed-nodes.htm" title="11月24日→18.9M/S|2024年最新免费节点Clash Xray订阅链接地址">11月24日→18.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-22907.htm" title="动物诊疗许可证办不下来（动物诊疗许可证好办吗）">动物诊疗许可证办不下来（动物诊疗许可证好办吗）</a></li>
+                        <li class="py-2"><a href="/news/article-38038.htm" title="i2c调试工具分享">i2c调试工具分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-30-winxray-windows.htm" title="12月30日→21.5M/S|2024年最新免费节点Clash Xray订阅链接地址">12月30日→21.5M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-31783.htm" title="动物疫苗价格表图片（动物疫苗法最新消息2019）">动物疫苗价格表图片（动物疫苗法最新消息2019）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
