@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-39526.htm" />
+    <!-- Title of The Page -->
+    <title>Qt(QtWebEngine)加载本地网页跨域问题的总结</title>
+        <meta name="description" content="目录  1. 概述 2. 详论  2.1. 传参 2.2. JS module   3. 建议 4. 参考    浏览器直接加载本地网页的时候，如果网页涉及到加载本地资源（如图片），会出现跨域的问题。" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Qt(QtWebEngine)加载本地网页跨域问题的总结</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#1-%E6%A6%82%E8%BF%B0" rel="nofollow">1. 概述</a></li> <li><a href="#2-%E8%AF%A6%E8%AE%BA" rel="nofollow">2. 详论</a> <ul> <li><a href="#21-%E4%BC%A0%E5%8F%82" rel="nofollow">2.1. 传参</a></li> <li><a href="#22-js-module" rel="nofollow">2.2. JS module</a></li> </ul> </li> <li><a href="#3-%E5%BB%BA%E8%AE%AE" rel="nofollow">3. 建议</a></li> <li><a href="#4-%E5%8F%82%E8%80%83" rel="nofollow">4. 参考</a></li> </ul> </div> </h1> <p>浏览器直接加载本地网页的时候，如果网页涉及到加载本地资源（如图片），会出现跨域的问题。Qt的Qt WebEngine模块基于Chromium项目，遇到这样的情况也会出现跨域的问题。</p> </h1> <h2 id="21-传参">2.1. 传参</h2> <p>理论上，我们可以像设置chrome浏览器跨域一样（设置chrome浏览器跨域网上的资料非常多），给我们使用的Qt程序传参：</p> <pre><code class="language-cpp">char ARG_DISABLE_WEB_SECURITY[] = "--disable-web-security"; int newArgc = argc+1+1; char** newArgv = new char*[newArgc]; for(int i=0; i&lt;argc; i++) {     newArgv[i] = argv[i]; } newArgv[argc] = ARG_DISABLE_WEB_SECURITY; newArgv[argc+1] = nullptr;  QApplication myApplication(newArgc, newArgv);</code></pre> <p>Qt会将跨域参数传递到Qt WebEngine模块的Chromium内核中，从而实现跨域。</p> <h2 id="22-js-module">2.2. JS module</h2> <p>即使设置跨域，当使用JavaScript ES6 module的时候，仍然有可能会出现跨域的问题。</p> <p>一个显而易见的错误提示如下：</p> <pre><code>js: Failed to load module script: The server responded with a non-JavaScript MIME type of "". Strict MIME type checking is enforced for module scripts per HTML spec.</code></pre> <p>原因在于，在Chrome浏览器的某些版本中，ES6 module的功能不支持跨域（但是require.js却可以）。现在最新版本的Chrome的跨域设置已经可以支持ES6 module，但是Qt WebEngine模块却可能是比较低的Chromium版本，从而造成使用ES6 module遇到跨域问题。通常来说，越新的Qt版本，Chromium版本也会越高。</p> <p>如果还是不想要服务器环境，那么一种解决方案就是自定义URL方案：</p> <pre><code class="language-cpp">#include &lt;QApplication&gt; #include &lt;QWebEngineView&gt; #include &lt;QWebEngineUrlScheme&gt; #include &lt;QWebEngineProfile&gt; #include &lt;QWebEngineUrlSchemeHandler&gt; #include &lt;QWebEngineUrlRequestJob&gt; #include &lt;QFile&gt; #include &lt;QFile&gt; #include &lt;QFileInfo&gt; #include &lt;QMimeDatabase&gt;  class QtSchemeHandler : public QWebEngineUrlSchemeHandler { public:     QtSchemeHandler(QObject *parent = nullptr):QWebEngineUrlSchemeHandler(parent)     {     }      void requestStarted(QWebEngineUrlRequestJob *request) override     {         QByteArray request_method = request-&gt;requestMethod();         if(request_method != "GET")         {             request-&gt;fail(QWebEngineUrlRequestJob::RequestDenied);             return;         }          QUrl request_url = request-&gt;requestUrl();         QString request_path = request_url.path();         //qDebug()&lt;&lt;request_url&lt;&lt;endl;          QString application_path = "D:/";         QFile *file = new QFile(application_path + request_path);         file-&gt;setParent(request);         connect(request, &amp;QObject::destroyed, file, &amp;QFile::deleteLater);         //qDebug()&lt;&lt;file-&gt;size()&lt;&lt;endl;         if(!file-&gt;exists()||file-&gt;size()==0)         {             printf("resource '{request_path}' not found or is empty");             request-&gt;fail(QWebEngineUrlRequestJob::UrlNotFound);             return;         }          QFileInfo file_info = QFileInfo(*file);         QMimeDatabase mime_database;         QMimeType mime_type = mime_database.mimeTypeForFile(file_info);         request-&gt;reply(QUrl(mime_type.name()).toEncoded(), file);     } };  int main(int argc, char *argv[]) {     char ARG_DISABLE_WEB_SECURITY[] = "--disable-web-security";     int newArgc = argc+1+1;     char** newArgv = new char*[newArgc];     for(int i=0; i&lt;argc; i++) {         newArgv[i] = argv[i];     }     newArgv[argc] = ARG_DISABLE_WEB_SECURITY;     newArgv[argc+1] = nullptr;      qputenv("QTWEBENGINE_REMOTE_DEBUGGING", "7542");    //用于调试      QWebEngineUrlScheme scheme = QWebEngineUrlScheme("qt");     scheme.setFlags(QWebEngineUrlScheme::CorsEnabled);     QWebEngineUrlScheme::registerScheme(scheme);      //QApplication a(argc, argv);     QApplication a(newArgc, newArgv);      QWebEngineView view;      QtSchemeHandler *scheme_handler = new QtSchemeHandler();     view.page()-&gt;profile()-&gt;installUrlSchemeHandler("qt", scheme_handler);      view.page()-&gt;profile()-&gt;clearHttpCache();       //删除缓存      //view.load(QUrl("D:/cesium/CesiumWork/3DTilesPhotogrammetry/3DTilesPhotogrammetry.html"));     view.load(QUrl("qt://local/cesium/CesiumWork/3DTilesPhotogrammetry/3DTilesPhotogrammetry.html"));      view.show();      return a.exec(); }</code></pre> <p>这个方案的本质是将URL定义地址的资源给转发了一遍。但是这种方案还是有局限性，经过测试，在Qt5.15.2版本中可行，但在Qt5.12.5版本中不行。而且这样所有的资源地址都得采用这一套URL方案。</p> </h1> <p>其实个人还是不太建议再轻易尝试使用本地网页跨域了，毕竟这一点与Web的安全性背道而驰。最好还是让网页在服务器环境下吧，出问题的可能性会小一点。</p> </h1> <ol> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://stackoverflow.com/questions/45909518/qt-qwebengineview-not-allowed-to-load-local-resource"  target="_blank" rel="nofollow">Qt QWebEngineView not allowed to load local resource</a></li> <li><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://stackoverflow.com/questions/69358171/pyqt5-how-to-use-javascript-modules"  target="_blank" rel="nofollow">PyQt5 How To Use JavaScript Modules</a></li> </ol> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-39525.htm">Python求解线性规划PuLP使用教程</a></p>
+                                        <p>下一个：<a href="/news/article-40005.htm">七、C++ 内联函数</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-23819.htm" title="Spring cloud链路跟踪服务集成zipkin+mysql+sleuth+rabbitMq">Spring cloud链路跟踪服务集成zipkin+mysql+sleuth+rabbitMq</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-high-speed-nodes.htm" title="11月24日→18.9M/S|2024年最新免费节点Clash Xray订阅链接地址">11月24日→18.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-6-free-node-subscribe.htm" title="11月6日→19.6M/S|2024年最新免费节点Clash Xray订阅链接地址">11月6日→19.6M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-27-free-subscribe-node.htm" title="11月27日→18M/S|2024年最新免费节点Clash Xray订阅链接地址">11月27日→18M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-node-share-links.htm" title="10月15日→19.3M/S|2024年最新免费节点Clash Xray订阅链接地址">10月15日→19.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-node-share-links.htm" title="10月21日→19.9M/S|2024年最新免费节点Clash Xray订阅链接地址">10月21日→19.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-25-node-share.htm" title="10月25日→18.5M/S|2024年最新免费节点Clash Xray订阅链接地址">10月25日→18.5M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-32744.htm" title="宠物领养平台app推荐哪个软件最好（宠物领养 app）">宠物领养平台app推荐哪个软件最好（宠物领养 app）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-free-node-subscribe-links.htm" title="11月20日→22.4M/S|2024年最新免费节点Clash Xray订阅链接地址">11月20日→22.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24753.htm" title="猫三联三针一共多少钱一针图片（猫三联一共几针多少钱）">猫三联三针一共多少钱一针图片（猫三联一共几针多少钱）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-39525.htm" />
+    <!-- Title of The Page -->
+    <title>Python求解线性规划PuLP使用教程</title>
+        <meta name="description" content="简洁是智慧的灵魂，冗长是肤浅的藻饰。——莎士比亚《哈姆雷特》  1 PuLP 库的安装 如果您使用的是 Anaconda[1] 的话（事实上我也更推荐这样做），需要先激活你想要安装的虚拟环境，之后在 " />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Python求解线性规划PuLP使用教程</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<blockquote> <p>简洁是智慧的灵魂，冗长是肤浅的藻饰。——莎士比亚《哈姆雷特》</p> </blockquote> <h2 id="1-pulp-库的安装">1 PuLP 库的安装</h2> <p>如果您使用的是 Anaconda<sup class="footnote-ref"><a href="#fn1" id="fnref1" rel="nofollow">[1]</a></sup> 的话（事实上我也更推荐这样做），需要先激活你想要安装的虚拟环境，之后在 Prompt 输入</p> <pre><code class="language-sh">pip install pulp</code></pre> <p>不出意外的话等一会就安装完毕。</p> <h2 id="2-线性规划简介">2 线性规划简介</h2> <p>想必大家能点开这篇文章一定都知道<strong>线性规划</strong>是什么意思吧……那么我用两个例子再简单说一下。</p> <h3 id="21-线性规划">2.1 线性规划</h3> <h4 id="211-题目描述">2.1.1 题目描述<sup class="footnote-ref"><a href="#fn2" id="fnref2" rel="nofollow">[2]</a></sup></h4> <p>若变量<span class="math inline">\(x, y\)</span> 满足约束条件：</p> <div class="math display">\[\left\{<br /> 	\begin{aligned}<br /> 		&amp; 2x + 3y - 6\geq 0\\<br /> 		&amp; x + y - 3 \leq 0\\<br /> 		&amp; y - 2 \leq 0<br />     \end{aligned}<br /> \right.<br /> \]</div> <p>求<span class="math inline">\(z = 3x + y\)</span> 的最大值。</p> <h4 id="212-基本概念">2.1.2 基本概念</h4> <p>首先，我们要认清在这道题中，<span class="math inline">\(x\)</span> 和<span class="math inline">\(y\)</span> 是可以变的，所以把它们叫做<strong>决策变量</strong>。三个不等式叫做<strong>约束条件</strong>，即<span class="math inline">\(x\)</span> 和<span class="math inline">\(y\)</span> 必须同时满足这三个不等式。我们若画出图来：</p> <p><img decoding="async" src="https://images.cnblogs.com/cnblogs_com/blogs/727916/galleries/2095858/o_220426125945_image-20220426182542100.png" alt="Python求解线性规划PuLP使用教程"></p> <p>其中<strong>不满足</strong>约束条件的区域被我标上了颜色，所以<span class="math inline">\(x, y\)</span> 可以取得值只能在纯白区域内，这一片区域称作<strong>可行域</strong>。</p> <p>再看最后的我们的目标：求<span class="math inline">\(z = x + 3y\)</span> 的最大值。</p> <p>于是<span class="math inline">\(z=x+3y\)</span> 就被称作<strong>目标函数</strong>，我们的工作就是求这个目标函数的最大值。</p> <p>整个问题描述为：</p> <div class="math display">\[\begin{eqnarray*}<br /> 	 &amp;\max &amp;z = x+3y \tag{1}\\<br /> 	 &amp;\mathrm{s.t.} &amp; \quad 2x + 3y - 6 \geq0 \tag{2}\\<br /> 	 &amp;              &amp; \quad x + 3y - 3 \leq 0 \tag{3}\\<br /> 	 &amp;              &amp; \quad y - 2 \leq 0      \tag{4}<br /> \end{eqnarray*}<br /> \]</div> <p>然后怎么算？别急我们再看一个例子。</p> <h3 id="22-整数规划">2.2 整数规划</h3> <h4 id="221-题目描述">2.2.1 题目描述<sup class="footnote-ref"><a href="#fn3" id="fnref3" rel="nofollow">[3]</a></sup></h4> <p>汽车厂生产小、中、大三种类型的汽车，已知各类型每辆车对钢材、劳动时间的需求以及利润如下表所示。要求每月的钢材消耗不超过 600 t，总劳动时间不超过 60 000 h。试指定生产计划使得工厂每月的利润最大。</p> <table> <thead> <tr> <th></th> <th>小型车</th> <th>中型车</th> <th>大型车</th> </tr> </thead> <tbody> <tr> <td>钢材 / t</td> <td>1.5</td> <td>3</td> <td>5</td> </tr> <tr> <td>劳动时间 / h</td> <td>280</td> <td>250</td> <td>400</td> </tr> <tr> <td>利润 / 万元</td> <td>2</td> <td>3</td> <td>4</td> </tr> </tbody> </table> <h4 id="222-解题思路">2.2.2 解题思路</h4> <p>首先，设三个<strong>决策变量</strong>，用<span class="math inline">\(x_1, x_2, x_3\)</span> 分别表示生产小型车、中型车、大型车的数量，但是注意要满足：</p> <ul> <li>车的数量<strong>只能是整数</strong>；</li> <li>车的数量大于等于 0。</li> </ul> <p>其他<strong>约束条件</strong>看题直接列：</p> <div class="math display">\[\left\{\begin{aligned}<br /> 	&amp; 1.5 x_1 +   3 x_2 +   5 x_3 \leq 600\\<br />     &amp; 280 x_1 + 250 x_2 + 400 x_2 \leq 60000<br /> \end{aligned}\right.<br /> \]</div> <p>最后写出<strong>目标函数</strong>：</p> <div class="math display">\[z = 2x_1 + 3x_2 + 4x_3<br /> \]</div> <p>综合起来整个问题描述为：</p> <div class="math display">\[\begin{eqnarray*}<br /> 	 &amp;\max &amp; z = 2x_1 + 3x_2 + 4x_3 \tag{1}\\<br /> 	 &amp;\mathrm{s.t.} &amp; 1.5 x_1 +   3 x_2 +   5 x_3 \leq 600\tag{2}\\<br />      &amp;              &amp; 280 x_1 + 250 x_2 + 400 x_2 \leq 60000\tag{3}\\<br />      &amp;              &amp; x_1, x_2, x_3 \geq 0\tag{4}\\<br />      &amp;              &amp; x_1, x_2, x_3 均为整数\tag{5}<br /> \end{eqnarray*}<br /> \]</div> <p>另外可以看出这个题由于涉及到三个决策变量，可行域是相当抽象的，这里就不画了 hhh~</p> <h2 id="3-求解过程">3 求解过程</h2> <p>首先在最前面引入所需的<code>pulp</code>工具库：</p> <pre><code class="language-python">import pulp as pl</code></pre> <p>这句话是引入<code>pulp</code> 库并简写为<code>pl</code>，一个 python 库只有在开始<code>import</code> 了之后才能在后面使用。这样后面凡是用到<code>pulp</code> 的功能都要写成<code>pl.xxx</code>。</p> <p>接下来是以下几个步骤：</p> <ul> <li>定义模型</li> <li>定义决策变量</li> <li>添加约束条件</li> <li>添加目标函数</li> <li>模型求解</li> <li>打印结果</li> </ul> <h3 id="31-定义模型">3.1 定义模型</h3> <pre><code class="language-python"># Define the model model = pl.LpProblem(name="My-Model", sense=pl.LpMaximize)</code></pre> <p>这个操作是使用<code>pl.LpProblem</code> 创建了一个模型并赋值给变量<code>model</code>，接收两个参数：</p> <ul> <li><code>name</code>：模型的名字，随便起一个；</li> <li><code>sense</code>：模型的类型，<code>pl.LpMinimize</code>是求目标函数的最小值，<code>pl.LpMaximize</code> 是求最大值</li> </ul> <h3 id="32-定义决策变量">3.2 定义决策变量</h3> <pre><code class="language-python"># Define the decision variables x = pl.LpVariable(name='x') y = pl.LpVariable(name='y')</code></pre> <p>如果你的变量比较少的话可以简单这么写。这个意思是定义了两个浮点数变量，取值范围是整个实数域。注意等号左边的变量才是你在之后的计算式中使用的符号，而参数<code>name</code> 只有在最后打印结果的时候才会被打印出来。另外如果你对变量有其他要求的话可以添加以下参数：</p> <ul> <li><code>lowBound</code>：变量的最小取值（不写的话默认负无穷）；</li> <li><code>upBound</code>：变量的最大取值（默认正无穷）；</li> <li><code>cat</code>：变量的类型，有<code>pl.Binary</code> 逻辑变量、<code>pl.Integer</code> 整数、<code>pl.Continuous</code> 实数（默认值）；</li> </ul> <p>如果你的变量比较多而不得不用 1, 2, 3…… 来编号，可以采用类似这样的写法：</p> <pre><code class="language-python"># Define the decision variables x = {i: pl.LpVariable(name=f"x{i}", lowBound=0, cat=pl.LpInteger) for i in range(1, 9)}</code></pre> <p>这是一次定义 8 个变量并保存在一个类似数组的结构中，变量都是<strong>正整数</strong>，分别用<code>x[1]</code>,<code> x[2]</code>, ...,<code>x[8]</code> 表示，依次命名为 x1, x2,..., x8。</p> <blockquote> <p>注意<code>range(left, right)</code> 表示的区间是左闭右开。</p> </blockquote> <h3 id="33-添加约束条件">3.3 添加约束条件</h3> <pre><code class="language-python"># Add constraints model += (2 * x + 3 * y - 6 &gt;= 0, "constrain_1") model += (x + 3 * y - 3 == 0, "constrain_2")</code></pre> <p>没错！如你所见就是这么简单，括号里第一个变量就是你的约束<strong>不等式</strong>或<strong>等式</strong>，第二个变量是你的自定义的约束名（可以起一个有意义的名字，当然也可以省略）。</p> <blockquote> <p>由于一些比较数学的原因，约束条件里是不能使用大于号“&gt;”或小于号“&lt;”的。</p> </blockquote> <p>如果你像前面一样把变量定义在了数组中，那么可以直接用方括号调用：</p> <pre><code class="language-python">model += (2 * x[1] + 3 * x[2] - 6 &gt;= 0)</code></pre> <h3 id="34-添加目标函数">3.4 添加目标函数</h3> <pre><code class="language-python"># Set the objective model += x + 3 * y</code></pre> <p>与前面添加约束条件不同，添加目标函数这一步不用加最外层的括号。</p> <h3 id="35-模型求解">3.5 模型求解</h3> <pre><code class="language-python"># Solve the optimization problem status = model.solve()</code></pre> <p>就写这一句话，调用<code>model</code> 的<code>solve()</code> 方法，并把结果保存在<code>status</code> 中。</p> <h3 id="34-打印结果">3.4 打印结果</h3> <pre><code class="language-python"># Get the results print(f"status: {model.status}, {pl.LpStatus[model.status]}") print(f"objective: {model.objective.value()}")  for var in model.variables():     print(f"{var.name}: {var.value()}")  for name, constraint in model.constraints.items():     print(f"{name}: {constraint.value()}")</code></pre> <p>然后你就能看到模型求解的结果了。</p> <h2 id="4-示例代码">4 示例代码</h2> <h3 id="41-高考题代码">4.1 高考题代码</h3> <p>首先解决一下 3.1 的高考题：</p> <pre><code class="language-python">import pulp as pl  # 定义一个模型，命名为 "Model_3.1"，求最大值 model = pl.LpProblem(name="Model_3.1", sense=pl.LpMaximize)  # 定义两个决策变量，取值为整个实数域 x = pl.LpVariable(name='x') y = pl.LpVariable(name='y')  # 添加三个约束条件 model += (2 * x + 3 * y - 6 &gt;= 0) model += (x + y - 3 &lt;= 0) model += (y - 2 &lt;= 0)  # 目标函数 model += x + 3 * y  # 求解 status = model.solve()  # 打印结果 print(f"status: {model.status}, {pl.LpStatus[model.status]}") print(f"objective: {model.objective.value()}")  for var in model.variables():     print(f"{var.name}: {var.value()}")  for name, constraint in model.constraints.items():     print(f"{name}: {constraint.value()}")</code></pre> <p>查看结果的最后几行：</p> <pre><code class="language-X">status: 1, Optimal objective: 7.0 x: 1.0 y: 2.0 _C1: 2.0 _C2: 0.0 _C3: 0.0</code></pre> <p>最大值是<span class="math inline">\(7.0\)</span>，在<span class="math inline">\(x=1.0, y=2.0\)</span> 时取到。</p> <h3 id="42-汽车厂代码">4.2 汽车厂代码</h3> <pre><code class="language-python">import pulp as pl  # 定义一个模型，命名为 "Model_3.2"，求最大值 model = pl.LpProblem(name="Model_3.2", sense=pl.LpMaximize)  # 定义三个决策变量，取值正整数 x = {i: pl.LpVariable(name=f"x{i}", lowBound=0, cat=pl.LpInteger) for i in range(1, 4)}  # 添加约束条件 model += (1.5 * x[1] + 3 * x[2] + 5 * x[3] &lt;= 600) model += (280 * x[1] + 250 * x[2] + 400 * x[3] &lt;= 60000)  # 目标函数 model += 2 * x[1] + 3 * x[2] + 4 * x[3]  # 求解 status = model.solve()  # 打印结果 print(f"status: {model.status}, {pl.LpStatus[model.status]}") print(f"objective: {model.objective.value()}")  for var in model.variables():     print(f"{var.name}: {var.value()}")  for name, constraint in model.constraints.items():     print(f"{name}: {constraint.value()}")</code></pre> <p>查看结果的最后几行：</p> <pre><code class="language-X">status: 1, Optimal objective: 632.0 x1: 64.0 x2: 168.0 x3: 0.0 _C1: 0.0 _C2: -80.0</code></pre> <p>三种车的产量分别取 64、168、0，最大收益 632 万元。</p> <hr class="footnotes-sep"/> <section class="footnotes"> <ol class="footnotes-list"> <li id="fn1" class="footnote-item"> <p>众所周知 Python 在各个领域如此受欢迎很大程度上是因为其有众多强大的第三方库，但是用的多了就会发现如果安装太多库就有点乱。而 Anaconda 就是一种很方便的管理 Python 环境的工具，不仅可以将不同的库分门别类管理好，更有用的是可以在电脑上安装<strong>不同版本</strong>的 Python 而不用担心会互相冲突。<a href="#fnref1" class="footnote-backref" rel="nofollow">↩︎</a></p> </li> <li id="fn2" class="footnote-item"> <p>2019 年高考数学全国二卷。<a href="#fnref2" class="footnote-backref" rel="nofollow">↩︎</a></p> </li> <li id="fn3" class="footnote-item"> <p>改编自姜启源等《数学模型（第五版）》108 页例 1。<a href="#fnref3" class="footnote-backref" rel="nofollow">↩︎</a></p> </li> </ol> </section> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-39005.htm">宠物店培训学校在哪里报名（宠物培训班收费多少钱）</a></p>
+                                        <p>下一个：<a href="/news/article-39526.htm">Qt(QtWebEngine)加载本地网页跨域问题的总结</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-28010.htm" title="动物疫苗哪里买的到 动物疫苗哪里买的到啊">动物疫苗哪里买的到 动物疫苗哪里买的到啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-winxray-node.htm" title="10月28日→19.5M/S|2024年最新免费节点Clash Xray订阅链接地址">10月28日→19.5M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-37044.htm" title="python数据导入hive_使用 python 批量插入 hive">python数据导入hive_使用 python 批量插入 hive</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-8-node-share.htm" title="12月8日→18.3M/S|2024年最新免费节点Clash Xray订阅链接地址">12月8日→18.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-28471.htm" title="一片枫叶的拼音怎么写呀怎么组词语（一片枫叶的拼音怎么写呀怎么组词语啊）">一片枫叶的拼音怎么写呀怎么组词语（一片枫叶的拼音怎么写呀怎么组词语啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-free-winxray-node.htm" title="12月22日→20.6M/S|2024年最新免费节点Clash Xray订阅链接地址">12月22日→20.6M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-32744.htm" title="宠物领养平台app推荐哪个软件最好（宠物领养 app）">宠物领养平台app推荐哪个软件最好（宠物领养 app）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-winxray-github.htm" title="11月12日→19M/S|2024年最新免费节点Clash Xray订阅链接地址">11月12日→19M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-latest-winxray-node.htm" title="12月9日→22.5M/S|2024年最新免费节点Clash Xray订阅链接地址">12月9日→22.5M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-15-winxray-node-share.htm" title="12月15日→20.6M/S|2024年最新免费节点Clash Xray订阅链接地址">12月15日→20.6M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
