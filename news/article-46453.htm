@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-46453.htm" />
+    <!-- Title of The Page -->
+    <title>使用Android DataBinding时发现只能显示一次，不能动态更新数据</title>
+        <meta name="description" content="使用Android DataBinding时发现只能显示一次，不能动态更新数据 本文只是记录解决错误的过程，可能起不到分享的意义。  刚开始使用 dagger2 + DataBinding 的结构，很" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-46453.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="使用Android DataBinding时发现只能显示一次，不能动态更新数据" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/80c0c5043a9d2d0655757a7ce1d41f55.webp" />
+        <meta property="og:release_date" content="2025-01-26T09:59:25" />
+    <meta property="og:updated_time" content="2025-01-26T09:59:25" />
+        <meta property="og:description" content="使用Android DataBinding时发现只能显示一次，不能动态更新数据 本文只是记录解决错误的过程，可能起不到分享的意义。  刚开始使用 dagger2 + DataBinding 的结构，很" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="使用Android DataBinding时发现只能显示一次，不能动态更新数据">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">使用Android DataBinding时发现只能显示一次，不能动态更新数据</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2 id="使用android-databinding时发现只能显示一次不能动态更新数据">使用Android DataBinding时发现只能显示一次，不能动态更新数据</h2> <p>本文只是记录解决错误的过程，可能起不到分享的意义。 <br /> 刚开始使用 dagger2 + DataBinding 的结构，很多东西也不是很清晰。</p> <h3 id="现象">现象</h3> <ul> <li>一个页面有三块布局，我使用一个Activity搭配三个Fragment实现。</li> <li>通过三个Fragment共同使用Activity的ViewModel来实现数据共享。</li> <li>但是最后出现个现象就是只有刚进入页面时，ViewModel中的数据会显示在视图上。</li> <li>通过点击事件更新ViewModel中 <code>ObservableField</code> 对象中的数据，并不会刷新视图。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/421074469ef7e06f0f0518f849d321c1.jpg" alt="使用Android DataBinding时发现只能显示一次，不能动态更新数据"></p> <h3 id="原因">原因</h3> <ul> <li>千辛万苦找到了是因为在项目中使用了 <code>Dagger2</code> </li> <li>在给三个Fragment注入 Activity的 <code>ViewModel</code> 时，实际上是注入了三个 <code>ViewModel</code> 对象</li> <li>导致每个Fragment的binding绑定的ViewModel都是不同的，自然不会有什么联系</li> </ul> <h3 id="解决1">解决1</h3> <ul> <li>通过静态代码块的方式实现了 <code>ViewModel</code> 的单例</li> <li>在 module 中 <code>@Provide</code>修饰的方法中，返回的是单例模式的 <code>ViewModel</code> </li> </ul> <h3 id="解决2失败了">解决2（失败了）</h3> <ul> <li>在 Activity 的 module 中 <code>@Provide</code>修饰的方法上再加上个 <code>@Singleton</code> </li> <li>报错：AppComponent has a @Singleton</li> <li>原因：<code>@Singleton</code> 在 <code>AppComponent</code> 上声明了，<code>@Singleton</code> 并不是设计模式中的单例模式，而是 <code>Dagger2</code> 为了保证 <code>module</code> 提供的产品，在一个 Scope （<code>Component</code>）中，只有一个对象的标签。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230108/5656adcbaa43108be1fb96f9437e85c3.jpg" alt="使用Android DataBinding时发现只能显示一次，不能动态更新数据"></p> <ul> <li>如上，表示了三个 <code>Module</code> 类在 AppComponent 这个scope中是单例的</li> </ul> <h3 id="解决3">解决3</h3> <ul> <li>既然外层已经使用了 <code>@Singleton</code> ，那么我们可以自定义一个注解来表示一个 scope</li> <li>创建注解：@NewPesticideSingle （名字任意）</li> <li>标注在 Module 和对应的 Component 中即可</li> </ul> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-45950.htm">怎么做宠物粮代理（宠物粮代加工工厂哪哪里好点）</a></p>
+                                        <p>下一个：<a href="/news/article-46454.htm">动物疫苗厂家排名榜单 动物疫苗厂家排名榜单最新</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-18-today-winxray-node.htm" title="10月18日→22.3M/S|2024年最新免费节点Clash Xray订阅链接地址">10月18日→22.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-winxray-node-github.htm" title="12月6日→19.9M/S|2024年最新免费节点Clash Xray订阅链接地址">12月6日→19.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-23820.htm" title="我所在的城市有一家宠物医院英语翻译怎么说（在我的城市有一家宠物医院英文）">我所在的城市有一家宠物医院英语翻译怎么说（在我的城市有一家宠物医院英文）</a></li>
+                        <li class="py-2"><a href="/news/article-25217.htm" title="JSON  传输数据出现415错误 Content type &#8216;application/xml;charset=UTF-8&#8217; not supported">JSON  传输数据出现415错误 Content type &#8216;application/xml;charset=UTF-8&#8217; not supported</a></li>
+                        <li class="py-2"><a href="/news/article-44473.htm" title="宠物批发零售（宠物批发零售网站）">宠物批发零售（宠物批发零售网站）</a></li>
+                        <li class="py-2"><a href="/news/article-28471.htm" title="一片枫叶的拼音怎么写呀怎么组词语（一片枫叶的拼音怎么写呀怎么组词语啊）">一片枫叶的拼音怎么写呀怎么组词语（一片枫叶的拼音怎么写呀怎么组词语啊）</a></li>
+                        <li class="py-2"><a href="/news/article-46926.htm" title="被小猫咬了多久过安全期（被小猫咬了小猫几天死了）">被小猫咬了多久过安全期（被小猫咬了小猫几天死了）</a></li>
+                        <li class="py-2"><a href="/news/article-24753.htm" title="猫三联三针一共多少钱一针图片（猫三联一共几针多少钱）">猫三联三针一共多少钱一针图片（猫三联一共几针多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-20613.htm" title="Spring MVC 自定义拦截器">Spring MVC 自定义拦截器</a></li>
+                        <li class="py-2"><a href="/news/article-26613.htm" title="Python数据分析实例">Python数据分析实例</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
