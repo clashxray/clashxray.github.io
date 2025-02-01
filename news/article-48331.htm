@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-48331.htm" />
+    <!-- Title of The Page -->
+    <title>Vue刷新页面的三种方式</title>
+        <meta name="description" content="1.原生的js刷新方式： location.reload();  2.vue自带的路由跳转方式： this.$router.go(0);  使用过后发现这俩种方式都会使页面有短暂的空白，体验效果不是特" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-48331.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="Vue刷新页面的三种方式" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/ed217b8fdcdc741f1011a5ee41ef32b1.webp" />
+        <meta property="og:release_date" content="2025-01-30T06:45:02" />
+    <meta property="og:updated_time" content="2025-01-30T06:45:02" />
+        <meta property="og:description" content="1.原生的js刷新方式： location.reload();  2.vue自带的路由跳转方式： this.$router.go(0);  使用过后发现这俩种方式都会使页面有短暂的空白，体验效果不是特" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vue刷新页面的三种方式">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                                                        <a href="/">
+                                <span>Clash Xray</span>
+                            </a>
+                                                    </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="#">关于</a></li>
+                                    <li><a href="#">联系</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Vue刷新页面的三种方式</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>1.原生的js刷新方式：</p> <pre><code>location.reload(); </code></pre> <p>2.vue自带的路由跳转方式：</p> <pre><code>this.$router.go(0); </code></pre> <p>使用过后发现这俩种方式都会使页面有短暂的空白，体验效果不是特别好所以总结出了第三种方式<br /> 3. 在app或者路由插槽处声明以下代码：</p> <pre><code>template&gt;     &lt;div id="app"&gt;     	&lt;router-view v-if="isShow"&gt;&lt;/router-view&gt; 	&lt;/div&gt; &lt;/template&gt; &lt;script&gt;     export default {         name: 'App',         provide () {         //父组件中通过provide来提供变量，在子组件中通过inject接受。                                                          return {                 reload: this.reload                                                           }         },         data() {             return{             //自定义参数                 isShow: true             }         },         methods: {             reload () {             //reload方法首先将isShow设置为false，将router-view通过if判断取消                 this.isShow= false;             // Vue.nextTick用于延迟执行一段代码，它接受2个参数（回调函数和执行回调函数的上下文环境），如果没有提供回调函数，那么将返回promise对象。                 this.$nextTick(function () {            //     在页面更新后再将isShow设置为true                     this.isShow= true;                 })              }         }，     } &lt;/script&gt; </code></pre> <p>组件中设置刷新</p> <pre><code>export default {     inject:['reload'],//  此处引入在app中定义的reload方法     data () {         return {         }     } }, </code></pre> <p>在页面中需要页面刷新的地方调用即可</p> <pre><code>this.reload(); </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-47924.htm">动物疫苗的使用方法及注意事项视频教学大全图片（动物接种疫苗）</a></p>
+                                        <p>下一个：<a href="/news/article-48332.htm">ES6 解构赋值详解</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-winxray-windows.htm" title="1月18日→19.7M/S|2025年最新免费节点Clash Xray订阅链接地址">1月18日→19.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36233.htm" title="东北农大宠物医院营业时间电话（东北农大宠物医院地址）">东北农大宠物医院营业时间电话（东北农大宠物医院地址）</a></li>
+                        <li class="py-2"><a href="/news/article-46925.htm" title="从 jQuery 到 Vue3 的快捷通道_在线工具">从 jQuery 到 Vue3 的快捷通道_在线工具</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-winxray-windows.htm" title="1月7日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址">1月7日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-38517.htm" title="宠爱宠物服务有限公司（宠爱宠物会馆）">宠爱宠物服务有限公司（宠爱宠物会馆）</a></li>
+                        <li class="py-2"><a href="/news/article-47420.htm" title="动物疫苗接种方法有哪几种图片大全（动物疫苗接种方法有哪几种图片大全集）">动物疫苗接种方法有哪几种图片大全（动物疫苗接种方法有哪几种图片大全集）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-winxray-node.htm" title="10月20日→18.4M/S|2024年最新免费节点Clash Xray订阅链接地址">10月20日→18.4M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24753.htm" title="猫三联三针一共多少钱一针图片（猫三联一共几针多少钱）">猫三联三针一共多少钱一针图片（猫三联一共几针多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-33205.htm" title="Python yield 用法">Python yield 用法</a></li>
+                        <li class="py-2"><a href="/news/article-19698.htm" title="Java中的抽象类与接口">Java中的抽象类与接口</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
