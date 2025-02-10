@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-53632.htm" />
+    <!-- Title of The Page -->
+    <title>vue之prop与$emit的用法说明_vue.js_</title>
+        <meta name="description" content="目录  prop与$emit的用法  1.vue组件Prop传递数据 2.子组件可以使用$emit触发父组件的自定义事件  今天遇到的坑--this.$emit  我的实现方法 效果 问题来了,问题解" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-53632.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="vue之prop与$emit的用法说明_vue.js_" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/80c0c5043a9d2d0655757a7ce1d41f55.webp" />
+        <meta property="og:release_date" content="2025-02-09T10:04:45" />
+    <meta property="og:updated_time" content="2025-02-09T10:04:45" />
+        <meta property="og:description" content="目录  prop与$emit的用法  1.vue组件Prop传递数据 2.子组件可以使用$emit触发父组件的自定义事件  今天遇到的坑--this.$emit  我的实现方法 效果 问题来了,问题解" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue之prop与$emit的用法说明_vue.js_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">vue之prop与$emit的用法说明_vue.js_</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">prop与$emit的用法</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">1.vue组件Prop传递数据</a></li> <li><a href="#_lab2_0_1" rel="nofollow">2.子组件可以使用$emit触发父组件的自定义事件</a></li> </ul> <li><a href="#_label1" rel="nofollow">今天遇到的坑--this.$emit</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_2" rel="nofollow">我的实现方法</a></li> <li><a href="#_lab2_1_3" rel="nofollow">效果</a></li> <li><a href="#_lab2_1_4" rel="nofollow">问题来了,问题解决</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>prop与$emit的用法</h2> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>1.vue组件Prop传递数据</h3> <p> 组件实例的作用域是孤立的，这意味着不能在子组件的模板内直接引父组件的数据，如果要让子组件使用父组件的数据，则需要通过子组件的prop选项；prop是单向绑定的，当父组件的属性变化时，将传递给子组件，但是反过来不行；这样主要是防止子组件无意修改父组件的状态；每次父组件更新时，子组件的所有prop都会更新为最新值。这意味着你不能在子组件内部改变prop。</p> <p class="maodian"><a name="_lab2_0_1" rel="nofollow"></a></p> <h3>2.子组件可以使用$emit触发父组件的自定义事件</h3> <ul> <li> <code>vm.$emit( event, arg )</code>：发送数据，第一个参数是发送数据的名称，接收时还用这个参数接收，第二个参数是这个数据现在的位置</li> </ul> <p><strong>拓展：</strong></p> <ul> <li> <code>vm.$on( event, fn )</code>：接收数据，第一个参数是数据的名称，与发送时的名字对应，第二个参数是一个方法，要对数据的操作</li> </ul> <p>注：vue模板只能有一个根对象 (在template中只能用一个标签来包裹全部元素)不然会报错如：</p> <blockquote> <p>Component template should contain exactly one root element. If you are using v-if on multiple elements, use v-else-if to chain them instead.</p> </blockquote> <p><strong>父组件：</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div&gt;       &lt;div&gt;父组件的addName：{{addrName}}&lt;/div&gt;      &lt;child-prop @showAddrName="updateAddrName" :sendData="addrName"&gt;&lt;/child-prop&gt;    &lt;/div&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;    import childProp from "./childProp";    export default {      name:'index',      components: {childProp},      data () {        return {          addrName:"北京"        }      },      methods:{        updateAddrName(data){//触发子组件城市选择-选择城市的事件          console.log(data);          this.addrName = data.addrName;//改变了父组件的值          console.log('toCity:'+this.addrName)        }      }    }  &lt;/script&gt;</pre> </div> <p><strong>子组件：</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div&gt;      &lt;h3&gt;父组件传给子组件的addrName:{{sendData}}&lt;/h3&gt;      &lt;br/&gt;&lt;button @click='addr(`上海`)'&gt;点击此处将‘上海'发射给父组件&lt;/button&gt;    &lt;/div&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;    export default {      name:'childProp',      props:["sendData"], // 用来接收父组件传给子组件的数据      methods:{        addr(val) {          let data = {            addrName: val          };          this.$emit('showAddrName',data);//select事件触发后，自动触发showCityName事件        }      }    }  &lt;/script&gt;</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>今天遇到的坑--this.$emit</h2> <p><strong>写给赶时间的人</strong></p> <p>一句话</p> <p>this.$emit('xxx', input), input最好是字符串, 如果需要传一个对象, 那么, 建议您在父组件里面, JSON.parse(input), 或者不要传原始对象, 需要const一个对象, 深拷贝您需要传的对象</p> <p><strong>写给有点时间看的人</strong></p> <p>作为一个半路出家的伪前端, 遇到坑, 基本都是因为自己基础知识不牢固, 例如今天遇到这个this.$emit的坑</p> <p><strong>需求</strong></p> <p>一个简单的需求, 页面上面有一个搜索框, 里面需要填2个字段, 按确定进行搜索</p> <p><strong>实现</strong></p> <p>我是这样想的, 填两个字段, 那我就把他们写在一个对象里面, this.$emit的时候, 传这个对象的值就好了</p> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>我的实现方法</h3> <p>search组件</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div&gt;      &lt;div&gt;search&lt;/div&gt;      &lt;input type="text" v-model="searchKey.key_apple"&gt;      &lt;input type="text" v-model="searchKey.key_blackBerry"&gt;      &lt;button @click="onSubmit"&gt;确定&lt;/button&gt;    &lt;/div&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;  export default {    data() {      return {        searchKey: {          key_blackBerry: "",          key_apple: ""        }      };    },       methods: {      onSubmit() {        this.$emit("onSearchSubmit", this.searchKey);      }    }  };  &lt;/script&gt;</pre> </div> <p><strong>父组件：</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;section class="container"&gt;      &lt;div&gt;        &lt;Search @onSearchSubmit="onSearchSubmit"/&gt;        &lt;h1&gt;{{parent_search}}&lt;/h1&gt;      &lt;/div&gt;    &lt;/section&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;  import Search from "~/components/Search.vue";     export default {    components: {      Search    },       data() {      return {        parent_search: {}      };    },       methods: {      onSearchSubmit(input) {        this.parent_search = input;      }    }  };  &lt;/script&gt;</pre> </div> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>效果</h3> <p>实际上也能达到要求, 但是, 出现了一个意想不到的结果: 当第一次点击确定之后, 我们再在搜索框里面输入, 预想的结果是什么都没变化, 例如h1里面的字符不会变化, 但是, 结果确发现, 双向绑定了, 这不是我想要的结果...我并没有实现父子组件间的双向绑定(例如通过复写组件的change方法)</p> <p class="maodian"><a name="_lab2_1_4" rel="nofollow"></a></p> <h3>问题来了,问题解决</h3> <p>发生这个情况的原因在于, 我写的自组件this.$emit里面, 是一个对象, 其实传的是它的地址</p> <p>所以，后面这样改写子组件就ok了</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div&gt;      &lt;div&gt;search&lt;/div&gt;      &lt;input type="text" v-model="searchKey.key_apple"&gt;      &lt;input type="text" v-model="searchKey.key_blackBerry"&gt;      &lt;button @click="onSubmit"&gt;确定&lt;/button&gt;    &lt;/div&gt;  &lt;/template&gt;</pre> </div> <div class="ay1code"> <pre class="brush:js;">&lt;script&gt;  export default {    data() {      return {        searchKey: {          key_blackBerry: "",          key_apple: ""        }      };    },       methods: {      onSubmit() {        const input = JSON.parse(JSON.stringify(this.searchKey));        this.$emit("onSearchSubmit", input);      }    }  };  &lt;/script&gt;</pre> </div> <p>基础真的很重要~</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53631.htm">如何在Android sqlite中删除表？</a></p>
+                                        <p>下一个：<a href="/news/article-54174.htm">宠物粮食加工厂加盟电话号码查询（宠物粮基地）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-4-latest-winxray-node.htm" title="1月4日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址">1月4日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-24755.htm" title="宠物出售app（宠物出售广告怎么写）">宠物出售app（宠物出售广告怎么写）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-7-latest-winxray-node.htm" title="2月7日→18.1M/S|2025年最新免费节点Clash Xray订阅链接地址">2月7日→18.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-24-free-high-speed-nodes.htm" title="11月24日→18.9M/S|2024年最新免费节点Clash Xray订阅链接地址">11月24日→18.9M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21538.htm" title="宠物之家官网（深圳宠物之家官网）">宠物之家官网（深圳宠物之家官网）</a></li>
+                        <li class="py-2"><a href="/news/article-53632.htm" title="vue之prop与$emit的用法说明_vue.js_">vue之prop与$emit的用法说明_vue.js_</a></li>
+                        <li class="py-2"><a href="/news/article-29886.htm" title="疫苗箱子回收（疫苗包装盒处理）">疫苗箱子回收（疫苗包装盒处理）</a></li>
+                        <li class="py-2"><a href="/news/article-28471.htm" title="一片枫叶的拼音怎么写呀怎么组词语（一片枫叶的拼音怎么写呀怎么组词语啊）">一片枫叶的拼音怎么写呀怎么组词语（一片枫叶的拼音怎么写呀怎么组词语啊）</a></li>
+                        <li class="py-2"><a href="/news/article-23353.htm" title="猫咪领养协议免费模板怎么写好（猫咪领养协议免费模板怎么写好一点）">猫咪领养协议免费模板怎么写好（猫咪领养协议免费模板怎么写好一点）</a></li>
+                        <li class="py-2"><a href="/news/article-40006.htm" title="宠物领养需要花钱吗现在怎么办（宠物领养需要什么费用）">宠物领养需要花钱吗现在怎么办（宠物领养需要什么费用）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
