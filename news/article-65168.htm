@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-65168.htm" />
+    <!-- Title of The Page -->
+    <title>数据库的四大特性以及不同隔离级别</title>
+        <meta name="description" content="数据库的四大特性 原子性（要么全部成功，要么全部失败）； 一致性（数据执行前后，保持一致）； 隔离性（互不影响，就是所谓的隔离级别）； 持久性（已经提交的事务，对于数据库中数据的改变是永久性的，即使数" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-65168.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="数据库的四大特性以及不同隔离级别" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/64f0bf57536701d6ec2f2ad67dc911f6.webp" />
+        <meta property="og:release_date" content="2025-03-01T06:59:24" />
+    <meta property="og:updated_time" content="2025-03-01T06:59:24" />
+        <meta property="og:description" content="数据库的四大特性 原子性（要么全部成功，要么全部失败）； 一致性（数据执行前后，保持一致）； 隔离性（互不影响，就是所谓的隔离级别）； 持久性（已经提交的事务，对于数据库中数据的改变是永久性的，即使数" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="数据库的四大特性以及不同隔离级别">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">数据库的四大特性以及不同隔离级别</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>数据库的四大特性<br /> 原子性（要么全部成功，要么全部失败）；<br /> 一致性（数据执行前后，保持一致）；<br /> 隔离性（互不影响，就是所谓的隔离级别）；<br /> 持久性（已经提交的事务，对于数据库中数据的改变是永久性的，即使数据库发生故障也不能丢失已提交事务所完成的改变；）</p> <p>数据库的隔离级别由低到高的顺序：<br /> 未提交读 (Read Uncommitted) ；<br /> 提交读 (Read Committed) ；<br /> 可重复读 (Repeated Read) ；<br /> 串行化(Serializab)；</p> <p>四种隔离级别介绍：<br /> 未提交读：<br /> 一个事务可以读取另一个未提交事务的数据；（因为事务未提交，所以数据不准确 出现“脏读”）</p> <p>提交读：<br /> 一个事务要等另一个事务提交后才能读取数据。（并发情况下 两个事务同时操作同一条数据，导致数据被覆盖；造成“不可重复读”）</p> <p>可重复读：<br /> 一个事务中，查询的行被加上 共享锁，加了共享锁的行 可以被多个事务查询 但是不能修改；修改的行加上排他锁，其他事务不能查看也不能修改；（解决了“不可重复读“，但是会造成”幻读“）</p> <p>串行化：<br /> 事物a 执行读写操作时，会锁定检索的数据行范围（范围锁），这种锁会阻止其他事物在本范围内的一切操作，<br /> 只有事物a执行完毕，提交事物后，才会释放范围锁，这样就避免了幻读。（统计时，发生增、删的情况 ）</p> <p>MYSQL 默认隔离级别 可重复读 (Repeated Read) ；<br /> SQLSERVICE\ORACLE 默认隔离级别 提交读 (Read Committed) ；</p> <p>--------------并发问题<br /> user1 更新的数据丢失了，这也是更新覆盖，比如用户转账的操作。a 账户总共1000，事务1和事务2查询账户都是1000，然后事务1账户扣减100，提交。事务2扣减800提交。这时候账户余额为200，事务1扣减的100 会不翼而飞，这会导致严重的问题。</p> <p>MYSQL 不会出现这种情况，SQLSERVICE\ORACLE 会出现这种情况；<br /> 解决办法1：使用悲观锁</p> <p>1）读取锁定 --&gt; select balance from account where user= ‘a’ for update</p> <p>2）更新 --&gt; update account set balance = balance -100 where user= ‘a’</p> <p>解决办法2: 使用乐观锁</p> <p>1）表增加字段 jpa_version int 版本号 --&gt; select balance,version from account where user= ‘a’</p> <p>2) 使用版本号更新 --&gt; update account set balance = balance -100 where user= ‘a’ and jpa_version = ${version}</p> <p>总结：</p> <p>对于账户交易建议直接使用悲观，数据库的性能很高，并发度不是很高的场景两者性能没有太大差别。如果是交易减库存的操作可以考虑乐观锁，保证并发度。</p> <p>作者：h_f7e8<br /> 链接：https://www.jianshu.com/p/3fcba1c04ddf<br /> 来源：简书<br /> 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-65167.htm">微信小程序——设置公用组件</a></p>
+                                        <p>下一个：<a href="/news/article-65795.htm">docker设置代理服务器，解决pull命令：Error response from daemon: Get https://registry-1.docker.io/v2&#8230;</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-21538.htm" title="宠物之家官网（深圳宠物之家官网）">宠物之家官网（深圳宠物之家官网）</a></li>
+                        <li class="py-2"><a href="/news/article-41988.htm" title="猫三联三针和两针的区别图片（猫三联三针一共多少钱）">猫三联三针和两针的区别图片（猫三联三针一共多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-42495.htm" title="北京中农大动物医院有限公司招聘 北京中农大动物医院有限公司招聘信息">北京中农大动物医院有限公司招聘 北京中农大动物医院有限公司招聘信息</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-winxray-node.htm" title="12月28日→19.3M/S|2024年最新免费节点Clash Xray订阅链接地址">12月28日→19.3M/S|2024年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-5-free-winxray-node.htm" title="1月5日→22.4M/S|2025年最新免费节点Clash Xray订阅链接地址">1月5日→22.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-31240.htm" title="动物接种疫苗前后注意事项是什么意思（动物疫苗接种技术）">动物接种疫苗前后注意事项是什么意思（动物疫苗接种技术）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-free-winxray-node.htm" title="2月22日→19.4M/S|2025年最新免费节点Clash Xray订阅链接地址">2月22日→19.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25218.htm" title="杭州免费领养宠物狗（杭州哪里可以免费领养狗）">杭州免费领养宠物狗（杭州哪里可以免费领养狗）</a></li>
+                        <li class="py-2"><a href="/news/article-44473.htm" title="宠物批发零售（宠物批发零售网站）">宠物批发零售（宠物批发零售网站）</a></li>
+                        <li class="py-2"><a href="/news/article-26614.htm" title="动物医院办理条件是什么（动物医院手续）">动物医院办理条件是什么（动物医院手续）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
