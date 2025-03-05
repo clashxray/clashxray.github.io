@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-66419.htm" />
+    <!-- Title of The Page -->
+    <title>从Paxos到ZooKeeper-一致性协议之2PC、3PC</title>
+        <meta name="description" content="一、2PC &nbsp;&nbsp;&nbsp;&nbsp;在上一节ZooKeeper-分布式架构中有讲到，分布式系统架构设计中往往是在系统可用性和数据一致性之间进行反复权衡，于是产生了系列一致性协议" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-66419.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="从Paxos到ZooKeeper-一致性协议之2PC、3PC" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/26ee2ea14b0a1035f8babcbc2359deed.webp" />
+        <meta property="og:release_date" content="2025-03-03T08:14:17" />
+    <meta property="og:updated_time" content="2025-03-03T08:14:17" />
+        <meta property="og:description" content="一、2PC &nbsp;&nbsp;&nbsp;&nbsp;在上一节ZooKeeper-分布式架构中有讲到，分布式系统架构设计中往往是在系统可用性和数据一致性之间进行反复权衡，于是产生了系列一致性协议" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="从Paxos到ZooKeeper-一致性协议之2PC、3PC">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">从Paxos到ZooKeeper-一致性协议之2PC、3PC</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2 id="一2pc"><strong>一、2PC</strong></h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;在上一节<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://blog.csdn.net/qq_29999343/article/details/78253146"  rel="nofollow">ZooKeeper-分布式架构</a>中有讲到，分布式系统架构设计中往往是在系统可用性和数据一致性之间进行反复权衡，于是产生了系列一致性协议</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;在分布式系统中，每个节点都能明确知道自身事务操作结果，但无法直接获取到其他分布式节点的操作结果。所以当一个事务要横跨多个节点时，为了保证事务处理的ACID特性而引入了协调者组件来统一调度所有分布式节点（参与者）的执行逻辑，协调者调度参与者的行为并最终决定是否把参与者的事务进行真正的提交</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;2PC（Two-Phase Commit 两阶段提交）：完成参与者的协调，统一决定事务的提交或回滚，使基于分布式系统架构下的所有节点在进行事务处理过程中能够保持原子性和数据一致性</p> <p><strong>1. 协议说明</strong></p> <p>&nbsp;&nbsp;&nbsp;&nbsp;二阶段提交协议将事物的提交过程分为两个阶段处理</p> <p>（1）提交事务请求</p> <blockquote> <p>事务询问：协调者向所有参与者发送事务内容，询问是否可以执行事务提交操作，等待响应<br /> 执行事务：参与者节点执行事务操作，并记录Undo和Redo信息到事务日志<br /> 参与者响应：若参与者成功执行事务，则向协调者反馈Yes响应，否则反馈No响应</p> </blockquote> <p>（2）执行事务提交-提交</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;如果所有参与者的反馈都是Yes响应，那么执行事务提交</p> <blockquote> <p>发送提交请求：协调者向所有参与者发送Commit请求<br /> 事务提交：参与者接受到Commit请求后执行事务提交操作并释放占用的事务资源<br /> 反馈事务提交结果：参与者完成事务提交后向协调者发送Ack消息<br /> 完成事务：协调者收到所有参与者的Ack响应后，完成事务提交</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220830/1396c76dc3c1dcc58671d13fe91fac07.jpg" alt="从Paxos到ZooKeeper-一致性协议之2PC、3PC"></p> <p>（3）执行事务提交-中断</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;如果任何一个参与者返回了N响应或者协调者等待超时后就会中断事务</p> <blockquote> <p>发送回滚请求：协调者向所有参与者发送Rollback请求<br /> 事务回滚：参与者受到请求后通过Undo信息执行事务回滚操作并释放占用的事务资源<br /> 反馈事务回滚结果：参与者回滚事务后向协调者发送Ack消息<br /> 中断事务：协调者接收到所有参与者的Ack响应后，完成事务中断</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220830/7324b94c1c99b9293479554845fe8bd0.jpg" alt="从Paxos到ZooKeeper-一致性协议之2PC、3PC"></p> <p><strong>2. 优缺点</strong></p> <p>（1）优点</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;原理简单，实现方便</p> <p>（2）缺点</p> <blockquote> <p><strong>同步阻塞：</strong>在阶段二事务提交过程中，所有参与者的操作逻辑都处于阻塞状态，等待其他参与者响应，协调者请求<br /><strong>单点问题：</strong>一旦协调者出现问题，阶段二提交流程无法运转，并且参与者会一直处于锁定事务资源的状态，无法继续事务操作<br /><strong>数据不一致：</strong>当协调者向所有参与者发送了Commit请求后局部网络异常或协调者半路出错导致只有部分参与者收到Commit请求，造成系统出现数据不一致<br /><strong>太过保守：</strong>任何一个参与节点的失败使得协调者无法获取所有参与者的响应信息都会导致整个事务的失败</p> </blockquote> <h2 id="二3pc"><strong>二、3PC</strong></h2> <p>&nbsp;&nbsp;&nbsp;&nbsp;3PC（Three-Phase Commit 三阶段提交）将二阶段提交的提交事务请求过程一分为二，形成CanCommit、PreCommit、doCommit三个阶段</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220830/f2c3ff1cc0fa91c47865482e0b3a95a9.jpg" alt="从Paxos到ZooKeeper-一致性协议之2PC、3PC"></p> <p><strong>1.协议说明</strong></p> <p>（1）CanCommit</p> <blockquote> <p>事务询问：协调者向所有参与者发送包含事务内容的CanCommit请求，询问是否可以执行事务提交操作，等待响应<br /> 参与者响应：参与者接收到CanCommit请求后判断自身能够顺利执行事务，能则返回Yes响应并进入预备状态，否则返回No响应</p> </blockquote> <p>（2）PreCommit</p> <ul> <li> <p>执行事务预提交</p> <p>如果所有参与者反馈都为Yes响应，则执行事务预提交</p> <blockquote> <p>发送预提交请求：协调者向所有参与者节点发出PreCommit请求，并进入Prepared阶段<br /> 事务预提交：参与者接收到PreCommit请求后执行事务操作，并记录Undo和Redo信息到事务日志中<br /> 参与者响应事务执行结果：若参与者成功执行事务后则返回Ack响应给协调者，等待最终命令</p> </blockquote> </li> <li> <p>中断事务</p> <p>若任何一个参与者反馈了No响应或者协调者等待超时则中断事务</p> <blockquote> <p>发送中断请求：协调者向所有参与者节点发出Abort请求<br /> 中断事务：无论收到Abort请求或者等待协调者请求超时，参与者都会中断事务</p> </blockquote> </li> </ul> <p>（3）DoCommit</p> <ul> <li> <p>执行提交</p> <blockquote> <p>发送提交请求：当协调者收到所有参与者反馈的Ack响应，向所有参与者发送DoCommit请求，从预提交状态转到提交状态<br /> 事务提交：参与者接收到DoCommit请求后，正式执行事务提交操作，并释放占用的事务资源<br /> 反馈事务提交结果：参与者完成事务提交后向协调者发送Ack消息<br /> 完成事务：协调者接受到所有参与者反馈的Ack响应后，完成事务</p> </blockquote> </li> <li> <p>中断事务</p> <blockquote> <p>发送中断请求：协调者向所有参与者节点发出Abort请求<br /> 事务回滚：参与者接收到Abort请求后，利用Undo信息执行事务回滚操作，并释放占用的事务资源<br /> 反馈事务回滚结果：参与者完成事务回滚后向协调者发送Ack消息<br /> 中断事务：协调者接收到所有参与者反馈的Ack响应后，中断事务</p> </blockquote> </li> </ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;第三阶段中若参与者无法及时接收到协调者发送的DoCommit或者Abort请求都会在等待超时后继续进行事务提交</p> <p><strong>2. 优缺点</strong></p> <p>（1）优点</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;降低参与者的阻塞范围，能够在出现单点故障后继续达成一致</p> <p>（2）缺点</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;接受者接收到PreCommit消息后，如果出现网络分区导致协调者和参与者无法正常通信，这时参与者仍会进行事务提交，造成数据的不一致</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-65796.htm">宠物猫咪驱虫多少钱一针（猫猫驱虫价格）</a></p>
+                                        <p>下一个：<a href="/news/article-66420.htm">js模块 &#8211; amd cmd commonjs esm umd</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-35694.htm" title="宠物美容师宠物美容（宠物美容师宠物美容培训学校天津）">宠物美容师宠物美容（宠物美容师宠物美容培训学校天津）</a></li>
+                        <li class="py-2"><a href="/news/article-49948.htm" title="iOS全埋点解决方案-控件点击事件">iOS全埋点解决方案-控件点击事件</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-28-free-high-speed-nodes.htm" title="1月28日→22.3M/S|2025年最新免费节点Clash Xray订阅链接地址">1月28日→22.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-51510.htm" title="动物防疫站能打疫苗吗（动物防疫站可以驱虫吗）">动物防疫站能打疫苗吗（动物防疫站可以驱虫吗）</a></li>
+                        <li class="py-2"><a href="/news/article-37535.htm" title="成都宠物犬领养中心电话地址（成都宠物领养中心官网收容中心）">成都宠物犬领养中心电话地址（成都宠物领养中心官网收容中心）</a></li>
+                        <li class="py-2"><a href="/news/article-41486.htm" title="动物医院有公立的吗还是私立医院的 动物医院有公立的吗还是私立医院的好">动物医院有公立的吗还是私立医院的 动物医院有公立的吗还是私立医院的好</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-2-latest-winxray-node.htm" title="2月2日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址">2月2日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-50467.htm" title="动物疫苗接种时间间隔多久（动物疫苗接种时间间隔多久打）">动物疫苗接种时间间隔多久（动物疫苗接种时间间隔多久打）</a></li>
+                        <li class="py-2"><a href="/news/article-48909.htm" title="成都宠物管理（成都宠物饲养规定）">成都宠物管理（成都宠物饲养规定）</a></li>
+                        <li class="py-2"><a href="/news/article-53090.htm" title="HCNP Routing&amp;Switching之代理ARP">HCNP Routing&amp;Switching之代理ARP</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
