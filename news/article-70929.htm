@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-70929.htm" />
+    <!-- Title of The Page -->
+    <title>深入理解cloud 题外话1：httpPool连接池工具类配置，logback.xml，feign日志配置</title>
+        <meta name="description" content="@ConfigurationpublicclassHttpPool{@BeanpublicHttpClienthttpClient(){System.out.println("init feign h" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-70929.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="深入理解cloud 题外话1：httpPool连接池工具类配置，logback.xml，feign日志配置" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/c356f71b07900a329a214c680ec68c60.webp" />
+        <meta property="og:release_date" content="2025-03-10T04:36:46" />
+    <meta property="og:updated_time" content="2025-03-10T04:36:46" />
+        <meta property="og:description" content="@ConfigurationpublicclassHttpPool{@BeanpublicHttpClienthttpClient(){System.out.println("init feign h" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="深入理解cloud 题外话1：httpPool连接池工具类配置，logback.xml，feign日志配置">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">深入理解cloud 题外话1：httpPool连接池工具类配置，logback.xml，feign日志配置</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <pre><code class="prism language-java"><span class="token annotation punctuation">@Configuration</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">HttpPool</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Bean</span><span class="token keyword">public</span><span class="token class-name">HttpClient</span><span class="token function">httpClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"init feign httpclient configuration "</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 生成默认请求配置</span><span class="token class-name">RequestConfig<span class="token punctuation">.</span>Builder</span> requestConfigBuilder<span class="token operator">=</span><span class="token class-name">RequestConfig</span><span class="token punctuation">.</span><span class="token function">custom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 超时时间</span>         requestConfigBuilder<span class="token punctuation">.</span><span class="token function">setSocketTimeout</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 连接时间</span>         requestConfigBuilder<span class="token punctuation">.</span><span class="token function">setConnectTimeout</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">RequestConfig</span> defaultRequestConfig<span class="token operator">=</span> requestConfigBuilder<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 连接池配置</span><span class="token comment">// 长连接保持30秒</span><span class="token keyword">final</span><span class="token class-name">PoolingHttpClientConnectionManager</span> pollingConnectionManager<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">PoolingHttpClientConnectionManager</span><span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 总连接数</span>         pollingConnectionManager<span class="token punctuation">.</span><span class="token function">setMaxTotal</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 同路由的并发数</span>         pollingConnectionManager<span class="token punctuation">.</span><span class="token function">setDefaultMaxPerRoute</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// httpclient 配置</span><span class="token class-name">HttpClientBuilder</span> httpClientBuilder<span class="token operator">=</span><span class="token class-name">HttpClientBuilder</span><span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 保持长连接配置，需要在头添加Keep-Alive</span>         httpClientBuilder<span class="token punctuation">.</span><span class="token function">setKeepAliveStrategy</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token class-name">DefaultConnectionKeepAliveStrategy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         httpClientBuilder<span class="token punctuation">.</span><span class="token function">setConnectionManager</span><span class="token punctuation">(</span>pollingConnectionManager<span class="token punctuation">)</span><span class="token punctuation">;</span>         httpClientBuilder<span class="token punctuation">.</span><span class="token function">setDefaultRequestConfig</span><span class="token punctuation">(</span>defaultRequestConfig<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">HttpClient</span> client<span class="token operator">=</span> httpClientBuilder<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 启动定时器，定时回收过期的连接</span><span class="token class-name">Timer</span> timer<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">Timer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         timer<span class="token punctuation">.</span><span class="token function">schedule</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token class-name">TimerTask</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Override</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">//        System.out.println("=====closeIdleConnections===");</span>                 pollingConnectionManager<span class="token punctuation">.</span><span class="token function">closeExpiredConnections</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 pollingConnectionManager<span class="token punctuation">.</span><span class="token function">closeIdleConnections</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"===== Apache httpclient 初始化连接池==="</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span> client<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> </h1> <pre><code class="prism language-java"><span class="token annotation punctuation">@Configuration</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">FeignClientConfig</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@Bean</span><span class="token class-name">Logger<span class="token punctuation">.</span>Level</span><span class="token function">feignLoggerLevel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 设置日志</span><span class="token keyword">return</span><span class="token class-name">Logger<span class="token punctuation">.</span>Level</span><span class="token punctuation">.</span>FULL<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> </h1> <pre><code class="prism language-xml"><span class="token comment">&lt;!-- if debug set to true, context info always print otherwise the contex info will print when error occour --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token attr-name">scan</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token attr-name">scanPeriod</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>60 seconds<span class="token punctuation">"</span></span><span class="token attr-name">debug</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender</span><span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stdout<span class="token punctuation">"</span></span><span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ch.qos.logback.core.ConsoleAppender<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>layout</span><span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ch.qos.logback.classic.PatternLayout<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pattern</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>layout</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>appender</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- 所有日志文件--&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender</span><span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>AllLog<span class="token punctuation">"</span></span><span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ch.qos.logback.core.rolling.RollingFileAppender<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rollingPolicy</span><span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ch.qos.logback.core.rolling.TimeBasedRollingPolicy<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fileNamePattern</span><span class="token punctuation">&gt;</span></span>D:/temp/idea/%d{yyyy-MM-dd}.log<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fileNamePattern</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maxHistory</span><span class="token punctuation">&gt;</span></span>30<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maxHistory</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rollingPolicy</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoder</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pattern</span><span class="token punctuation">&gt;</span></span>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>pattern</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>encoder</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>appender</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- &lt;appender name="TaskLog" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;         &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;             &lt;fileNamePattern&gt;log/abcchina/task/%d{yyyy-MM-dd}.log&lt;/fileNamePattern&gt;             &lt;maxHistory&gt;30&lt;/maxHistory&gt;         &lt;/rollingPolicy&gt;         &lt;encoder&gt;             &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n&lt;/pattern&gt;         &lt;/encoder&gt;     &lt;/appender&gt;     &lt;appender name="SendLog" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt;         &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt;             &lt;fileNamePattern&gt;log/abcchina/send/%d{yyyy-MM-dd}.log&lt;/fileNamePattern&gt;             &lt;maxHistory&gt;30&lt;/maxHistory&gt;         &lt;/rollingPolicy&gt;         &lt;encoder&gt;             &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{40} - %msg%n&lt;/pattern&gt;         &lt;/encoder&gt;     &lt;/appender&gt;     &amp;lt;!&amp;ndash; 包下的所有类指定Appender 这里也可以指定类名称例如：com.aa.bb.ClassName&amp;ndash;&amp;gt;     &lt;logger name="com.aa.bb" &gt;         &lt;appender-ref ref="TaskLog" /&gt;     &lt;/logger&gt;      &lt;logger name="com.aa.cc" &gt;         &lt;appender-ref ref="SendLog" /&gt;     &lt;/logger&gt;--&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>root</span><span class="token attr-name">level</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>DEBUG<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender-ref</span><span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>AllLog<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>appender-ref</span><span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stdout<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>root</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-70267.htm">中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）</a></p>
+                                        <p>下一个：<a href="/news/article-70930.htm">长春宠物领养中心在哪儿（长春宠物领养长春宠物赠送）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-60951.htm" title="全国宠物领养平台可信吗现在（全国宠物领养中心官网）">全国宠物领养平台可信吗现在（全国宠物领养中心官网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-1-free-node-subscribe.htm" title="3月1日→20.8M/S|2025年最新免费节点Clash Xray订阅链接地址">3月1日→20.8M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-high-speed-nodes.htm" title="1月13日→20.3M/S|2025年最新免费节点Clash Xray订阅链接地址">1月13日→20.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36234.htm" title="动物医院申请书范文怎么写（动物医院营业执照申领需要哪些准备材料）">动物医院申请书范文怎么写（动物医院营业执照申领需要哪些准备材料）</a></li>
+                        <li class="py-2"><a href="/news/article-52560.htm" title="动物医院急救电话号码查询（24小时动物医院电话）">动物医院急救电话号码查询（24小时动物医院电话）</a></li>
+                        <li class="py-2"><a href="/news/article-63328.htm" title="免费领养小猫崽剑川县（免费领养小猫小狗）">免费领养小猫崽剑川县（免费领养小猫小狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-winxray-node-github.htm" title="1月24日→23M/S|2025年最新免费节点Clash Xray订阅链接地址">1月24日→23M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-51511.htm" title="开宠物食品店（开宠物食品店赚钱吗）">开宠物食品店（开宠物食品店赚钱吗）</a></li>
+                        <li class="py-2"><a href="/news/article-44475.htm" title="宠物粮食专卖店在哪里啊（宠物粮食专卖店在哪里啊）">宠物粮食专卖店在哪里啊（宠物粮食专卖店在哪里啊）</a></li>
+                        <li class="py-2"><a href="/news/article-62730.htm" title="办宠物食品加工厂需要投资多少钱（宠物食品加工厂需要办理哪些手续）">办宠物食品加工厂需要投资多少钱（宠物食品加工厂需要办理哪些手续）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

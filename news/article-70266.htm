@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-70266.htm" />
+    <!-- Title of The Page -->
+    <title>go微服务框架Kratos简单使用总结</title>
+        <meta name="description" content="Kratos是B站开源的一款go的微服务框架，最近PS5上的 战神·诸神黄昏比较火，主角就是奎托斯。这个框架的名字就取自他。 在进行框架选型时，对比了目前主流的很多go微服务框架，如Zero，最后对比" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-70266.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="go微服务框架Kratos简单使用总结" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/45bc9d9403a87e63c4a09ecaa900237b.webp" />
+        <meta property="og:release_date" content="2025-03-09T09:46:01" />
+    <meta property="og:updated_time" content="2025-03-09T09:46:01" />
+        <meta property="og:description" content="Kratos是B站开源的一款go的微服务框架，最近PS5上的 战神·诸神黄昏比较火，主角就是奎托斯。这个框架的名字就取自他。 在进行框架选型时，对比了目前主流的很多go微服务框架，如Zero，最后对比" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="go微服务框架Kratos简单使用总结">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">go微服务框架Kratos简单使用总结</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <p>Kratos是B站开源的一款go的微服务框架，最近PS5上的 战神·诸神黄昏比较火，主角就是奎托斯。这个框架的名字就取自他。</p> <p>在进行框架选型时，对比了目前主流的很多go微服务框架，如Zero，最后对比之下，选择了Kratos，原因是Kratos给了开发人员更多的选择和更多的自由空间，方便自定义实现和选用很多东西，可以更快的适应已有的服务 以及 让开发者更快地上手使用（因为选用自己熟悉的工具）。</p> <blockquote> <p>Kratos并不绑定于特定的基础设施，不限定于某种注册中心，或数据库ORM等，所以您可以十分轻松地将任意库集成进项目里，与Kratos共同运作。</p> </blockquote> <h4><a id="httpsgokratosdevdocs_6" rel="nofollow"></a>原则<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://go-kratos.dev/docs/#%E5%8E%9F%E5%88%99"  rel="nofollow"></a></h4> <ul> <li><strong>简单</strong>：不过度设计，代码平实简单；</li> <li><strong>通用</strong>：通用业务开发所需要的基础库的功能；</li> <li><strong>高效</strong>：提高业务迭代的效率；</li> <li><strong>稳定</strong>：基础库可测试性高，覆盖率高，有线上实践安全可靠；</li> <li><strong>健壮</strong>：通过良好的基础库设计，减少错用；</li> <li><strong>高性能</strong>：性能高，但不特定为了性能做 hack 优化，引入 unsafe ；</li> <li><strong>扩展性</strong>：良好的接口设计，来扩展实现，或者通过新增基础库目录来扩展功能；</li> <li><strong>容错性</strong>：为失败设计，大量引入对 SRE 的理解，鲁棒性高；</li> <li><strong>工具链</strong>：包含大量工具链，比如 cache 代码生成，lint 工具等等；</li> </ul> <p>这是kratos官方挂出的框架设计出发点，其中有几点是在现有工具中尤为宝贵，并且十分契合go开发风格的。如 简单，高效，扩展性，容错性。</p> <p>有人说，使用go最大的好处就是无论什么人，他们水平高或低，可以写出相近的代码，大家都读得懂。</p> <p>我也认为，go的上手难度较低，风格相对固定，性能也还可以，所以，在中国的互联网企业风靡了起来。</p> <p>而kratos这个框架，无疑将go的这些特性进行了放大。接下来，我会将我在实际使用中，最关注的一些点做些分享和记录。</p> <hr/> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/ce35620b88939c61a9650b0103bfa937.jpg" alt="go微服务框架Kratos简单使用总结"></p> <p>首先，是整个kratos的架构风格图，可以看到kratos将整个服务大体分为了3层，API / Service / DB</p> <p>左侧标注了在 Service和DB层，使用依赖注入（DI）进行实现，工具名称为Wire。</p> <p>从这张图中，可以看到Wire这个工具几乎贯穿Kratos架构始终，是一个大角色。</p> <hr/> <h3><a id="1__38" rel="nofollow"></a>1. 传输协议</h3> <p>支持http + grpc两种调用方式，通过编写proto文件来实现。</p> <p>一般，http开放给外部调用，可以使用restful风格定义。grpc面向内部微服务之间进行调用。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/a0efc183abff559a490e1b9bf1af0424.jpg" alt="go微服务框架Kratos简单使用总结"></p> <p> 在项目中，会以这样的结构出现，并且可以对不同协议进来的请求进行处理，添加处理的中间件，如<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://go-kratos.dev/docs/component/middleware/auth"  rel="nofollow">权限校验</a>、<code>熔断限流</code>等等。</p> <h3><a id="2__48" rel="nofollow"></a>2. 日志</h3> <p>在kratos中，可以自定义日志框架选型，设置日志格式和输出内容，然后将logger对象以依赖注入的方式，分配给server中的grpc server和http server，这样就可以实现每次收到请求后的日志打印。</p> <p>将logger对象以依赖注入的方式，注入到业务层，就可以在业务层中统一使用logger进行输出。</p> <h3><a id="3__54" rel="nofollow"></a>3. 错误处理</h3> <p>在grpc中，比较通用的一种错误处理方式就是直接通过 proto 预定义定义错误码，然后通过 proto-gen-go 生成帮助代码，直接返回 error。</p> <pre><code class="prism language-json"><span class="token punctuation">{<!-- --></span><span class="token comment">// 错误码，跟 http-status 一致，并且在 grpc 中可以转换成 grpc-status</span><span class="token string-property property">"code"</span><span class="token operator">:</span><span class="token number">500</span><span class="token punctuation">,</span><span class="token comment">// 错误原因，定义为业务判定错误码</span><span class="token string-property property">"reason"</span><span class="token operator">:</span><span class="token string">"USER_NOT_FOUND"</span><span class="token punctuation">,</span><span class="token comment">// 错误信息，为用户可读的信息，可作为用户提示内容</span><span class="token string-property property">"message"</span><span class="token operator">:</span><span class="token string">"invalid argument error"</span><span class="token punctuation">,</span><span class="token comment">// 错误元信息，为错误添加附加可扩展信息</span><span class="token string-property property">"metadata"</span><span class="token operator">:</span><span class="token punctuation">{<!-- --></span><span class="token string-property property">"foo"</span><span class="token operator">:</span><span class="token string">"bar"</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>结构是这样的。这里可以发现，为了兼容grpc，在http的返回结果中，code也无法自定义，只能跟随httpcode。所以这里客户端或者第三方去处理错误时，需要判断reason字段。</p> <h3><a id="4__75" rel="nofollow"></a>4. 配置管理</h3> <p>使用proto文件定义配置和生成struct，然后将yaml中的内容读取到对应struct 字段中进行使用。</p> <p>在这里我们可以注意到，在kratos中，除了传输格式使用了proto进行定义之外，错误处理和配置管理，也使用了proto来进行。可以说，一切皆proto。</p> <h3><a id="5_wire_81" rel="nofollow"></a>5. wire</h3> <p><strong>Wire</strong> 是一个灵活的依赖注入工具（需要安装），通过自动生成代码的方式在编译期完成依赖注入。通过<em>Wire</em> 进行初始化代码，可以很好地解决组件之间的耦合，以及提高代码维护性。</p> <p>打开Kratos的示例项目，从main入口看，有一处调用了wireApp方法，这里就是一切的源头（万恶之源）。</p> <p>这个方法调用的是main同目录的wire文件中的wireApp方法，同目录的wire_gen.go实现了此方法。</p> <p>wire_gen中去实例化不同service和组建的对象，用于调用。关系图如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221120/562c91bec5a1c18d95214576e193cf88.jpg" alt="go微服务框架Kratos简单使用总结"></p> <p>在每个模块中，只需要一个<em>ProviderSet</em> 提供者集合，就可以在 wire 中进行依赖注入。</p> <p>简单的描述一下：有一个数据库连接对象，service需要操作数据库，依赖数据库连接对象。这时候我们可以声明数据库连接对象在<em>ProviderSet</em>集合，然后在service对象处声明，我需要一个数据库连接对象。 然后我们使用wire工具，就可以自动帮我们生成依赖注入的代码。</p> <p>这个功能使用的时候，我才真正明白了依赖注入。和使用java的依赖注入是完全不同的感觉。有了显式的依赖注入，让代码间的依赖关系一目了然。当我们查看同事代码时，只需要点开wire_gen.go 代码，什么处理过程 需要依赖哪些组件，清清楚楚，大大提高了代码的维护性。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-69619.htm">天津宠物救助中心电话24小时（天津宠物救助站电话）</a></p>
+                                        <p>下一个：<a href="/news/article-70267.htm">中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-53090.htm" title="HCNP Routing&amp;Switching之代理ARP">HCNP Routing&amp;Switching之代理ARP</a></li>
+                        <li class="py-2"><a href="/news/article-50991.htm" title="2021公务员国考报考时间和考试时间是多少（2022年公务员国考考试报名时间）">2021公务员国考报考时间和考试时间是多少（2022年公务员国考考试报名时间）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-8-latest-winxray-node.htm" title="1月8日→21.4M/S|2025年最新免费节点Clash Xray订阅链接地址">1月8日→21.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-35694.htm" title="宠物美容师宠物美容（宠物美容师宠物美容培训学校天津）">宠物美容师宠物美容（宠物美容师宠物美容培训学校天津）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-high-speed-nodes.htm" title="1月13日→20.3M/S|2025年最新免费节点Clash Xray订阅链接地址">1月13日→20.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-63328.htm" title="免费领养小猫崽剑川县（免费领养小猫小狗）">免费领养小猫崽剑川县（免费领养小猫小狗）</a></li>
+                        <li class="py-2"><a href="/news/article-36563.htm" title="宠物医院证件办理流程（宠物医院需要办理什么证）">宠物医院证件办理流程（宠物医院需要办理什么证）</a></li>
+                        <li class="py-2"><a href="/news/article-43977.htm" title="动物医院办理条件是什么样的呢图片（动物医院诊疗许可证办理）">动物医院办理条件是什么样的呢图片（动物医院诊疗许可证办理）</a></li>
+                        <li class="py-2"><a href="/news/article-56933.htm" title="哪里有免费领狗的地方（哪里有免费领狗的地方呀）">哪里有免费领狗的地方（哪里有免费领狗的地方呀）</a></li>
+                        <li class="py-2"><a href="/news/article-36562.htm" title="家用小型狗粮机器价格及图片（小型犬狗粮制作方法）">家用小型狗粮机器价格及图片（小型犬狗粮制作方法）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
