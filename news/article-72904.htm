@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-72904.htm" />
+    <!-- Title of The Page -->
+    <title>Zookeeper——客户端API的相关方法操作</title>
+        <meta name="description" content="1.前言 2.实操步骤 2.1 创建zk客户端，完成与服务端的连接 2.2 创建节点信息 2.3 获取子结点并监听节点变化 2.4 判断节点是否存在 3.浅谈写数据原理 3.1 写流程之写入请求直接发" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-72904.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="Zookeeper——客户端API的相关方法操作" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/f9caf09b24d2756e433a093f95d96fba.webp" />
+        <meta property="og:release_date" content="2025-03-13T09:21:50" />
+    <meta property="og:updated_time" content="2025-03-13T09:21:50" />
+        <meta property="og:description" content="1.前言 2.实操步骤 2.1 创建zk客户端，完成与服务端的连接 2.2 创建节点信息 2.3 获取子结点并监听节点变化 2.4 判断节点是否存在 3.浅谈写数据原理 3.1 写流程之写入请求直接发" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Zookeeper——客户端API的相关方法操作">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Zookeeper——客户端API的相关方法操作</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p id="1.%E5%89%8D%E8%A8%80-toc" style="margin-left:0px;"><a href="#1.%E5%89%8D%E8%A8%80" rel="nofollow">1.前言</a></p> <p id="2.%E5%AE%9E%E6%93%8D%E6%AD%A5%E9%AA%A4-toc" style="margin-left:0px;"><a href="#2.%E5%AE%9E%E6%93%8D%E6%AD%A5%E9%AA%A4" rel="nofollow">2.实操步骤</a></p> <p id="2.1%20%E5%88%9B%E5%BB%BAzk%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%8C%E5%AE%8C%E6%88%90%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E8%BF%9E%E6%8E%A5-toc" style="margin-left:40px;"><a href="#2.1%20%E5%88%9B%E5%BB%BAzk%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%8C%E5%AE%8C%E6%88%90%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E8%BF%9E%E6%8E%A5" rel="nofollow">2.1 创建zk客户端，完成与服务端的连接</a></p> <p id="2.2%20%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9%E4%BF%A1%E6%81%AF-toc" style="margin-left:40px;"><a href="#2.2%20%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9%E4%BF%A1%E6%81%AF" rel="nofollow">2.2 创建节点信息</a></p> <p id="2.3%20%E8%8E%B7%E5%8F%96%E5%AD%90%E7%BB%93%E7%82%B9%E5%B9%B6%E7%9B%91%E5%90%AC%E8%8A%82%E7%82%B9%E5%8F%98%E5%8C%96-toc" style="margin-left:40px;"><a href="#2.3%20%E8%8E%B7%E5%8F%96%E5%AD%90%E7%BB%93%E7%82%B9%E5%B9%B6%E7%9B%91%E5%90%AC%E8%8A%82%E7%82%B9%E5%8F%98%E5%8C%96" rel="nofollow">2.3 获取子结点并监听节点变化</a></p> <p id="2.4%20%E5%88%A4%E6%96%AD%E8%8A%82%E7%82%B9%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8-toc" style="margin-left:40px;"><a href="#2.4%20%E5%88%A4%E6%96%AD%E8%8A%82%E7%82%B9%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8" rel="nofollow">2.4 判断节点是否存在</a></p> <p id="3.%E6%B5%85%E8%B0%88%E5%86%99%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86-toc" style="margin-left:0px;"><a href="#3.%E6%B5%85%E8%B0%88%E5%86%99%E6%95%B0%E6%8D%AE%E5%8E%9F%E7%90%86" rel="nofollow">3.浅谈写数据原理</a></p> <p id="3.1%20%E5%86%99%E6%B5%81%E7%A8%8B%E4%B9%8B%E5%86%99%E5%85%A5%E8%AF%B7%E6%B1%82%E7%9B%B4%E6%8E%A5%E5%8F%91%E9%80%81%E7%BB%99Leader%E8%8A%82%E7%82%B9-toc" style="margin-left:40px;"><a href="#3.1%20%E5%86%99%E6%B5%81%E7%A8%8B%E4%B9%8B%E5%86%99%E5%85%A5%E8%AF%B7%E6%B1%82%E7%9B%B4%E6%8E%A5%E5%8F%91%E9%80%81%E7%BB%99Leader%E8%8A%82%E7%82%B9" rel="nofollow">3.1 写流程之写入请求直接发送给Leader节点</a></p> <p id="3.2%C2%A0%E5%86%99%E6%B5%81%E7%A8%8B%E4%B9%8B%E5%86%99%E5%85%A5%E8%AF%B7%E6%B1%82%E7%9B%B4%E6%8E%A5%E5%8F%91%E9%80%81%E7%BB%99Follower%E8%8A%82%E7%82%B9-toc" style="margin-left:40px;"><a href="#3.2%C2%A0%E5%86%99%E6%B5%81%E7%A8%8B%E4%B9%8B%E5%86%99%E5%85%A5%E8%AF%B7%E6%B1%82%E7%9B%B4%E6%8E%A5%E5%8F%91%E9%80%81%E7%BB%99Follower%E8%8A%82%E7%82%B9" rel="nofollow">3.2&nbsp;写流程之写入请求直接发送给Follower节点</a></p> <hr id="hr-toc"/> </h1> <blockquote> <p>首先，在上一篇博客中，主要是对zookeeper集群的相关操作，那么由于我的笔记本是 8G 内存的，所以开三台Linux还是可以的，但是再开个IDEA了话就炸了，所以我这里针对zookeeper和Java API的操作，就切换成zookeeper单机模式了，也就是只启动一台zookeeper。</p> <p>由于之前配置的是zookeeper集群，现在转为单机版，所以需要把 zoo.cfg 配置文件中关于集群的那些注释掉：????????????</p> </blockquote> <p><img fetchpriority="high" decoding="async" alt="" height="129" src="http://img.555519.xyz/uploads3/20220903/74b02dd7ea3b7924b8ff262c3fc3b892.jpg"></p> <hr/> </h1> <blockquote> <p>首先建一个maven项目，pom文件中添加如下依赖。</p> </blockquote> <pre><code class="language-XML">    &lt;dependencies&gt;         &lt;dependency&gt;             &lt;groupId&gt;junit&lt;/groupId&gt;             &lt;artifactId&gt;junit&lt;/artifactId&gt;             &lt;version&gt;RELEASE&lt;/version&gt;         &lt;/dependency&gt;         &lt;dependency&gt;             &lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;             &lt;artifactId&gt;log4j-core&lt;/artifactId&gt;             &lt;version&gt;2.8.2&lt;/version&gt;         &lt;/dependency&gt;         &lt;dependency&gt;             &lt;groupId&gt;org.apache.zookeeper&lt;/groupId&gt;             &lt;artifactId&gt;zookeeper&lt;/artifactId&gt;             &lt;version&gt;3.5.7&lt;/version&gt;         &lt;/dependency&gt;     &lt;/dependencies&gt;</code></pre> <blockquote> <div><span style="color:#000000;">需要在项目的</span><span style="color:#000000;">src/main/resources</span><span style="color:#000000;">目录下，新建一个文件，命名为“</span><span style="color:#000000;">log4j.properties</span><span style="color:#000000;">”，在文件中填入。</span></div> </blockquote> <pre><code class="language-XML">log4j.rootLogger=INFO, stdout  log4j.appender.stdout=org.apache.log4j.ConsoleAppender  log4j.appender.stdout.layout=org.apache.log4j.PatternLayout  log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n  log4j.appender.logfile=org.apache.log4j.FileAppender  log4j.appender.logfile.File=target/spring.log  log4j.appender.logfile.layout=org.apache.log4j.PatternLayout  log4j.appender.logfile.layout.ConversionPattern=%d %p [%c] - %m%n</code></pre> <h2 id="2.1%20%E5%88%9B%E5%BB%BAzk%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%8C%E5%AE%8C%E6%88%90%E4%B8%8E%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%9A%84%E8%BF%9E%E6%8E%A5">2.1 创建zk客户端，完成与服务端的连接</h2> <pre><code class="language-java">package com.szh.zk;  import org.apache.zookeeper.*; import org.apache.zookeeper.data.Stat; import org.junit.Before; import org.junit.Test;  import java.io.IOException; import java.util.List;  /**  *  */ public class ZookeeperClient {      //单机模式     private static String connectString = "192.168.40.130:2181";     //集群模式 //    private static String connectString = "zk101:2181,zk102:2181,zk103:2181";     private static int sessionTimeout = 30000;     private ZooKeeper zkClient = null;      /**      * 创建ZooKeeper客户端，完成服务端与客户端之间的连接      * connectString: 具体连接的那台zookeeper服务器的地址      * sessionTimeout: 客户端和服务端直接连接的超时时限      * watcher: 监听器相关设置      */     @Test     public void init() throws IOException {         zkClient = new ZooKeeper(connectString, sessionTimeout, new Watcher() {             @Override             public void process(WatchedEvent watchedEvent) {              }         });     } }</code></pre> <p><img decoding="async" alt="" height="346" src="http://img.555519.xyz/uploads3/20220903/459c082eb32e201a4f47705caeaf498b.jpg"></p> <h2 id="2.2%20%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9%E4%BF%A1%E6%81%AF">2.2 创建节点信息</h2> <pre><code class="language-java">package com.szh.zk;  import org.apache.zookeeper.*; import org.apache.zookeeper.data.Stat; import org.junit.Before; import org.junit.Test;  import java.io.IOException; import java.util.List;  /**  *  */ public class ZookeeperClient {      //单机模式     private static String connectString = "192.168.40.130:2181";     //集群模式 //    private static String connectString = "zk101:2181,zk102:2181,zk103:2181";     private static int sessionTimeout = 30000;     private ZooKeeper zkClient = null;      /**      * 创建ZooKeeper客户端，完成服务端与客户端之间的连接      * connectString: 具体连接的那台zookeeper服务器的地址      * sessionTimeout: 客户端和服务端直接连接的超时时限      * watcher: 监听器相关设置      */     @Before     public void init2() throws IOException {         zkClient = new ZooKeeper(connectString, sessionTimeout, new Watcher() {             @Override             public void process(WatchedEvent watchedEvent) {              }         });     }      /**      * 创建节点相关信息      * String path: 要在哪个节点路径下创建新的节点      * byte[] data: 节点中存储的具体值      * List&lt;ACL&gt; acl: 权限控制相关内容, OPEN_ACL_UNSAFE表示任何人都可以访问      * CreateMode createMode: 创建节点的类型（永久、短暂等）, PERSISTENT表示永久节点      */     @Test     public void create() throws KeeperException, InterruptedException {         String node = zkClient.create("/szh", "Java开发".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);         System.out.println(node);     } }</code></pre> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220903/b7796d8aeff987d1c732bbe484a01b2a.jpg"></p> <h2 id="2.3%20%E8%8E%B7%E5%8F%96%E5%AD%90%E7%BB%93%E7%82%B9%E5%B9%B6%E7%9B%91%E5%90%AC%E8%8A%82%E7%82%B9%E5%8F%98%E5%8C%96">2.3 获取子结点并监听节点变化</h2> <pre><code class="language-java">package com.szh.zk;  import org.apache.zookeeper.*; import org.apache.zookeeper.data.Stat; import org.junit.Before; import org.junit.Test;  import java.io.IOException; import java.util.List;  /**  *  */ public class ZookeeperClient {      //单机模式     private static String connectString = "192.168.40.130:2181";     //集群模式 //    private static String connectString = "zk101:2181,zk102:2181,zk103:2181";     private static int sessionTimeout = 30000;     private ZooKeeper zkClient = null;      /**      * 创建ZooKeeper客户端，完成服务端与客户端之间的连接      * connectString: 具体连接的那台zookeeper服务器的地址      * sessionTimeout: 客户端和服务端直接连接的超时时限      * watcher: 监听器相关设置      */     @Before     public void init2() throws IOException {         zkClient = new ZooKeeper(connectString, sessionTimeout, new Watcher() {             @Override             public void process(WatchedEvent watchedEvent) {                 //收到事件通知后的回调函数（用户的业务逻辑）                 System.out.println("-----------------------------------");                 List&lt;String&gt; children = null;                 try {                     children = zkClient.getChildren("/", true);                 } catch (KeeperException | InterruptedException e) {                     e.printStackTrace();                 }                 children.forEach(System.out::println);             }         });     }      /**      * 获取子结点，并监听节点的变化      * String path: 监听哪个路径下的节点      * boolean watch: true表示采用监听器，客户端相关路径下的节点一旦发生变化，监听器就会触发相应的回调方法，再次启动监听      */     @Test     public void getChildren() throws KeeperException, InterruptedException {         List&lt;String&gt; children = zkClient.getChildren("/", true);         children.forEach(System.out::println);         Thread.sleep(Long.MAX_VALUE);     } }</code></pre> <blockquote> <p>基于上面创建节点的API测试之后，此时zk客户端中是存在 szh 这个节点的。</p> </blockquote> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220903/447eef12b370018386ad829ef1070a77.jpg"></p> <blockquote> <p>下面，我们到 zk客户端命令行中，创建新的节点，看看这里监听如何？</p> </blockquote> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220903/d4248f93dff4d295e952c05d5ef1589c.jpg"></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220903/b7ed5e413e3022ff73fe297bdf353c64.jpg"></p> <blockquote> <p>从上面的运行结果中可以看到，在客户端中实时的创建新的节点是可以被监听到的。</p> <p>下面删除一个节点，这边监听仍然正常执行。</p> </blockquote> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220903/5f858cc63d278a07b8fed2c3cada8cfa.jpg"></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220903/0a1fc7d0e54698e15f1e31b104db25fd.jpg"></p> <h2 id="2.4%20%E5%88%A4%E6%96%AD%E8%8A%82%E7%82%B9%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8">2.4 判断节点是否存在</h2> <pre><code class="language-java">package com.szh.zk;  import org.apache.zookeeper.*; import org.apache.zookeeper.data.Stat; import org.junit.Before; import org.junit.Test;  import java.io.IOException; import java.util.List;  /**  *  */ public class ZookeeperClient {      //单机模式     private static String connectString = "192.168.40.130:2181";     //集群模式 //    private static String connectString = "zk101:2181,zk102:2181,zk103:2181";     private static int sessionTimeout = 30000;     private ZooKeeper zkClient = null;      /**      * 创建ZooKeeper客户端，完成服务端与客户端之间的连接      * connectString: 具体连接的那台zookeeper服务器的地址      * sessionTimeout: 客户端和服务端直接连接的超时时限      * watcher: 监听器相关设置      */     @Test     public void init() throws IOException {         zkClient = new ZooKeeper(connectString, sessionTimeout, new Watcher() {             @Override             public void process(WatchedEvent watchedEvent) {              }         });     }      @Before     public void init2() throws IOException {         zkClient = new ZooKeeper(connectString, sessionTimeout, new Watcher() {             @Override             public void process(WatchedEvent watchedEvent) {              }         });     }      /**      * 判断节点是否存在      * String path: 判断哪个路径下的节点是否存在      * boolean watch: false表示不开启监听器功能      */     @Test     public void exist() throws KeeperException, InterruptedException {         Stat stat = zkClient.exists("/szh", false);         System.out.println(stat != null ? "节点存在" : "节点不存在");     } }</code></pre> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220903/36605fa15dd3350b6f4f5dffc6ea25f0.jpg"></p> <blockquote> <p>基于上面的API测试，我们知道 szh 这个节点是存在的，所以上面的运行结果是 节点存在。</p> <p>然后将 szh 节点删除，自然就不存在了。</p> </blockquote> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220903/86a7f61b35ad38625e17dd41180046f2.jpg"></p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220903/13718fbf9ae7e2c9067f663a8813e034.jpg"></p> <hr/> </h1> <h2 id="3.1%20%E5%86%99%E6%B5%81%E7%A8%8B%E4%B9%8B%E5%86%99%E5%85%A5%E8%AF%B7%E6%B1%82%E7%9B%B4%E6%8E%A5%E5%8F%91%E9%80%81%E7%BB%99Leader%E8%8A%82%E7%82%B9">3.1 写流程之写入请求直接发送给Leader节点</h2> <p><img decoding="async" alt="" height="428" src="http://img.555519.xyz/uploads3/20220903/9f4e757bbbd870b119d73d8f754cd0af.jpg"></p> <h2 id="3.2%C2%A0%E5%86%99%E6%B5%81%E7%A8%8B%E4%B9%8B%E5%86%99%E5%85%A5%E8%AF%B7%E6%B1%82%E7%9B%B4%E6%8E%A5%E5%8F%91%E9%80%81%E7%BB%99Follower%E8%8A%82%E7%82%B9">3.2&nbsp;写流程之写入请求直接发送给Follower节点</h2> <p><img loading="lazy" decoding="async" alt="" height="402" src="http://img.555519.xyz/uploads3/20220903/b8476c252cd8c83914f729220a49854e.jpg"></p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-72244.htm">自己可以买疫苗给狗狗打吗（自己可以买疫苗给狗狗打吗）</a></p>
+                                        <p>下一个：<a href="/news/article-72905.htm">关于Hadoop在java客户端进行下载时的异常java.io.FileNotFoundException: Hadoop home directory is no existed的解决办法</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-60952.htm" title="动物接种狂犬疫苗有效期是多久（动物接种狂犬疫苗有效期是多久呢）">动物接种狂犬疫苗有效期是多久（动物接种狂犬疫苗有效期是多久呢）</a></li>
+                        <li class="py-2"><a href="/news/article-49424.htm" title="广州狗市场价格在多少（广州那里有狗市场交易）">广州狗市场价格在多少（广州那里有狗市场交易）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-2-latest-winxray-node.htm" title="2月2日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址">2月2日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-48331.htm" title="Vue刷新页面的三种方式">Vue刷新页面的三种方式</a></li>
+                        <li class="py-2"><a href="/news/article-36563.htm" title="宠物医院证件办理流程（宠物医院需要办理什么证）">宠物医院证件办理流程（宠物医院需要办理什么证）</a></li>
+                        <li class="py-2"><a href="/news/article-58735.htm" title="Citus 分布式 PostgreSQL 集群 &#8211; SQL Reference(查询处理)">Citus 分布式 PostgreSQL 集群 &#8211; SQL Reference(查询处理)</a></li>
+                        <li class="py-2"><a href="/news/article-51511.htm" title="开宠物食品店（开宠物食品店赚钱吗）">开宠物食品店（开宠物食品店赚钱吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-winxray-github.htm" title="3月2日→21.7M/S|2025年最新免费节点Clash Xray订阅链接地址">3月2日→21.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-39003.htm" title="Vue3.0入门 + Vant3.0移动端实践（二）轮播图模块封装及首页完善">Vue3.0入门 + Vant3.0移动端实践（二）轮播图模块封装及首页完善</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-winxray-node-github.htm" title="1月17日→22M/S|2025年最新免费节点Clash Xray订阅链接地址">1月17日→22M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
