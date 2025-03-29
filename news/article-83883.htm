@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-83883.htm" />
+    <!-- Title of The Page -->
+    <title>聊下 git remote prune origin</title>
+        <meta name="description" content="在你经常使用的命令当中有一个git branch –a 用来查看所有的分支，包括本地和远程的。但是时间长了你会发现有些分支在远程其实早就被删除了，但是在你本地依然可以看见这些被删除的分支。 你可以通过" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-83883.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="聊下 git remote prune origin" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/ed217b8fdcdc741f1011a5ee41ef32b1.webp" />
+        <meta property="og:release_date" content="2025-03-29T09:00:30" />
+    <meta property="og:updated_time" content="2025-03-29T09:00:30" />
+        <meta property="og:description" content="在你经常使用的命令当中有一个git branch –a 用来查看所有的分支，包括本地和远程的。但是时间长了你会发现有些分支在远程其实早就被删除了，但是在你本地依然可以看见这些被删除的分支。 你可以通过" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="聊下 git remote prune origin">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">聊下 git remote prune origin</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> <p>在你经常使用的命令当中有一个git branch –a 用来查看所有的分支，包括本地和远程的。但是时间长了你会发现有些分支在远程其实早就被删除了，但是在你本地依然可以看见这些被删除的分支。</p> <p>你可以通过命令，git remote show origin 来查看有关于origin的一些信息，包括分支是否tracking。</p> <p><a href="http://images2015.cnblogs.com/blog/202205/201611/202205-20161113090750045-714061164.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img fetchpriority="high" decoding="async" style="background-image:none;border:0px;" title="1" src="http://img.555519.xyz/uploads3/20220707/1eecadd50e2eb38e5e9d489ab83abbee.jpg" alt="聊下 git remote prune origin"></a></p> <p>Local refs configured for ‘git push’，这一栏说明你push了哪些分支上origin。</p> <p><a href="http://images2015.cnblogs.com/blog/202205/201611/202205-20161113090750592-1519818265.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img decoding="async" style="background-image:none;border:0px;" title="2" src="http://img.555519.xyz/uploads3/20220707/9d16000f89059027c7b51d1572442559.jpg" alt="聊下 git remote prune origin"></a></p> <p>develop_newfeature_apiwrapper，分支在远程，我们现在去把他删除掉。</p> <p><a href="http://images2015.cnblogs.com/blog/202205/201611/202205-20161113090751045-1040918315.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img decoding="async" style="background-image:none;border:0px;" title="3" src="http://img.555519.xyz/uploads3/20220707/ce74ae58d6803a1a72d195020c4e060a.jpg" alt="聊下 git remote prune origin"></a></p> <p>点击垃圾桶，将其删除。再回到本地来查看所有分支。</p> <p><a href="http://images2015.cnblogs.com/blog/202205/201611/202205-20161113090751874-830771201.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img loading="lazy" decoding="async" style="background-image:none;border:0px;" title="4" src="http://img.555519.xyz/uploads3/20220707/0d44449f983e244f5e556fff8eaa6080.jpg" alt="聊下 git remote prune origin"></a></p> <p>它依然存在。但是你再通过 git remote show origin，来查看就会发现问题。</p> <p><a href="http://images2015.cnblogs.com/blog/202205/201611/202205-20161113090752358-672493368.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img loading="lazy" decoding="async" style="background-image:none;border:0px;" title="5" src="http://img.555519.xyz/uploads3/20220707/ab342fdbe662fa7dd95166b27d81f861.jpg" alt="聊下 git remote prune origin"></a></p> <p>提示你可以通过git remote prune 移除这个分支。（也就是说你可以刷新本地仓库与远程仓库的保持这些改动的同步）</p> <p><a href="http://images2015.cnblogs.com/blog/202205/201611/202205-20161113090752858-929888010.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img loading="lazy" decoding="async" style="background-image:none;border:0px;" title="6" src="http://img.555519.xyz/uploads3/20220707/95a127a8cc9d1392a7452a7d4251f167.jpg" alt="聊下 git remote prune origin"></a></p> <p>这个在远程删除的分支在你本地仓库也将被删除。再通过git branch –a 来查看。</p> <p><a href="http://images2015.cnblogs.com/blog/202205/201611/202205-20161113090753389-401638706.png" rel="nofollow" class="fancybox" data-fancybox-group="button"><img loading="lazy" decoding="async" style="background-image:none;border:0px;" title="7" src="http://img.555519.xyz/uploads3/20220707/e8f9c222fd847cb986110b891565dd82.jpg" alt="聊下 git remote prune origin"></a></p> <p>已经不存在了。</p> <p>作者：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.cnblogs.com/wangiqngpei557/"  rel="nofollow">王清培</a></p> <p>出处：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.cnblogs.com/wangiqngpei557/"  rel="nofollow">http://www.cnblogs.com/wangiqngpei557/</a></p> <p>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面</p> </div> <p>转载于:https://www.cnblogs.com/wangiqngpei557/p/6058115.html</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-83174.htm">动物疫苗市场竞争（动物疫苗行业）</a></p>
+                                        <p>下一个：<a href="/news/article-83884.htm">宠物粮食在哪里进货好呢知乎文章（宠物粮在哪里批发）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-64553.htm" title="SpringBoot @Scheduled 读取配置文件获取cron值">SpringBoot @Scheduled 读取配置文件获取cron值</a></li>
+                        <li class="py-2"><a href="/news/article-71594.htm" title="Halo 开源项目学习（六）：事件监听机制_在线工具">Halo 开源项目学习（六）：事件监听机制_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-83883.htm" title="聊下 git remote prune origin">聊下 git remote prune origin</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-30-latest-winxray-node.htm" title="1月30日→21.9M/S|2025年最新免费节点Clash Xray订阅链接地址">1月30日→21.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-72904.htm" title="Zookeeper——客户端API的相关方法操作">Zookeeper——客户端API的相关方法操作</a></li>
+                        <li class="py-2"><a href="/news/article-54174.htm" title="宠物粮食加工厂加盟电话号码查询（宠物粮基地）">宠物粮食加工厂加盟电话号码查询（宠物粮基地）</a></li>
+                        <li class="py-2"><a href="/news/article-66419.htm" title="从Paxos到ZooKeeper-一致性协议之2PC、3PC">从Paxos到ZooKeeper-一致性协议之2PC、3PC</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-26-winxray-github.htm" title="2月26日→20.7M/S|2025年最新免费节点Clash Xray订阅链接地址">2月26日→20.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-36234.htm" title="动物医院申请书范文怎么写（动物医院营业执照申领需要哪些准备材料）">动物医院申请书范文怎么写（动物医院营业执照申领需要哪些准备材料）</a></li>
+                        <li class="py-2"><a href="/news/article-56932.htm" title="聊城宠物市场在什么地方（在聊城有最大的宠物店吗）">聊城宠物市场在什么地方（在聊城有最大的宠物店吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
