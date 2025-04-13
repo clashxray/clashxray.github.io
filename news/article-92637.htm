@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-92637.htm" />
+    <!-- Title of The Page -->
+    <title>详解Android如何实现自定义的动画曲线_Android_</title>
+        <meta name="description" content="目录  前言 Curve 类定义 实例解析 正弦动画曲线 总结    前言 最近在写动画相关的篇章，经常会用到 Curve 这个动画曲线类，那这个类到底怎么实现的？如果想自己来一个自定义的动画曲线该怎" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-92637.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="详解Android如何实现自定义的动画曲线_Android_" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/cd0ccc11a3ba8258f3d86c3637b29e2a.webp" />
+        <meta property="og:release_date" content="2025-04-10T08:17:35" />
+    <meta property="og:updated_time" content="2025-04-10T08:17:35" />
+        <meta property="og:description" content="目录  前言 Curve 类定义 实例解析 正弦动画曲线 总结    前言 最近在写动画相关的篇章，经常会用到 Curve 这个动画曲线类，那这个类到底怎么实现的？如果想自己来一个自定义的动画曲线该怎" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="详解Android如何实现自定义的动画曲线_Android_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">详解Android如何实现自定义的动画曲线_Android_</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">前言</a></li> <li><a href="#_label1" rel="nofollow">Curve 类定义</a></li> <li><a href="#_label2" rel="nofollow">实例解析</a></li> <li><a href="#_label3" rel="nofollow">正弦动画曲线</a></li> <li><a href="#_label4" rel="nofollow">总结</a></li> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>前言</h2> <p>最近在写动画相关的篇章，经常会用到 <code>Curve</code> 这个动画曲线类，那这个类到底怎么实现的？如果想自己来一个自定义的动画曲线该怎么弄？本篇我们就来一探究竟。</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220413/0550fcdebf63391572273aa4a0612d6c.jpg"></p> <p style="text-align:center">曲线</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>Curve 类定义</h2> <p>查看源码， <code>Curve</code> 类定义如下：</p> <div class="ay1code"> <pre class="brush:java;">abstract class Curve extends ParametricCurve&lt;double&gt; {    const Curve();      @override    double transform(double t) {      if (t == 0.0 || t == 1.0) {        return t;      }      return super.transform(t);    }        Curve get flipped =&gt; FlippedCurve(this);  }    </pre> </div> <p>看上去好像没定义什么， 实际这里只是做了两个处理，一个是明确的数据类型为 <code>double</code>，另一个是对 <code>transform</code> 做了重载，也只是对参数 t 做了特殊处理，保证参数 t 的范围在0-1之间，且起点值0.0和终点值1.0不被转换函数转换。主要定义在上一层的<code>ParametricCurve</code>。文档是建议子类重载<code>transformInternal</code>方法，那我们就继续往上看<code>ParametricCurve</code>这个类的实现，代码如下：</p> <div class="ay1code"> <pre class="brush:java;">abstract class ParametricCurve&lt;T&gt; {    const ParametricCurve();      T transform(double t) {      assert(t != null);      assert(t &gt;= 0.0 &amp;&amp; t &lt;= 1.0, 'parametric value $t is outside of [0, 1] range.');      return transformInternal(t);    }      @protected    T transformInternal(double t) {      throw UnimplementedError();    }      @override    String toString() =&gt; objectRuntimeType(this, 'ParametricCurve');  }  </pre> </div> <p>可以看到，实际上 <code>transform</code> 方法除了做参数合法性验证以外，其实就是调用了<code>transformInternal</code>方法，因此子类必须要实现该方法，否则会抛出<code>UnimplementedError</code>异常。</p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>实例解析</h2> <p>上面的源码可以看到，关键在于参数 <code>t</code>。这个参数 <code>t</code> 代表什么呢？注释里说的是：</p> <blockquote> <p>Returns the value of the curve at point <code>t</code>. — 返回 t 点的曲线对应的值。</p> </blockquote> <p>因此 <code>t</code> 可以认为是曲线的横坐标，而为了保证曲线的一致性，做了归一化处理，也就是<code>t</code>的取值都是在0-1之间。这么说可能有点抽象，我们来看2个例子来对比就明白了，先看最简单<code> Curves.linear</code> 的实现。</p> <div class="ay1code"> <pre class="brush:java;">class _Linear extends Curve {    const _Linear._();      @override    double transformInternal(double t) =&gt; t;  }  </pre> </div> <p>超级简单吧，直接返回 t，其实对应我们的数学的函数就是：</p> <div class="ay1code"> <pre class="brush:java;">y = f(t) = t  </pre> </div> <p>对应的曲线就是一条斜线。也就是说在设定的动画时间内，会完成从0-1的线性转变，也就是变化是均匀的。线性这个很好理解，我们再来看一个减速曲线<code>decelerate</code>的实现。</p> <div class="ay1code"> <pre class="brush:java;">class _DecelerateCurve extends Curve {    const _DecelerateCurve._();      @override    double transformInternal(double t) {      t = 1.0 - t;      return 1.0 - t * t;    }  }  </pre> </div> <p>我们先看一下_DecelerateCurve 的计算表达式是什么。</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220413/e0c9809df9b3af728e5d2b8c4971d9ee.jpg"></p> <p>回忆一下我们高中物理学的匀减速运动，加速度为负（即减速）的距离计算公式：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220413/08b8990f17587c22f5049ec146dccd4f.jpg"></p> <p>上面的减速曲线其实就可以看做是初始速度是2，加速度也是2的减速运动。为什么要是2这个值呢，这是因为 t 的取值范围是0-1，这样计算完的结果的取值范围还是0-1。你肯定会问，<strong>为什么要保证曲线的计算结果要是0-1</strong>？我们来假设计算结果不为0-1会发生什么情况，比如我们要在屏幕上移动一个组件为60像素。假设动画曲线初始值不为0。那就意味着一开始的移动距离是跳变的。同样的，如果结束值不为1.0，意味着在最后一个点的距离值不是60.0，那么就意味着结束时需要从最后一个点跳到最终的60像素的位置（动画需要保证最终的移动距离是60像素）这样意味着动画会出现跳变的效果，绘制曲线的话会是下面的样子（绿色是正常的，红线是异常的）。<strong>这样的动画体验是很糟糕的！因此，这是一个关键点，如果你的自定义曲线的 <code>transformInternal</code> 方法的返回值范围不是0-1，就意味着动画会出现跳变，导致动画缺帧的感觉。</strong></p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220413/cbab1f16d160957f801d736b91117759.jpg"></p> <p style="text-align:center">image.png</p> <p>有了这个基础，我们就可以解释动画曲线的基本机制了，实际上就是在给定的动画时间（<code>Duration</code>）范围内，完成组件的初始状态到结束状态的转变，这个转变是沿着设定的 <code>Curve</code> 类完成的，而其横坐标是0-1.0，曲线的初始值和结束值分别是0和1.0，而至于中间值是可以低于0或超过1的。我们可以想像是我们沿着设定的曲线运动，最终无论如何都会达到设定的目的地，而至于怎么走，拐多少道弯，速度怎么变化都是曲线控制的。但是，如果你的曲线初始值不为0或结束值不为1，就像是跳悬崖的那种感觉！</p> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>正弦动画曲线</h2> <p>我们来一个正弦曲线的动画验证一下上面的说法。</p> <div class="ay1code"> <pre class="brush:java;">class SineCurve extends Curve {    final int count;    const SineCurve({this.count = 1}) : assert(count &gt; 0);      @override    double transformInternal(double t) {      return sin(2 * count* pi * t);    }  }  </pre> </div> <p>count 参数用于控制周期，即达到目的地之前可以多来几个来回。这里我们发现，初始值是0，但是一个周期（2π）结束值也是0，这样在动画结束前会出现跳变的结果。来看一下示例代码，这个示例是让圆形向下移动60像素。</p> <div class="ay1code"> <pre class="brush:java;">AnimatedContainer(    decoration: BoxDecoration(      color: Colors.blue,      borderRadius: BorderRadius.circular(30.0),    ),    transform: Matrix4.identity()..translate(0.0, up ? 60.0 : 0.0, 0.0),    duration: Duration(milliseconds: 3000),    curve: SineCurve(count: 1),    child: ClipOval(      child: Container(        width: 60.0,        height: 60.0,        color: Colors.blue,      ),    ),  )  </pre> </div> <p>运行效果如下，注意看最后一帧从0的位置直接跳到了60的位置。</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220413/bfbdbfaeedd750dbd72e9d72e6d2e169.jpg"></p> <p style="text-align:center">跳动动画</p> <p>这个怎么调呢，我们来看一下正弦曲线的样子。</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220413/c973bb8e097c06038e157ee377bd06ff.jpg"></p> <p style="text-align:center">正弦曲线</p> <p>如果我们要满足0-1范围的要求，那么要往后再移动90度才能够达到。但是，这样还有个问题，这样破坏了周期性，比如设置 <code>count=2</code>的时候结果又不对了。我们来看一下规律，实际上只有第一个周期需要多移动90度（图中箭头指向的点），后面的都是按360度（即2π）为周期了。也就是角度其实是按2.5π，4.5π，6.5π……规律来的，对应的角度公式其实就是：</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220413/f45c95383c27ee61f6bceaefaf4823d1.jpg"></p> <p>所以调整后的正弦曲线代码为：</p> <div class="ay1code"> <pre class="brush:java;">class SineCurve extends Curve {    final int count;    const SineCurve({this.count = 1}) : assert(count &gt; 0);      @override    double transformInternal(double t) {      // 需要补偿pi/2个角度，使得起始值是0.终止值是1，避免出现最后突然回到0      return sin(2 * (count + 0.25) * pi * t);    }  }  </pre> </div> <p>再看调整后的效果，是不是丝滑般地过渡了？</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220413/e283e3cdf7ac3127b3fb465275788903.jpg"></p> <p class="maodian"><a name="_label4" rel="nofollow"></a></p> <h2>总结</h2> <p>本篇介绍了 Flutter 动画曲线类的原理和控制动画的机制，实际上 Curve 类就是在指定的时间内，沿曲线完成从起点到终点的过渡。但是为了保证动画平滑过渡，应该保证自定义曲线的<code>transformInternal</code>方法返回值的起始值和结束值分别是0和1。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-92636.htm">Redis+Caffeine两级缓存，让访问速度纵享丝滑</a></p>
+                                        <p>下一个：<a href="/news/article-93388.htm">哈尔滨王允海宠物医院怎么样呀电话号码（阿城王允海宠物医院）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-12-free-winxray-node.htm" title="4月12日→19.1M/S|2025年最新免费节点Clash Xray订阅链接地址">4月12日→19.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67672.htm" title="动物医院仪器设备（动物医院的仪器设备）">动物医院仪器设备（动物医院的仪器设备）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-free-subscribe-node.htm" title="3月31日→22.8M/S|2025年最新免费节点Clash Xray订阅链接地址">3月31日→22.8M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-87465.htm" title="瑞派宠物医院价格表（瑞派宠物医院待遇怎么样）">瑞派宠物医院价格表（瑞派宠物医院待遇怎么样）</a></li>
+                        <li class="py-2"><a href="/news/article-79680.htm" title="被猫抓伤要***吗?没出血有事吗（被猫抓伤要***吗?没出血有事吗怎么办）">被猫抓伤要***吗?没出血有事吗（被猫抓伤要***吗?没出血有事吗怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-94308.htm" title="猫咬了多久过安全期被猫咬了的图片（猫咬了多久过安全期是真的吗）">猫咬了多久过安全期被猫咬了的图片（猫咬了多久过安全期是真的吗）</a></li>
+                        <li class="py-2"><a href="/news/article-65795.htm" title="docker设置代理服务器，解决pull命令：Error response from daemon: Get https://registry-1.docker.io/v2&#8230;">docker设置代理服务器，解决pull命令：Error response from daemon: Get https://registry-1.docker.io/v2&#8230;</a></li>
+                        <li class="py-2"><a href="/news/article-74223.htm" title="golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang">golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang</a></li>
+                        <li class="py-2"><a href="/news/article-80398.htm" title="Jenkins自动化部署Vue项目的方法实现_vue.js">Jenkins自动化部署Vue项目的方法实现_vue.js</a></li>
+                        <li class="py-2"><a href="/news/article-66419.htm" title="从Paxos到ZooKeeper-一致性协议之2PC、3PC">从Paxos到ZooKeeper-一致性协议之2PC、3PC</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">39</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
