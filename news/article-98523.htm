@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-98523.htm" />
+    <!-- Title of The Page -->
+    <title>python PIL Image 图像处理基本操作实例_python</title>
+        <meta name="description" content="1. 图片加载、灰度图、 显示和保存  from PIL import Image    img = Image.open('01.jpg')  imgGrey = img.convert('L') " />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-98523.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="python PIL Image 图像处理基本操作实例_python" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/79663f91f1a62bcd974d8e55983e7688.webp" />
+        <meta property="og:release_date" content="2025-04-18T09:39:22" />
+    <meta property="og:updated_time" content="2025-04-18T09:39:22" />
+        <meta property="og:description" content="1. 图片加载、灰度图、 显示和保存  from PIL import Image    img = Image.open('01.jpg')  imgGrey = img.convert('L') " />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="python PIL Image 图像处理基本操作实例_python">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">python PIL Image 图像处理基本操作实例_python</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<h3>1. 图片加载、灰度图、 显示和保存</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image    img = Image.open('01.jpg')  imgGrey = img.convert('L')    img.show()  imgGrey.show()    img.save('img_copy.jpg')  imgGrey.save('img_gray.jpg')</pre> </div> <h3>2. 图片宽、高、通道模式、平均值获取</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image  import numpy as np    img = Image.open('01.jpg')    width, height = img.size  channel_mode = img.mode  mean_value = np.mean(img)    print(width)  print(height)  print(channel_mode)  print(mean_value)</pre> </div> <h3>3. 创建指定大小，指定通道类型的空图像</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image    width = 200  height = 100    img_white = Image.new('RGB', (width,height), (255,255,255))  img_black = Image.new('RGB', (width,height), (0,0,0))  img_L = Image.new('L', (width, height), (255))    img_white.show()  img_black.show()  img_L.show()</pre> </div> <h3>4. 访问和操作图像像素</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image    img = Image.open('01.jpg')    width, height = img.size    # 获取指定坐标位置像素值  pixel_value = img.getpixel((width/2, height/2))  print(pixel_value)    # 或者使用load方法  pim = img.load()  pixel_value1 = pim[width/2, height/2]  print(pixel_value1)    # 设置指定坐标位置像素的值  pim[width/2, height/2] = (0, 0, 0)    # 或使用putpixel方法  img.putpixel((w//2, h//2), (255,255,255))    # 设置指定区域像素的值  for w in range(int(width/2) - 40, int(width/2) + 40):  for h in range(int(height/2) - 20, int(height/2) + 20):  pim[w, h] = (255, 0, 0)  # img.putpixel((w, h), (255,255,255))  img.show()</pre> </div> <h3>5. 图像通道分离和合并</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image    img = Image.open('01.jpg')    # 通道分离  R, G, B = img.split()    R.show)  G.show()  B.show()    # 通道合并  img_RGB = Image.merge('RGB', (R, G, B))  img_BGR = Image.merge('RGB', (B, G, R))  img_RGB.show()  img_BGR.show()</pre> </div> <h3>6. 在图像上输出文字</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image, ImageDraw, ImageFont    img = Image.open('01.jpg')    # 创建Draw对象:  draw = ImageDraw.Draw(img)  # 字体颜色  fillColor = (255, 0, 0)    text = 'print text on PIL Image'  position = (200,100)    draw.text(position, text, fill=fillColor)  img.show()</pre> </div> <h3>7. 图像缩放</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image    img = Image.open('01.jpg')    width, height = img.size    img_NEARESET = img.resize((width//2, height//2)) # 缩放默认模式是NEARESET(最近邻插值)  img_BILINEAR = img.resize((width//2, height//2), Image.BILINEAR) # BILINEAR 2x2区域的双线性插值  img_BICUBIC = img.resize((width//2, height//2), Image.BICUBIC) # BICUBIC 4x4区域的双三次插值  img_ANTIALIAS = img.resize((width//2, height//2), Image.ANTIALIAS) # ANTIALIAS 高质量下采样滤波</pre> </div> <h3>8. 图像遍历操作</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image    img = Image.open('01.jpg').convert('L')    width, height = img.size    pim = img.load()    for w in range(width):  for h in range(height):  if pim[w, h] &gt; 100:  img.putpixel((w, h), 255)  # pim[w, h] = 255  else:  img.putpixel((w, h), 0)  # pim[w, h] = 0    img.show()</pre> </div> <h3>9. 图像阈值分割、 二值化</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image    img = Image.open('01.jpg').convert('L')    width, height = img.size    threshold = 125    for w in range(width):  for h in range(height):  if img.getpixel((w, h)) &gt; threshold:  img.putpixel((w, h), 255)  else:  img.putpixel((w, h), 0)    img.save('binary.jpg')</pre> </div> <h3>10. 图像裁剪</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image    img = Image.open('01.jpg')    width, height = img.size    # 前两个坐标点是左上角坐标  # 后两个坐标点是右下角坐标  # width在前， height在后  box = (100, 100, 550, 350)    region = img.crop(box)    region.save('crop.jpg')</pre> </div> <h3><strong>11. 图像边界扩展</strong></h3> <div class="ay1code"> <pre class="brush:py;"># 边界扩展  from PIL import Image    img = Image.open('test.png')    width, height = img.size  channel_mode = img.mode    img_makeBorder_full = Image.new(channel_mode, (2*width, height))  img_makeBorder_part = Image.new(channel_mode, (width+200, height))    # 图像水平扩展整个图像  img_makeBorder_full.paste(img, (0, 0, width, height))  img_makeBorder_full.paste(img, (width, 0, 2*width, height))    # 前两个坐标点是左上角坐标  # 后两个坐标点是右下角坐标  # width在前， height在后  box = (width-200, 0, width, height)  region = img.crop(box)    # 图像水平右侧扩展一个ROI  img_makeBorder_part.paste(img, (0, 0, width, height))  img_makeBorder_part.paste(region, (width, 0, width+200, height))  img_makeBorder_part.show()  img_makeBorder_full.show()</pre> </div> <h3>12. PIL.Image 和 numpy 格式相互转换</h3> <div class="ay1code"> <pre class="brush:py;">from PIL import Image  import numpy as np    img = Image.open('01.jpg')    array = np.array(img) # PIL.Image 转 numpy    img1 = Image.fromarray(array) # numpy转 PIL.Image  img1 = Image.fromarray(array.astype('uint8'))    img1.save('from_array.jpg')</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-98522.htm">MyBatis &#8211; typeAliases不能正确解析问题的处理方法</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-72904.htm" title="Zookeeper——客户端API的相关方法操作">Zookeeper——客户端API的相关方法操作</a></li>
+                        <li class="py-2"><a href="/news/article-68344.htm" title="北京农大动物医院营业时间查询官网（北京农大动物医院电话）">北京农大动物医院营业时间查询官网（北京农大动物医院电话）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-node-share.htm" title="3月3日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址">3月3日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-79680.htm" title="被猫抓伤要***吗?没出血有事吗（被猫抓伤要***吗?没出血有事吗怎么办）">被猫抓伤要***吗?没出血有事吗（被猫抓伤要***吗?没出血有事吗怎么办）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-winxray-node.htm" title="3月30日→20.9M/S|2025年最新免费节点Clash Xray订阅链接地址">3月30日→20.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-80398.htm" title="Jenkins自动化部署Vue项目的方法实现_vue.js">Jenkins自动化部署Vue项目的方法实现_vue.js</a></li>
+                        <li class="py-2"><a href="/news/article-72244.htm" title="自己可以买疫苗给狗狗打吗（自己可以买疫苗给狗狗打吗）">自己可以买疫苗给狗狗打吗（自己可以买疫苗给狗狗打吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-12-free-winxray-node.htm" title="4月12日→19.1M/S|2025年最新免费节点Clash Xray订阅链接地址">4月12日→19.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-92636.htm" title="Redis+Caffeine两级缓存，让访问速度纵享丝滑">Redis+Caffeine两级缓存，让访问速度纵享丝滑</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-winxray-node-share.htm" title="3月19日→20.1M/S|2025年最新免费节点Clash Xray订阅链接地址">3月19日→20.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

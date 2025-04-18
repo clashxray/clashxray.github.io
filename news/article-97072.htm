@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-97072.htm" />
+    <!-- Title of The Page -->
+    <title>Java并发系列之JUC中的Lock锁与synchronized同步代码块问题_java_</title>
+        <meta name="description" content="目录  一、Lock锁 二、锁的底层 三、案例  案例一：传统的synchronized实现 案例二：Lock锁的实现  四、Lock锁和synchronized的区别    写在前边： 在Java服" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-97072.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="Java并发系列之JUC中的Lock锁与synchronized同步代码块问题_java_" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/26ee2ea14b0a1035f8babcbc2359deed.webp" />
+        <meta property="og:release_date" content="2025-04-16T08:39:24" />
+    <meta property="og:updated_time" content="2025-04-16T08:39:24" />
+        <meta property="og:description" content="目录  一、Lock锁 二、锁的底层 三、案例  案例一：传统的synchronized实现 案例二：Lock锁的实现  四、Lock锁和synchronized的区别    写在前边： 在Java服" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java并发系列之JUC中的Lock锁与synchronized同步代码块问题_java_">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Java并发系列之JUC中的Lock锁与synchronized同步代码块问题_java_</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">一、Lock锁</a></li> <li><a href="#_label1" rel="nofollow">二、锁的底层</a></li> <li><a href="#_label2" rel="nofollow">三、案例</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_2_0" rel="nofollow">案例一：传统的synchronized实现</a></li> <li><a href="#_lab2_2_1" rel="nofollow">案例二：Lock锁的实现</a></li> </ul> <li><a href="#_label3" rel="nofollow">四、Lock锁和synchronized的区别</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p><strong>写在前边：</strong> 在Java服务端中，会常常遇到并发的场景，以下我使用两个售票的案例实现传统的Lock锁与synchronized加锁<strong>解决线程安全问题</strong>。</p> <p>本章代码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gitee.com/junshi975/codewhite-juc/tree/master/src/main/java/cn/codewhite/juc/demo"  target="_blank" rel="nofollow">Gitee: juc.demo</a></p> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>一、Lock锁</h2> <ul> <li> <code>ReentrantLock</code>类: 可重用锁（公平锁|非公平锁）</li> <li> <code>ReentrantReadWriteLock.ReadLock</code>：读锁</li> <li> <code>ReentrantReadWriteLock.WriteLock</code>：写锁</li> </ul> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>二、锁的底层</h2> <p>锁的底层有公平锁和非公平锁。其中：</p> <ul> <li>公平锁 ：十分公平，不能插队。</li> <li>非公平锁 ：十分不公平，可以插队。（默认非公平锁）</li> </ul> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>三、案例</h2> <p class="maodian"><a name="_lab2_2_0" rel="nofollow"></a></p> <h3>案例一：传统的synchronized实现</h3> <div class="ay1code"> <pre class="brush:java;">/**   * synchronized 同步代码块保证售票线程安全   *   * @Author JUNSHI   * @Create 2022-04-10 22:46   */  public class SaleTicketDemo01 {      public static void main(String[] args) {          Ticket ticket = new Ticket();          new Thread(()-&gt;{              for (int i = 0; i &lt; 60; i++) {                  ticket.sale();              }          },"AA").start();          },"BB").start();          new Thread(() -&gt; {          }, "CC").start();      }      static class Ticket{          // 50张飘票          private int num = 50;          // 售票 synchronized（同步代码块） 本质: 队列，锁          public synchronized void sale(){              if (num &gt; 0){                  System.out.println(Thread.currentThread().getName()+"卖出了"+(num--)+"票,剩余："+num);          }  }  </pre> </div> <p class="maodian"><a name="_lab2_2_1" rel="nofollow"></a></p> <h3>案例二：Lock锁的实现</h3> <div class="ay1code"> <pre class="brush:java;">/**   * Lock 加锁保证售票线程安全   *   * @Author JUNSHI   * @Create 2022-04-10 22:46   */  public class SaleTicketDemo02 {        public static void main(String[] args) {          Ticket2 ticket = new Ticket2();          new Thread(()-&gt;{ for (int i = 0; i &lt; 60; i++) ticket.sale(); },"AA").start();          new Thread(()-&gt;{ for (int i = 0; i &lt; 60; i++) ticket.sale(); },"BB").start();          new Thread(()-&gt;{ for (int i = 0; i &lt; 60; i++) ticket.sale(); },"CC").start();      }        static class Ticket2{          // 50张飘票          private int num = 50;            // 加锁三部曲          // 1、 创建锁 =&gt; new ReentrantLock();          // 2、 加锁 =&gt;  lock.lock();          // 3、 释放锁 =&gt; lock.unlock();          public void sale(){              // 可重入锁  默认：非公平锁：十分不公平，可以插队。（默认非公平锁）              Lock lock = new ReentrantLock();              // 加锁              lock.lock();              try {                  // 执行业务                  if (num &gt; 0){                      System.out.println(Thread.currentThread().getName()+"卖出了"+(num--)+"票,剩余："+num);                  }              } catch (Exception e) {                  e.printStackTrace();              } finally {                  // 解锁                  lock.unlock();              }          }      }  }  </pre> </div> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>四、Lock锁和synchronized的区别</h2> <ol> <li> <code>snchronized</code>是内置Java关键字；<code>Lock</code>是一个Java类。</li> <li> <code>synchronized</code> 无法判断获取锁的状态；<code>Lock</code>可以判断是否获取到了锁。（boolean b = lock.tryLock();）</li> <li> <code>synchronized</code><strong>会自动释放锁</strong>；<code>Lock</code>必须要<strong>手动释放锁，如果不释放锁，死锁</strong>。</li> <li> <code>synchronized</code>线程1获得锁阻塞时，线程2会一直等待下去；Lock锁线程1获得锁阻塞时，线程2等待足够长的时间后中断等待，去做其他的事。</li> <li> <code>synchronized</code>可重入锁：<strong>不可以中断的，非公平</strong>；Lock可重入锁：<strong>可以判断锁，非公平</strong>（可以自己设置）。</li> <li> <code>lock.lockInterruptibly()</code>;方法：当两个线程同时通过该方法想获取某个锁时，假若此时线程A获取到了锁，而线程B只有在等待，那么对线程B调用<code>threadB.interrupt()</code>方法能够中断线程B的等待过程。</li> <li> <code>synchronized</code>适合锁少量的代码同步问题； Lock适合锁大量的同步代码。</li> </ol> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-96400.htm">同城免费领养宠物怎么领的啊（同城免费领养宠物怎么领的啊安全吗）</a></p>
+                                        <p>下一个：<a href="/news/article-97073.htm">动物接种疫苗前的准备有哪些（动物接种疫苗的方法）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-81750.htm" title="动物医院利润 动物医院利润率高吗">动物医院利润 动物医院利润率高吗</a></li>
+                        <li class="py-2"><a href="/news/article-97867.htm" title="宠物领养中心要钱吗现在（宠物领养中心app）">宠物领养中心要钱吗现在（宠物领养中心app）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-winxray-github.htm" title="4月7日→23M/S|2025年最新免费节点Clash Xray订阅链接地址">4月7日→23M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-15-winxray-github.htm" title="4月15日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址">4月15日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-70267.htm" title="中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）">中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）</a></li>
+                        <li class="py-2"><a href="/news/article-74223.htm" title="golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang">golang实现简单工厂、方法工厂、抽象工厂三种设计模式_Golang</a></li>
+                        <li class="py-2"><a href="/news/article-98522.htm" title="MyBatis &#8211; typeAliases不能正确解析问题的处理方法">MyBatis &#8211; typeAliases不能正确解析问题的处理方法</a></li>
+                        <li class="py-2"><a href="/news/article-68344.htm" title="北京农大动物医院营业时间查询官网（北京农大动物医院电话）">北京农大动物医院营业时间查询官网（北京农大动物医院电话）</a></li>
+                        <li class="py-2"><a href="/news/article-92637.htm" title="详解Android如何实现自定义的动画曲线_Android_">详解Android如何实现自定义的动画曲线_Android_</a></li>
+                        <li class="py-2"><a href="/news/article-72904.htm" title="Zookeeper——客户端API的相关方法操作">Zookeeper——客户端API的相关方法操作</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
