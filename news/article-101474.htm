@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxray.github.io/news/article-101474.htm" />
+    <!-- Title of The Page -->
+    <title>Mina IoBuffer的特性介绍</title>
+        <meta name="description" content="原文地址：Mina IoBuffer(Apache Mina user guide Chapter8 IoBuffer) 一个字节缓冲区被Mina的应用程序所使用。这是一个ByteBuffer的替代类" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="Clash Xray免费机场节点分享官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxray.github.io/news/article-101474.htm" />
+    <meta property="og:site_name" content="Clash Xray免费机场节点分享官网" />
+    <meta property="og:title" content="Mina IoBuffer的特性介绍" />
+    <meta property="og:image" content="https://clashxray.github.io/uploads/20240912/cd0ccc11a3ba8258f3d86c3637b29e2a.webp" />
+        <meta property="og:release_date" content="2025-04-22T08:23:38" />
+    <meta property="og:updated_time" content="2025-04-22T08:23:38" />
+        <meta property="og:description" content="原文地址：Mina IoBuffer(Apache Mina user guide Chapter8 IoBuffer) 一个字节缓冲区被Mina的应用程序所使用。这是一个ByteBuffer的替代类" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mina IoBuffer的特性介绍">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-33PT2E497X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-33PT2E497X');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>Clash Xray</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">Mina IoBuffer的特性介绍</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p><span style="font-size:12px">原文地址：<a target="_blank" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://mina.apache.org/mina-project/userguide/ch8-iobuffer/ch8-iobuffer.html"  rel="nofollow"><u><span style="color:#35a1d4">Mina IoBuffer(Apache Mina user guide Chapter8 IoBuffer)</span></u></a></span></p> <p><span style="font-size:12px; color:#313131">一个字节缓冲区</span><span style="font-size:12px; color:#313131">被<span style="font-family:Arial">Mina</span></span><span style="font-size:12px; color:#313131">的应用程序</span><span style="font-size:12px; color:#313131">所使用。</span><span style="font-size:12px">这是一个<a target="_blank" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://java.sun.com/j2se/1.5.0/docs/api/java/nio/ByteBuffer.html"  rel="nofollow"><u><span style="color:#35a1d4">ByteBuffer</span></u></a>的替代类。<span style="color:#990000">Mina不直接使用<span style="font-family:Arial">NIOByteBuffer,</span><span style="font-family:宋体">有两个原因</span><span style="font-family:Arial">:</span></span></span></p> <ul> <li><span style="font-size:12px; color:#FF6600">它不提供有用的<span style="font-family:Arial">getter</span>s和putters<span style="font-family:宋体">方法</span>,<span style="font-family:宋体">如</span>fill/ putString,get/ putAsciiInt()<span style="font-family:宋体">。</span></span></li> <li><span style="font-size:12px; color:#FF6600">由于其固定容量很难写变长数据.</span></li> </ul> <p><span style="font-size:12px; color:#313131"></span></p> <p><span style="font-size:12px; color:#FF6600">这将在<span style="font-family:Arial">Mina3</span>改变。Mina有自己的包装主要原因是拓展nio ByteBuffer实现可扩展的缓冲区。这是一个非常糟糕的决定。缓冲区缓冲<span style="font-family:Arial">:</span><span style="font-family:宋体">临时存储临时数据</span><span style="font-family:Arial">,</span><span style="font-family:宋体">之前使用它。存在许多其他的解决方案</span><span style="font-family:Arial">,</span><span style="font-family:宋体">比如定义一个包装器</span><span style="font-family:Arial">,</span><span style="font-family:宋体">依靠</span><span style="font-family:Arial">NIO bytebuffer</span><span style="font-family:宋体">的列表</span><span style="font-family:Arial">,</span><span style="font-family:宋体">而不是复制现有的缓冲区更大的一个仅仅因为我们希望延长缓冲能力。</span></span></p> <p><span style="font-size:12px; color:#FF6600"></span></p> <p><span style="font-size:12px; color:#FF6600">它也可能是更舒适使用<span style="font-family:Arial">InputStream</span><span style="font-family:宋体">而不是一个字节缓冲区的过滤器</span><span style="font-family:Arial">,</span><span style="font-family:宋体">因为它并不意味着对存储数据的性质</span><span style="font-family:Arial">:</span><span style="font-family:宋体">它可以是一个字节数组</span><span style="font-family:Arial">,</span><span style="font-family:宋体">字符串</span><span style="font-family:Arial">,</span><span style="font-family:宋体">消息</span><span style="font-family:Arial">……</span></span></p> <p><span style="font-size:12px; color:#FF6600"></span></p> <p><span style="font-size:12px; color:#FF6600">最后<span style="font-family:Arial">,</span><span style="font-family:宋体">同样重要的是</span><span style="font-family:Arial">,</span><span style="font-family:宋体">当前实现失败的一个目标</span><span style="font-family:Arial">:</span><span style="font-family:宋体">零拷贝策略</span><span style="font-family:Arial">(</span><span style="font-family:宋体">例如</span><span style="font-family:Arial">,</span><span style="font-family:宋体">一旦我们从套接字读取数据</span><span style="font-family:Arial">,</span><span style="font-family:宋体">稍后我们不想做一个副本</span><span style="font-family:Arial">)</span><span style="font-family:宋体">。我们使用可扩展字节缓冲区</span><span style="font-family:Arial">,</span><span style="font-family:宋体">我们将肯定复制这些数据如果我们有处理大消息。假设</span>Mina<span style="font-family:宋体">的</span>ByteBuffer<span style="font-family:宋体">只是一个包装器</span><span style="font-family:Arial">NIO ByteBuffer</span><span style="font-family:宋体">之上</span><span style="font-family:Arial">,</span>在使用直接缓冲区时这可能是一个真正的问题。</span></p> <h3><span style="font-size:12px">1.1.1.<strong>IoBuffer<span style="font-family:宋体">操作</span></strong></span></h3> <h4><span style="font-size:12px">1.1.1.1.<strong>分配一个新的缓冲区</strong></span></h4> <p><span style="font-size:12px; color:#313131"><span style="color:#990000">IoBuffer<span style="font-family:宋体">是一个抽象类</span><span style="font-family:Arial">,</span></span><span style="font-family:宋体"><span style="color:#990000">因此不能直接实例化。</span>分配</span><span style="font-family:Arial">IoBuffer,</span><span style="font-family:宋体">我们需要使用两个</span></span><span style="font-size:12px; color:#313131">allocate</span><span style="font-size:12px; color:#313131">()<span style="font-family:宋体">方法</span></span><span style="font-size:12px; color:#313131">中的一个</span><span style="font-size:12px; color:#313131">。</span></p> <pre><code class="language-java">&lt;span style="font-size:12px;"&gt;// Allocates a new buffer with a specific size, defining its type (direct or heap) public static IoBuffer allocate(int capacity, boolean direct)  // Allocates a new buffer with a specific size public static IoBuffer allocate(int capacity)&lt;/span&gt;</code></pre> <p><span style="font-size:12px; color:#990000">allocate()<span style="font-family:宋体">方法接受一个或两个参数。第一个</span>结构需要两个参数<span style="font-family:Arial">:</span></span></p> <p><span style="font-size:12px">·<strong>capacity</strong>&nbsp;- 缓冲区的容量大小</span></p> <p><span style="font-size:12px">·<strong>direct</strong>&nbsp;-<span style="color:#313131"> 类型的缓冲区。</span><span style="color:#313131">true</span><span style="color:#313131">直接</span><span style="color:#313131">使用</span><span style="color:#313131">缓冲区<span style="font-family:Arial">,</span></span><span style="color:#313131">false<span style="font-family:宋体">使用</span></span><span style="color:#313131">堆缓冲区</span></span></p> <p><span style="font-size:12px; color:#313131">默认的缓冲区分配是由</span><span style="font-size:12px"><a target="_blank" href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://mina.apache.org/mina-project/xref/org/apache/mina/core/buffer/SimpleBufferAllocator.html"  rel="nofollow"><u><span style="color:#35a1d4">SimpleBufferAllocator</span></u></a><span style="color:#313131">处理</span><span style="color:#313131">的。</span></span></p> <p><span style="font-size:12px; color:#313131"></span></p> <p><span style="font-size:12px; color:#313131">另外<span style="font-family:Arial">,</span><span style="font-family:宋体">还可以使用以下形式</span></span><span style="font-size:12px; color:#313131">：</span></p> <pre><code class="language-java">&lt;span style="font-size:12px;"&gt;// Allocates heap buffer by default. IoBuffer.setUseDirectBuffer(false);  // A new heap buffer is returned. IoBuffer buf = IoBuffer.allocate(1024);&lt;/span&gt;</code></pre> <p><span style="font-size:12px; color:#990000">使用第二种形式时<span style="font-family:Arial">,</span><span style="font-family:宋体">别忘了之前设置默认缓冲类型</span><span style="font-family:Arial">,</span><span style="font-family:宋体">否则您将得到默认堆缓冲区。</span></span></p> <h3><span style="font-size:12px">1.1.2.<strong>创建自动扩展的缓冲区</strong></span></h3> <p><span style="font-size:12px; color:#313131">创建</span><span style="font-size:12px; color:#313131">自动</span><span style="font-size:12px; color:#313131">扩大缓冲与<span style="font-family:Arial">java NIO API</span><span style="font-family:宋体">不是很容易</span><span style="font-family:Arial">,</span><span style="font-family:宋体">因为固定大小的缓冲区。有一个缓冲区</span><span style="font-family:Arial">,</span><span style="font-family:宋体">可以自动扩展需要的是网络应用的一大亮点。为了解决这个问题</span><span style="font-family:Arial">,IoBuffer</span><span style="font-family:宋体">引入了</span><span style="font-family:Arial">autoExpand</span><span style="font-family:宋体">属性。它会自动扩大容量和极限值。</span></span></p> <p><span style="font-size:12px; color:#313131">让我们看看如何创建一个自动扩大缓冲区<span style="font-family:Arial">:</span></span></p> <pre><code class="language-java">&lt;span style="font-size:12px;"&gt;IoBuffer buffer = IoBuffer.allocate(8);  buffer.setAutoExpand(true);  buffer.putString("12345678", encoder);  // Add more to this buffer  buffer.put((byte)10);&lt;/span&gt;</code></pre> <p><span style="font-size:12px; color:#313131">底层<span style="font-family:Arial">ByteBuffer</span></span><span style="font-size:12px; color:#313131">在</span><span style="font-size:12px; color:#313131">幕后</span><span style="font-size:12px; color:#313131">重新分配是<span style="font-family:Arial">IoBuffer</span></span><span style="font-size:12px; color:#313131">。</span><span style="font-size:12px; color:#313131">如果编码数据大于<span style="font-family:Arial">8</span><span style="font-family:宋体">个字节在上面的例子中。</span></span><span style="font-size:12px; color:#313131">容量大小</span><span style="font-size:12px; color:#313131">将翻倍<span style="font-family:Arial">,</span><span style="font-family:宋体">其限制将增加到最后位置的字符串。这种行为非常类似于</span><span style="font-family:Arial">StringBuffer</span><span style="font-family:宋体">类的工作方式。</span></span></p> <p><span style="font-size:12px; color:#FF6600">这种机制很可能是远离Mina3.0,<span style="font-family:宋体">因为它不是最好的方式来处理增加的缓冲区大小。取而代之的应该是类似</span><span style="font-family:Arial">InputStream</span><span style="font-family:宋体">隐藏列表或一个固定大小的</span><span style="font-family:Arial">bytebuffer)</span><span style="font-family:宋体">数组。</span></span></p> <h3><span style="font-size:12px">1.1.3.<strong>创建自动收缩的缓冲区</strong></span></h3> <p><span style="font-size:12px; color:#313131">有些情况下</span><span style="font-size:12px; color:#313131">，调用</span><span style="font-size:12px; color:#313131">释放另外分配的字节缓冲区</span><span style="font-size:12px; color:#313131">以</span><span style="font-size:12px; color:#313131">保存</span><span style="font-size:12px; color:#313131">到内存</span><span style="font-size:12px; color:#313131">。<span style="font-family:Arial">IoBuffer</span><span style="font-family:宋体">提供</span><span style="font-family:Arial">autoShrink</span></span><span style="font-size:12px; color:#313131">属性</span><span style="font-size:12px; color:#313131">处理的需要。如果<span style="font-family:Arial">autoShrink</span><span style="font-family:宋体">打开</span><span style="font-family:Arial">,IoBuffer</span><span style="font-family:宋体">半紧凑时缓冲区的容量</span><span style="font-family:Arial">()</span><span style="font-family:宋体">调用</span><span style="font-family:Arial">,</span><span style="font-family:宋体">只有</span><span style="font-family:Arial">1/4</span><span style="font-family:宋体">或少使用当前的能力。手动收缩缓冲区</span><span style="font-family:Arial">,</span><span style="font-family:宋体">使用</span></span><span style="font-size:12px; color:#313131">shrink</span><span style="font-size:12px; color:#313131">()<span style="font-family:宋体">方法。</span></span></p> <p><span style="font-size:12px; color:#313131">让我们看看这</span><span style="font-size:12px; color:#313131">种方式：</span></p> <pre><code class="language-java">&lt;span style="font-size:12px;"&gt;IoBuffer buffer = IoBuffer.allocate(16); buffer.setAutoShrink(true); buffer.put((byte)1); System.out.println("Initial Buffer capacity = "+buffer.capacity()); buffer.shrink(); System.out.println("Initial Buffer capacity after shrink = "+buffer.capacity()); buffer.capacity(32); System.out.println("Buffer capacity after incrementing capacity to 32 = "+buffer.capacity()); buffer.shrink(); System.out.println("Buffer capacity after shrink= "+buffer.capacity());&lt;/span&gt;</code></pre> <p><span style="font-size:12px; color:#313131">我们最初分配一个容量为<span style="font-family:Arial">16,autoShrink</span><span style="font-family:宋体">属性设置为</span></span><span style="font-size:12px; color:#313131">true</span><span style="font-size:12px; color:#313131">。</span></p> <p><span style="font-size:12px; color:#313131">我们来看它的输出：</span></p> <pre><code class="language-java">&lt;span style="font-size:12px;"&gt;Initial Buffer capacity = 16 Initial Buffer capacity after shrink = 16 Buffer capacity after incrementing capacity to 32 = 32 Buffer capacity after shrink= 16&lt;/span&gt;</code></pre> <p><span style="font-size:12px; color:#313131">让</span><span style="font-size:12px; color:#313131">我们</span><span style="font-size:12px; color:#313131">休息</span><span style="font-size:12px; color:#313131">一下</span><span style="font-size:12px; color:#313131">和分析输出</span><span style="font-size:12px; color:#313131">：</span></p> <ul> <li><span style="font-size:12px; color:#FF6600">初始缓冲容量是<span style="font-family:Arial">16,</span><span style="font-family:宋体">我们创建的缓冲能力。内部这变成了最低的缓冲能力</span></span></li> <li><span style="font-size:12px; color:#FF6600">调用后shrink(),<span style="font-family:宋体">能力仍然是</span><span style="font-family:Arial">16,</span><span style="font-family:宋体">能力永远不会小于最小能力</span></span></li> <li><span style="font-size:12px; color:#FF6600">增加<span style="font-family:Arial">32</span><span style="font-family:宋体">的能力后</span><span style="font-family:Arial">,</span><span style="font-family:宋体">变成了</span><span style="font-family:Arial">32</span><span style="font-family:宋体">的能力</span></span></li> <li><span style="font-size:12px; color:#FF6600">shrink()<span style="font-family:宋体">的调用</span><span style="font-family:Arial">,</span><span style="font-family:宋体">减少能力</span><span style="font-family:Arial">16,</span><span style="font-family:宋体">从而消除额外的存储</span></span></li> </ul> <p><span style="font-size:12px; color:#313131"></span></p> <p><span style="font-size:12px; color:#FF6600">同样，这种应该是一个默认机制<span style="font-family:Arial">,</span><span style="font-family:宋体">无需影响告诉缓冲</span><span style="font-family:Arial">,</span><span style="font-family:宋体">它可以缩小。</span></span></p> <h3><span style="font-size:12px">1.1.4.<strong>缓冲区分配</strong></span></h3> <p><span style="font-size:12px; color:#313131">IoBufferAllocater<span style="font-family:宋体">负责分配和管理缓冲区。精确控制缓冲区分配策略</span><span style="font-family:Arial">,</span><span style="font-family:宋体">实现</span><span style="font-family:Arial">IoBufferAllocater</span><span style="font-family:宋体">接口。</span></span></p> <p><span style="font-size:12px; color:#313131">Mina</span><span style="font-size:12px; color:#313131">附带<span style="font-family:Arial">IoBufferAllocater</span><span style="font-family:宋体">的实现</span></span><span style="font-size:12px; color:#313131">：</span></p> <ul> <li><span style="font-size:12px; color:#FF6600">SimpleBufferAllocator(<span style="font-family:宋体">默认</span><span style="font-family:Arial">),</span><span style="font-family:宋体">每次都创建一个新的缓冲区</span></span></li> <li><span style="font-size:12px; color:#FF6600">CachedBufferAllocator——<span style="font-family:宋体">缓存缓冲区可能被重用扩张</span></span></li> </ul> <p><span style="font-size:12px; color:#313131"></span></p> <p><span style="font-size:12px; color:#FF6600">在新的可用的JVM<span style="font-family:宋体">中</span><span style="font-family:Arial">,</span><span style="font-family:宋体">使用缓存</span><span style="font-family:Arial">IoBuffer</span><span style="font-family:宋体">很可能提高性能。</span></span></p> <p><span style="font-size:12px; color:#313131"></span></p> <p><span style="font-size:12px; color:#313131">您可以实现您自己的实现<span style="font-family:Arial">IoBufferAllocator</span><span style="font-family:宋体">并调用</span><span style="font-family:Arial">setAllocator</span></span><span style="font-size:12px; color:#313131">()</span><span style="font-size:12px; color:#313131"></span><span style="font-size:12px; color:#313131">在</span><span style="font-size:12px; color:#313131">IoBuffer<span style="font-family:宋体">使用相同。</span></span></p> <p><span style="font-size:12px; color:#313131"></span></p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100795.htm">领养宠物店的流浪狗要什么手续（领养流浪猫狗要钱吗）</a></p>
+                                        <p>下一个：<a href="/news/article-101476.htm">猫粮品牌大全推荐 猫粮品牌大全推荐知乎</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-node-share-links.htm" title="3月25日→21M/S|2025年最新免费节点Clash Xray订阅链接地址">3月25日→21M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-76274.htm" title="狗粮厂家批发市场有哪些（狗粮厂家批发市场有哪些地方）">狗粮厂家批发市场有哪些（狗粮厂家批发市场有哪些地方）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-18-free-winxray-node.htm" title="4月18日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址">4月18日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-16-free-node-subscribe-links.htm" title="4月16日→21.5M/S|2025年最新免费节点Clash Xray订阅链接地址">4月16日→21.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-67059.htm" title="云南农大动物医院红河总院电话（云南农业大学动物医学院地址）">云南农大动物医院红河总院电话（云南农业大学动物医学院地址）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-free-winxray-node.htm" title="3月21日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址">3月21日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-15-winxray-github.htm" title="4月15日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址">4月15日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-93388.htm" title="哈尔滨王允海宠物医院怎么样呀电话号码（阿城王允海宠物医院）">哈尔滨王允海宠物医院怎么样呀电话号码（阿城王允海宠物医院）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-winxray-github.htm" title="3月22日→18.7M/S|2025年最新免费节点Clash Xray订阅链接地址">3月22日→18.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-81070.htm" title="宠物领养协议书电子版免费下载（宠物领养协议书电子版免费下载打印）">宠物领养协议书电子版免费下载（宠物领养协议书电子版免费下载打印）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">65</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Clash Xray免费机场节点分享官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
