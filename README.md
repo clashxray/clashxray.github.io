@@ -1,4 +1,4 @@
-# 1月2日→19.1M/S|2025年最新免费节点Clash Xray订阅链接地址  更新时间 2026-01-02 07:48:01
+# 1月9日→19.6M/S|2025年最新免费节点Clash Xray订阅链接地址  更新时间 2026-01-09 10:46:23
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashxray.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashxray.github.io/uploads/2026/01/0-20260102.yaml
-- https://clashxray.github.io/uploads/2026/01/1-20260102.yaml
-- https://clashxray.github.io/uploads/2026/01/2-20260102.yaml
-- https://clashxray.github.io/uploads/2026/01/3-20260102.yaml
-- https://clashxray.github.io/uploads/2026/01/4-20260102.yaml
+- https://clashxray.github.io/uploads/2026/01/0-20260109.yaml
+- https://clashxray.github.io/uploads/2026/01/1-20260109.yaml
+- https://clashxray.github.io/uploads/2026/01/2-20260109.yaml
+- https://clashxray.github.io/uploads/2026/01/3-20260109.yaml
+- https://clashxray.github.io/uploads/2026/01/4-20260109.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashxray.github.io/uploads/2026/01/0-20260102.txt
-- https://clashxray.github.io/uploads/2026/01/1-20260102.txt
-- https://clashxray.github.io/uploads/2026/01/2-20260102.txt
-- https://clashxray.github.io/uploads/2026/01/3-20260102.txt
-- https://clashxray.github.io/uploads/2026/01/4-20260102.txt
+- https://clashxray.github.io/uploads/2026/01/0-20260109.txt
+- https://clashxray.github.io/uploads/2026/01/1-20260109.txt
+- https://clashxray.github.io/uploads/2026/01/2-20260109.txt
+- https://clashxray.github.io/uploads/2026/01/3-20260109.txt
+- https://clashxray.github.io/uploads/2026/01/4-20260109.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashxray.github.io/uploads/2026/01/20260102.json
+- https://clashxray.github.io/uploads/2026/01/20260109.json
 
 ## 更多Clash节点订阅 ：
 
