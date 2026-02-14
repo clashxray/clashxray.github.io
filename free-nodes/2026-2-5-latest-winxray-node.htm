@@ -313,9 +313,29 @@ vmess支持更灵活的流量分流和混淆技术，能更有效地抵抗封锁
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的 Rule Provider 有什么作用？</h5></div>
+    <div class="panel-heading"><h5>Netch 可以做什么？</h5></div>
     <div class="panel-body">
-        Rule Provider 是 Clash 的规则分发机制。用户可以订阅不同的规则集，比如广告拦截、社交媒体、流媒体等，实现按需加载。它让配置文件更加简洁、动态更新，并支持多源规则管理。<hr />    </div>
+        Netch 是一款 Windows 平台的网络加速工具，支持基于 V2Ray、Socks5、Shadowsocks 等协议的代理。它可用于加速游戏、视频或网站访问，并能通过 TAP 模式实现系统级代理，广受游戏玩家喜爱。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 的差别？</h5></div>
+    <div class="panel-body">
+        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理只影响支持代理的应用。TUN 适合全局加速，如游戏、视频和浏览器流量，提高网络稳定性和覆盖范围。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 与传统代理协议有何不同？</h5></div>
+    <div class="panel-body">
+        Hysteria2 使用基于 QUIC 的高性能传输协议，可显著降低延迟并提升抗干扰能力。它特别适合高丢包或高延迟网络环境，提供流畅的浏览和视频播放体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持按端口匹配流量，将不同应用的流量分配到指定节点。结合策略组使用，可实现精准分流，优化访问速度和网络稳定性，提高整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何安全地在服务器上部署 V2Ray（最小权限原则）？</h5></div>
+    <div class="panel-body">
+        使用独立非 root 用户运行 V2Ray，限制服务访问端口并仅开放必要端口；配置防火墙规则与 Fail2ban 限制暴力登录；定期更新内核与 V2Ray 版本，并关闭不必要的系统服务以减少攻击面。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 如何防止流量被 DPI 检测？</h5></div>
@@ -323,9 +343,9 @@ vmess支持更灵活的流量分流和混淆技术，能更有效地抵抗封锁
         通过协议插件和混淆方式可以模拟正常 HTTPS 或 HTTP 流量，隐藏真实流量特征。合理配置混淆插件和加密方式，可以有效绕过 DPI 检测，保证连接稳定性和长期可用性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何安全地在服务器上部署 V2Ray（最小权限原则）？</h5></div>
+    <div class="panel-heading"><h5>Trojan 是否需要证书？</h5></div>
     <div class="panel-body">
-        使用独立非 root 用户运行 V2Ray，限制服务访问端口并仅开放必要端口；配置防火墙规则与 Fail2ban 限制暴力登录；定期更新内核与 V2Ray 版本，并关闭不必要的系统服务以减少攻击面。<hr />    </div>
+        是的，Trojan 必须使用有效的 TLS 证书才能运行。推荐使用 Let's Encrypt 免费证书。若证书过期或配置错误，客户端将无法建立加密连接，导致无法访问外部网络。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 的加密方式如何选择？</h5></div>
@@ -338,29 +358,9 @@ vmess支持更灵活的流量分流和混淆技术，能更有效地抵抗封锁
         在 Clash 中，用户可以通过策略组设置节点优先级，优先使用延迟低、稳定性高的节点。结合规则文件，可以根据域名或 IP 自动选择最优节点，实现更高效的网络访问体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 可以做什么？</h5></div>
+    <div class="panel-heading"><h5>Clash 的 Rule Provider 有什么作用？</h5></div>
     <div class="panel-body">
-        Netch 是一款 Windows 平台的网络加速工具，支持基于 V2Ray、Socks5、Shadowsocks 等协议的代理。它可用于加速游戏、视频或网站访问，并能通过 TAP 模式实现系统级代理，广受游戏玩家喜爱。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 与传统代理协议有何不同？</h5></div>
-    <div class="panel-body">
-        Hysteria2 使用基于 QUIC 的高性能传输协议，可显著降低延迟并提升抗干扰能力。它特别适合高丢包或高延迟网络环境，提供流畅的浏览和视频播放体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 是否需要证书？</h5></div>
-    <div class="panel-body">
-        是的，Trojan 必须使用有效的 TLS 证书才能运行。推荐使用 Let's Encrypt 免费证书。若证书过期或配置错误，客户端将无法建立加密连接，导致无法访问外部网络。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何按端口匹配流量分配节点？</h5></div>
-    <div class="panel-body">
-        Sing-box 支持按端口匹配流量，将不同应用的流量分配到指定节点。结合策略组使用，可实现精准分流，优化访问速度和网络稳定性，提高整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow TUN 模式与 SOCKS5 的差别？</h5></div>
-    <div class="panel-body">
-        TUN 模式拦截系统 IP 层流量，实现全局代理；SOCKS5 代理只影响支持代理的应用。TUN 适合全局加速，如游戏、视频和浏览器流量，提高网络稳定性和覆盖范围。    </div>
+        Rule Provider 是 Clash 的规则分发机制。用户可以订阅不同的规则集，比如广告拦截、社交媒体、流媒体等，实现按需加载。它让配置文件更加简洁、动态更新，并支持多源规则管理。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -389,16 +389,16 @@ vmess支持更灵活的流量分流和混淆技术，能更有效地抵抗封锁
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-1-21-winxray-github.htm" title="1月21日→18.7M/S|2025年最新免费节点Clash Xray订阅链接地址">1月21日→18.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-7-latest-winxray-node.htm" title="2月7日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址">2月7日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-9-winxray-node-github.htm" title="1月9日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址">1月9日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-20-free-winxray-node.htm" title="1月20日→19.3M/S|2025年最新免费节点Clash Xray订阅链接地址">1月20日→19.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-15-winxray-node.htm" title="1月15日→18.8M/S|2025年最新免费节点Clash Xray订阅链接地址">1月15日→18.8M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-18-free-winxray-node.htm" title="1月18日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址">1月18日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-3-free-node-subscribe.htm" title="2月3日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址">2月3日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-24-free-node-subscribe-links.htm" title="1月24日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址">1月24日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-2-1-winxray-node.htm" title="2月1日→18.2M/S|2025年最新免费节点Clash Xray订阅链接地址">2月1日→18.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-12-winxray-node-share.htm" title="2月12日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址">2月12日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-1-17-latest-winxray-node.htm" title="1月17日→20.9M/S|2025年最新免费节点Clash Xray订阅链接地址">1月17日→20.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-31-free-node-subscribe-links.htm" title="1月31日→19.4M/S|2025年最新免费节点Clash Xray订阅链接地址">1月31日→19.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-6-node-share-links.htm" title="1月6日→18.4M/S|2025年最新免费节点Clash Xray订阅链接地址">1月6日→18.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-13-free-node-subscribe.htm" title="2月13日→20.4M/S|2025年最新免费节点Clash Xray订阅链接地址">2月13日→20.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-8-free-subscribe-node.htm" title="2月8日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址">2月8日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-11-free-subscribe-node.htm" title="2月11日→22.2M/S|2025年最新免费节点Clash Xray订阅链接地址">2月11日→22.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-7-latest-winxray-node.htm" title="2月7日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址">2月7日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-18-free-winxray-node.htm" title="1月18日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址">1月18日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -410,10 +410,10 @@ vmess支持更灵活的流量分流和混淆技术，能更有效地抵抗封锁
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
+                <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
             </li>
                     </ul>
     </div>
