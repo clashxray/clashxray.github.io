@@ -382,14 +382,9 @@ sudo systemctl restart caddy
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何配置 Sing-box 使用 DoH 加密 DNS？</h5></div>
+    <div class="panel-heading"><h5>Clash 支持多配置文件加载吗？</h5></div>
     <div class="panel-body">
-        在 dns 模块中添加类型为 doh 的上游，如 `https://1.1.1.1/dns-query`，并指定 bootstrap 地址。启用加密 DNS 可防止 DNS 泄露并加快国际解析速度，提高整体隐私保护。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 支持哪些协议？</h5></div>
-    <div class="panel-body">
-        Clash 支持多种主流代理协议，包括 VMess、VLess、Trojan、Shadowsocks、Snell、Socks5 等。通过配置文件或订阅源，用户可以灵活组合不同协议的节点，实现复杂的分流策略与优先级控制。<hr />    </div>
+        Clash 支持多配置切换，用户可在图形界面中导入多个 YAML 文件，并通过选择不同配置快速切换使用场景。例如家用模式、移动模式或公司网络模式。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2RayN 与 WinXray 哪个更易用？</h5></div>
@@ -397,14 +392,14 @@ sudo systemctl restart caddy
         V2RayN 界面更简洁，功能更稳定，而 WinXray 提供了更现代的界面和自动测速功能。对于初学者来说，V2RayN 上手更快；而追求高级功能的用户可能更喜欢 WinXray。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 支持多配置文件加载吗？</h5></div>
+    <div class="panel-heading"><h5>Trojan TLS 如何避免被 DPI 检测？</h5></div>
     <div class="panel-body">
-        Clash 支持多配置切换，用户可在图形界面中导入多个 YAML 文件，并通过选择不同配置快速切换使用场景。例如家用模式、移动模式或公司网络模式。<hr />    </div>
+        通过选择真实可访问域名并使用有效证书，Trojan 流量可完全模拟 HTTPS 请求。隐藏真实流量特征，降低被封锁和 DPI 检测风险，保证节点长期可用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 如何结合手动节点选择优化访问？</h5></div>
+    <div class="panel-heading"><h5>如何配置 Sing-box 使用 DoH 加密 DNS？</h5></div>
     <div class="panel-body">
-        用户可根据网络延迟和用途手动切换节点，选择最优节点处理不同流量。虽然不支持自动更新，但在节点不稳定或特定需求下可以灵活调整，提高访问效率。<hr />    </div>
+        在 dns 模块中添加类型为 doh 的上游，如 `https://1.1.1.1/dns-query`，并指定 bootstrap 地址。启用加密 DNS 可防止 DNS 泄露并加快国际解析速度，提高整体隐私保护。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 的 QUIC 传输在高丢包环境下表现如何？</h5></div>
@@ -417,19 +412,24 @@ sudo systemctl restart caddy
         Reality 模式通过伪装握手和真实网站特征，提高流量隐蔽性，难以被 DPI 检测。TLS 模式更侧重加密和传输效率，Reality 更适合高封锁网络环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 支持哪些协议？</h5></div>
+    <div class="panel-body">
+        Clash 支持多种主流代理协议，包括 VMess、VLess、Trojan、Shadowsocks、Snell、Socks5 等。通过配置文件或订阅源，用户可以灵活组合不同协议的节点，实现复杂的分流策略与优先级控制。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 节点延迟检测如何优化视频访问？</h5></div>
     <div class="panel-body">
         WinXray 定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证视频流量通过低延迟节点，减少缓冲和卡顿，提高播放流畅度和网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan TLS 如何避免被 DPI 检测？</h5></div>
-    <div class="panel-body">
-        通过选择真实可访问域名并使用有效证书，Trojan 流量可完全模拟 HTTPS 请求。隐藏真实流量特征，降低被封锁和 DPI 检测风险，保证节点长期可用。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Shadowrocket 能否自动更新订阅？</h5></div>
     <div class="panel-body">
-        支持。Shadowrocket 可以设置定时更新周期，例如每隔 12 小时或每天自动刷新订阅链接，确保节点列表保持最新状态。这样无需手动更新即可长期稳定使用。    </div>
+        支持。Shadowrocket 可以设置定时更新周期，例如每隔 12 小时或每天自动刷新订阅链接，确保节点列表保持最新状态。这样无需手动更新即可长期稳定使用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Potatso Lite 如何结合手动节点选择优化访问？</h5></div>
+    <div class="panel-body">
+        用户可根据网络延迟和用途手动切换节点，选择最优节点处理不同流量。虽然不支持自动更新，但在节点不稳定或特定需求下可以灵活调整，提高访问效率。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -458,16 +458,16 @@ sudo systemctl restart caddy
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-2-10-node-share-links.htm" title="2月10日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址">2月10日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-24-free-node-subscribe-links.htm" title="1月24日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址">1月24日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-19-winxray-node-share.htm" title="1月19日→21.8M/S|2025年最新免费节点Clash Xray订阅链接地址">1月19日→21.8M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-11-free-subscribe-node.htm" title="2月11日→22.2M/S|2025年最新免费节点Clash Xray订阅链接地址">2月11日→22.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-20-free-winxray-node.htm" title="1月20日→19.3M/S|2025年最新免费节点Clash Xray订阅链接地址">1月20日→19.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-8-free-subscribe-node.htm" title="2月8日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址">2月8日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-5-latest-winxray-node.htm" title="2月5日→21.3M/S|2025年最新免费节点Clash Xray订阅链接地址">2月5日→21.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-20-winxray-github.htm" title="2月20日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址">2月20日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-12-winxray-node-share.htm" title="2月12日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址">2月12日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-7-latest-winxray-node.htm" title="2月7日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址">2月7日→22.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-2-2-free-subscribe-node.htm" title="2月2日→18.1M/S|2025年最新免费节点Clash Xray订阅链接地址">2月2日→18.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-3-free-node-subscribe.htm" title="2月3日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址">2月3日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-6-winxray-node-github.htm" title="2月6日→18.9M/S|2025年最新免费节点Clash Xray订阅链接地址">2月6日→18.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-17-today-winxray-node.htm" title="2月17日→22.9M/S|2025年最新免费节点Clash Xray订阅链接地址">2月17日→22.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-11-free-subscribe-node.htm" title="2月11日→22.2M/S|2025年最新免费节点Clash Xray订阅链接地址">2月11日→22.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-1-28-winxray-windows.htm" title="1月28日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址">1月28日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-31-free-node-subscribe-links.htm" title="1月31日→19.4M/S|2025年最新免费节点Clash Xray订阅链接地址">1月31日→19.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-10-node-share-links.htm" title="2月10日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址">2月10日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
                     </ul>
     </div>
 </div>
@@ -479,7 +479,7 @@ sudo systemctl restart caddy
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
