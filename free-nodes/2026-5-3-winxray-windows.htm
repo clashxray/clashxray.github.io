@@ -363,14 +363,9 @@ systemctl status v2ray
         QUIC 协议基于 UDP，减少了握手延迟，支持多路复用和拥塞控制优化。Hysteria2 利用 QUIC 提供更低延迟、更高稳定性的网络连接，尤其适合高延迟或丢包环境。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 节点延迟高、丢包严重，常见排查步骤有哪些？</h5></div>
+    <div class="panel-heading"><h5>Clash 的自定义规则组能实现哪些功能？</h5></div>
     <div class="panel-body">
-        先用 ping 和 traceroute 检查到服务器的延迟与路由跳数；再通过测速工具测带宽并尝试更换不同出站端口或混淆方式；若仍然不稳，考虑更换节点或联系客服查看服务端链路质量。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 的节点分类功能有哪些好处？</h5></div>
-    <div class="panel-body">
-        节点分类可以按地区、延迟或用途分组，结合策略组实现自动分流。这样可以快速选择最佳节点，管理大量节点更加高效，同时提升访问速度和稳定性。<hr />    </div>
+        Clash 的自定义规则组允许用户将多个节点和策略组合，通过优先级和条件分流流量。这样可以根据网站类别或流量类型自动选择最优节点，提高网络效率和使用体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 能否同步 iCloud 配置？</h5></div>
@@ -378,19 +373,19 @@ systemctl status v2ray
         可以。Surfboard 支持 iCloud 同步功能，用户可在不同苹果设备上共享同一配置文件。这样即使更换手机或重装系统，也能自动恢复节点与分流设置。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何给 Clash 或 Sing-box 添加本地广告屏蔽规则？</h5></div>
-    <div class="panel-body">
-        可导入公共广告域名列表（如 ads、trackers）并将其指向 `REJECT` 或 `DIRECT`（根据需求）；还可以使用 rule-provider 自动更新广告规则，并结合 hosts 或 DNS 层面进行联合拦截以提升屏蔽效果。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>WinXray 的多策略组如何优化流量分配？</h5></div>
     <div class="panel-body">
         多策略组允许将节点按用途、延迟或地理位置分类，并结合规则文件自动分流流量。这样不同应用如游戏、视频和网页流量都能走最优节点，提高整体访问速度和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何结合节点测速优化策略组？</h5></div>
+    <div class="panel-heading"><h5>如何给 Clash 或 Sing-box 添加本地广告屏蔽规则？</h5></div>
     <div class="panel-body">
-        PassWall2 会定期测速节点延迟和丢包率，并根据策略组自动选择最优节点。通过测速和自动切换，可保证网页、视频和游戏流量走低延迟节点，提升整体网络体验。<hr />    </div>
+        可导入公共广告域名列表（如 ads、trackers）并将其指向 `REJECT` 或 `DIRECT`（根据需求）；还可以使用 rule-provider 自动更新广告规则，并结合 hosts 或 DNS 层面进行联合拦截以提升屏蔽效果。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 的节点分类功能有哪些好处？</h5></div>
+    <div class="panel-body">
+        节点分类可以按地区、延迟或用途分组，结合策略组实现自动分流。这样可以快速选择最佳节点，管理大量节点更加高效，同时提升访问速度和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekobox 是否可以管理多客户端节点？</h5></div>
@@ -398,14 +393,19 @@ systemctl status v2ray
         可以。Nekobox 与 Shadowsocks、Clash 等客户端独立运行，互不干扰。结合策略组使用，可灵活分配节点，实现多客户端管理和流量优化。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的自定义规则组能实现哪些功能？</h5></div>
-    <div class="panel-body">
-        Clash 的自定义规则组允许用户将多个节点和策略组合，通过优先级和条件分流流量。这样可以根据网站类别或流量类型自动选择最优节点，提高网络效率和使用体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 服务器如何防止被扫描到真实 IP？</h5></div>
     <div class="panel-body">
-        可以把 Trojan 部署在反向代理或 CDN 后端，使用 CDN 的中转与域名伪装；同时避免在服务器上暴露其他与域名不匹配的服务，关闭 FTP/SSH 直连并设置防火墙白名单。    </div>
+        可以把 Trojan 部署在反向代理或 CDN 后端，使用 CDN 的中转与域名伪装；同时避免在服务器上暴露其他与域名不匹配的服务，关闭 FTP/SSH 直连并设置防火墙白名单。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 节点延迟高、丢包严重，常见排查步骤有哪些？</h5></div>
+    <div class="panel-body">
+        先用 ping 和 traceroute 检查到服务器的延迟与路由跳数；再通过测速工具测带宽并尝试更换不同出站端口或混淆方式；若仍然不稳，考虑更换节点或联系客服查看服务端链路质量。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何结合节点测速优化策略组？</h5></div>
+    <div class="panel-body">
+        PassWall2 会定期测速节点延迟和丢包率，并根据策略组自动选择最优节点。通过测速和自动切换，可保证网页、视频和游戏流量走低延迟节点，提升整体网络体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -434,15 +434,15 @@ systemctl status v2ray
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-4-28-winxray-github.htm" title="4月28日→18.6M/S|2025年最新免费节点Clash Xray订阅链接地址">4月28日→18.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-25-winxray-node-github.htm" title="4月25日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址">4月25日→19.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-27-free-subscribe-node.htm" title="4月27日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址">4月27日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-15-today-winxray-node.htm" title="4月15日→21.4M/S|2025年最新免费节点Clash Xray订阅链接地址">4月15日→21.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-19-node-share-links.htm" title="4月19日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址">4月19日→20.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-30-winxray-node-share.htm" title="4月30日→20.4M/S|2025年最新免费节点Clash Xray订阅链接地址">4月30日→20.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-5-free-node-subscribe.htm" title="5月5日→18.7M/S|2025年最新免费节点Clash Xray订阅链接地址">5月5日→18.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-18-winxray-node-share.htm" title="4月18日→19.4M/S|2025年最新免费节点Clash Xray订阅链接地址">4月18日→19.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-29-winxray-node-share.htm" title="4月29日→21.4M/S|2025年最新免费节点Clash Xray订阅链接地址">4月29日→21.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-20-winxray-github.htm" title="4月20日→20.7M/S|2025年最新免费节点Clash Xray订阅链接地址">4月20日→20.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-22-winxray-github.htm" title="4月22日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址">4月22日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-10-winxray-node.htm" title="4月10日→22.3M/S|2025年最新免费节点Clash Xray订阅链接地址">4月10日→22.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-24-winxray-windows.htm" title="4月24日→20.4M/S|2025年最新免费节点Clash Xray订阅链接地址">4月24日→20.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-14-free-node-subscribe.htm" title="4月14日→22.8M/S|2025年最新免费节点Clash Xray订阅链接地址">4月14日→22.8M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-13-winxray-node.htm" title="4月13日→21.7M/S|2025年最新免费节点Clash Xray订阅链接地址">4月13日→21.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-5-2-winxray-github.htm" title="5月2日→19.3M/S|2025年最新免费节点Clash Xray订阅链接地址">5月2日→19.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-1-winxray-github.htm" title="5月1日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址">5月1日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-17-node-share.htm" title="4月17日→18.6M/S|2025年最新免费节点Clash Xray订阅链接地址">4月17日→18.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a></li>
                     </ul>
     </div>
@@ -455,10 +455,10 @@ systemctl status v2ray
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
