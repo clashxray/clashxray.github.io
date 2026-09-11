@@ -397,14 +397,14 @@ Clash拍子支持包括Vmess（V2Ray）、Shadowsocks等多种协议，满足不
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 如何保证规则订阅的实时更新？</h5></div>
+    <div class="panel-body">
+        Sing-box 支持远程规则订阅 URL，可设置定期自动更新频率，如每小时或每天。自动更新保证节点和规则保持最新，减少手动维护，提高访问速度和分流效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS 的 Reality 模式需要额外配置吗？</h5></div>
     <div class="panel-body">
         Reality 模式需要配置伪装域名、公钥和服务器指纹等参数。正确配置后，可有效隐藏流量特征，提高在高封锁环境下的可用性和安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 相比 Clash Premium 有哪些改进？</h5></div>
-    <div class="panel-body">
-        Mihomo 作为 Clash Premium 的开源替代品，移除了闭源依赖并优化了内存管理。它支持更多自定义规则和插件扩展，对开发者更友好，同时保持与 Clash 配置完全兼容。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用如何提升短连接性能？</h5></div>
@@ -412,19 +412,9 @@ Clash拍子支持包括Vmess（V2Ray）、Shadowsocks等多种协议，满足不
         多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，可提高吞吐量和连接稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 如何保证规则订阅的实时更新？</h5></div>
+    <div class="panel-heading"><h5>VLESS + XTLS 对高延迟网络有哪些优化？</h5></div>
     <div class="panel-body">
-        Sing-box 支持远程规则订阅 URL，可设置定期自动更新频率，如每小时或每天。自动更新保证节点和规则保持最新，减少手动维护，提高访问速度和分流效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>当 V2Ray 报错 inbound 没有监听，可能是哪些配置问题？</h5></div>
-    <div class="panel-body">
-        检查 inbound 配置是否包含正确的 port、protocol 与 listen 字段；确认没有端口冲突或权限问题（非 root 绑定 1024 以下端口会失败）；查看日志中具体错误信息并根据提示修复配置。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 可以做什么？</h5></div>
-    <div class="panel-body">
-        Netch 是一款 Windows 平台的网络加速工具，支持基于 V2Ray、Socks5、Shadowsocks 等协议的代理。它可用于加速游戏、视频或网站访问，并能通过 TAP 模式实现系统级代理，广受游戏玩家喜爱。<hr />    </div>
+        XTLS 模式减少握手和加密开销，适合高延迟或不稳定网络环境。结合策略组和节点切换，可提高网页浏览、视频播放和游戏的稳定性和流畅度，改善用户体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 的重写规则可实现哪些功能？</h5></div>
@@ -432,9 +422,14 @@ Clash拍子支持包括Vmess（V2Ray）、Shadowsocks等多种协议，满足不
         QuantumultX 的重写规则支持请求头修改、响应内容修改、广告屏蔽及自动跳转。结合脚本可实现自动签到、流量统计和定制化网络访问，极大增强客户端灵活性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 对高延迟网络有哪些优化？</h5></div>
+    <div class="panel-heading"><h5>Mihomo 相比 Clash Premium 有哪些改进？</h5></div>
     <div class="panel-body">
-        XTLS 模式减少握手和加密开销，适合高延迟或不稳定网络环境。结合策略组和节点切换，可提高网页浏览、视频播放和游戏的稳定性和流畅度，改善用户体验。<hr />    </div>
+        Mihomo 作为 Clash Premium 的开源替代品，移除了闭源依赖并优化了内存管理。它支持更多自定义规则和插件扩展，对开发者更友好，同时保持与 Clash 配置完全兼容。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 可以做什么？</h5></div>
+    <div class="panel-body">
+        Netch 是一款 Windows 平台的网络加速工具，支持基于 V2Ray、Socks5、Shadowsocks 等协议的代理。它可用于加速游戏、视频或网站访问，并能通过 TAP 模式实现系统级代理，广受游戏玩家喜爱。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 协议如何提高节点隐蔽性？</h5></div>
@@ -444,7 +439,12 @@ Clash拍子支持包括Vmess（V2Ray）、Shadowsocks等多种协议，满足不
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的延迟检测如何帮助节点选择？</h5></div>
     <div class="panel-body">
-        Clash 会定期测速节点延迟，并根据策略组自动选择延迟最低节点处理流量。可避免访问高延迟或失效节点，提高网页、视频和游戏访问速度及稳定性。    </div>
+        Clash 会定期测速节点延迟，并根据策略组自动选择延迟最低节点处理流量。可避免访问高延迟或失效节点，提高网页、视频和游戏访问速度及稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>当 V2Ray 报错 inbound 没有监听，可能是哪些配置问题？</h5></div>
+    <div class="panel-body">
+        检查 inbound 配置是否包含正确的 port、protocol 与 listen 字段；确认没有端口冲突或权限问题（非 root 绑定 1024 以下端口会失败）；查看日志中具体错误信息并根据提示修复配置。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -492,16 +492,16 @@ Clash拍子支持包括Vmess（V2Ray）、Shadowsocks等多种协议，满足不
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-9-3.htm" title="9月3日→19.7M/S|2025年最新免费节点Clash Xray订阅链接地址">9月3日→19.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/winxray-node-2026-8-29.htm" title="8月29日→22.1M/S|2025年最新免费节点Clash Xray订阅链接地址">8月29日→22.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-7.htm" title="8月7日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址">8月7日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-25-winxray-node.htm" title="7月25日→22.9M/S|2025年最新免费节点Clash Xray订阅链接地址">7月25日→22.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-25.htm" title="8月25日→21.8M/S|2025年最新免费节点Clash Xray订阅链接地址">8月25日→21.8M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-13.htm" title="8月13日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址">8月13日→20.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-4-latest-winxray-node.htm" title="8月4日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址">8月4日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-6-free-node-subscribe.htm" title="8月6日→22.6M/S|2025年最新免费节点Clash Xray订阅链接地址">8月6日→22.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-24-free-subscribe-node.htm" title="8月24日→19.3M/S|2025年最新免费节点Clash Xray订阅链接地址">8月24日→19.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/today-winxray-node-2026-8-31.htm" title="8月31日→20.4M/S|2025年最新免费节点Clash Xray订阅链接地址">8月31日→20.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/today-winxray-node-2026-8-9.htm" title="8月9日→19.2M/S|2025年最新免费节点Clash Xray订阅链接地址">8月9日→19.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-16-winxray-node-github.htm" title="8月16日→18.7M/S|2025年最新免费节点Clash Xray订阅链接地址">8月16日→18.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/today-winxray-node-2026-7-31.htm" title="7月31日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址">7月31日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-19-free-high-speed-nodes.htm" title="7月19日→20.1M/S|2025年最新免费节点Clash Xray订阅链接地址">7月19日→20.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/winxray-github-2026-7-29.htm" title="7月29日→20.7M/S|2025年最新免费节点Clash Xray订阅链接地址">7月29日→20.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-2-node-share.htm" title="8月2日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址">8月2日→21.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-22-winxray-node-github.htm" title="7月22日→22.4M/S|2025年最新免费节点Clash Xray订阅链接地址">7月22日→22.4M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -513,10 +513,10 @@ Clash拍子支持包括Vmess（V2Ray）、Shadowsocks等多种协议，满足不
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
