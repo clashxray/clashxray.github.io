@@ -328,14 +328,14 @@ V2Ray本身是完全开源且免费的软件，但用户需要自行购买服务
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 的节点测速如何优化策略组选择？</h5></div>
+    <div class="panel-body">
+        Shadowrocket 会测量节点延迟和丢包率，将低延迟节点优先使用。结合策略组和规则文件，可保证网页、视频和游戏流量走最佳节点，提高访问速度和连接稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Hiddify Next 订阅更新后节点消失，如何恢复？</h5></div>
     <div class="panel-body">
         先检查订阅源是否更改格式或被下架，尝试重新粘贴订阅链接并手动刷新；若仍缺失，联系订阅提供方确认是否停用某些节点或使用了新的访问权限机制（例如 token 验证）。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和多出口节点，可提高访问速度和连接稳定性，保证用户体验流畅。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的 Rule Provider 有什么作用？</h5></div>
@@ -343,19 +343,29 @@ V2Ray本身是完全开源且免费的软件，但用户需要自行购买服务
         Rule Provider 是 Clash 的规则分发机制。用户可以订阅不同的规则集，比如广告拦截、社交媒体、流媒体等，实现按需加载。它让配置文件更加简洁、动态更新，并支持多源规则管理。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何通过规则文件优化流量分配？</h5></div>
+    <div class="panel-heading"><h5>VMess AEAD 加密在高封锁地区的优势？</h5></div>
     <div class="panel-body">
-        Clash 支持自定义规则文件，可根据域名、IP 或应用类型分流流量。结合策略组使用，可自动将视频、游戏、浏览器等流量分配到最优节点，提高访问速度和网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 的节点测速如何优化策略组选择？</h5></div>
-    <div class="panel-body">
-        Shadowrocket 会测量节点延迟和丢包率，将低延迟节点优先使用。结合策略组和规则文件，可保证网页、视频和游戏流量走最佳节点，提高访问速度和连接稳定性。<hr />    </div>
+        AEAD 加密可防止数据篡改和流量特征泄露，降低被 DPI 检测风险。在高封锁地区使用，可保证节点长期稳定可用，同时提升数据传输安全性和访问可靠性。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 如何实现端口与流量的精确分流？</h5></div>
     <div class="panel-body">
         Sing-box 支持按端口匹配流量，将不同类型应用的流量分配到指定节点。结合策略组使用，可提高访问速度和网络稳定性，实现精准分流和优化用户体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何配置 Sing-box 使用 DoH 加密 DNS？</h5></div>
+    <div class="panel-body">
+        在 dns 模块中添加类型为 doh 的上游，如 `https://1.1.1.1/dns-query`，并指定 bootstrap 地址。启用加密 DNS 可防止 DNS 泄露并加快国际解析速度，提高整体隐私保护。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 如何通过规则文件优化流量分配？</h5></div>
+    <div class="panel-body">
+        Clash 支持自定义规则文件，可根据域名、IP 或应用类型分流流量。结合策略组使用，可自动将视频、游戏、浏览器等流量分配到最优节点，提高访问速度和网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 模式在移动网络下表现如何？</h5></div>
+    <div class="panel-body">
+        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定移动网络。结合策略组和多出口节点，可提高访问速度和连接稳定性，保证用户体验流畅。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 是否比 Clash Meta 更快？</h5></div>
@@ -365,17 +375,7 @@ V2Ray本身是完全开源且免费的软件，但用户需要自行购买服务
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 的 TLS+伪装模式适合什么情况？</h5></div>
     <div class="panel-body">
-        TLS+伪装模式能隐藏真实流量特征，适用于封锁严格的环境。结合域名伪装和证书配置，可以使流量看似普通 HTTPS 请求，提高安全性和抗封锁能力。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何配置 Sing-box 使用 DoH 加密 DNS？</h5></div>
-    <div class="panel-body">
-        在 dns 模块中添加类型为 doh 的上游，如 `https://1.1.1.1/dns-query`，并指定 bootstrap 地址。启用加密 DNS 可防止 DNS 泄露并加快国际解析速度，提高整体隐私保护。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密在高封锁地区的优势？</h5></div>
-    <div class="panel-body">
-        AEAD 加密可防止数据篡改和流量特征泄露，降低被 DPI 检测风险。在高封锁地区使用，可保证节点长期稳定可用，同时提升数据传输安全性和访问可靠性。    </div>
+        TLS+伪装模式能隐藏真实流量特征，适用于封锁严格的环境。结合域名伪装和证书配置，可以使流量看似普通 HTTPS 请求，提高安全性和抗封锁能力。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -423,16 +423,16 @@ V2Ray本身是完全开源且免费的软件，但用户需要自行购买服务
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-9-26-winxray-node-share.htm" title="9月26日→18.6M/S|2025年最新免费节点Clash Xray订阅链接地址">9月26日→18.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-29.htm" title="10月29日→21.5M/S|2025年最新免费节点Clash Xray订阅链接地址">10月29日→21.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-winxray-node-2026-10-9.htm" title="10月9日→19.2M/S|2025年最新免费节点Clash Xray订阅链接地址">10月9日→19.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-22-node-share.htm" title="9月22日→22.1M/S|2025年最新免费节点Clash Xray订阅链接地址">9月22日→22.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-30-latest-winxray-node.htm" title="9月30日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址">9月30日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-9-23.htm" title="9月23日→19.6M/S|2025年最新免费节点Clash Xray订阅链接地址">9月23日→19.6M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/winxray-github-2026-11-5.htm" title="11月5日→19.2M/S|2025年最新免费节点Clash Xray订阅链接地址">11月5日→19.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-winxray-node-2026-10-7.htm" title="10月7日→19M/S|2025年最新免费节点Clash Xray订阅链接地址">10月7日→19M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-4-node-share.htm" title="9月4日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址">9月4日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-30-free-node-subscribe.htm" title="10月30日→19.7M/S|2025年最新免费节点Clash Xray订阅链接地址">10月30日→19.7M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-10-latest-winxray-node.htm" title="10月10日→22.9M/S|2025年最新免费节点Clash Xray订阅链接地址">10月10日→22.9M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-28-free-subscribe-node.htm" title="10月28日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址">10月28日→21.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/winxray-github-2026-10-23.htm" title="10月23日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址">10月23日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-winxray-node-2026-11-9.htm" title="11月9日→18.1M/S|2026年最新免费节点Clash Xray订阅链接地址">11月9日→18.1M/S|2026年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/today-winxray-node-2026-10-13.htm" title="10月13日→19.5M/S|2025年最新免费节点Clash Xray订阅链接地址">10月13日→19.5M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-10-node-share.htm" title="11月10日→19M/S|2026年最新免费节点Clash Xray订阅链接地址">11月10日→19M/S|2026年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-25.htm" title="10月25日→22.2M/S|2025年最新免费节点Clash Xray订阅链接地址">10月25日→22.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/today-winxray-node-2026-10-27.htm" title="10月27日→18.3M/S|2025年最新免费节点Clash Xray订阅链接地址">10月27日→18.3M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-11-6-free-node-subscribe.htm" title="11月6日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址">11月6日→21.2M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/winxray-github-2026-10-19.htm" title="10月19日→18.1M/S|2025年最新免费节点Clash Xray订阅链接地址">10月19日→18.1M/S|2025年最新免费节点Clash Xray订阅链接地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -444,13 +444,10 @@ V2Ray本身是完全开源且免费的软件，但用户需要自行购买服务
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">7</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2026-11/" title="2026-11 归档">2026-11</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                     </ul>
     </div>
